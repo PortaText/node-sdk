@@ -1,8 +1,6 @@
 var nullLogger = require('./null_logger');
 var clientMod = require('./client');
 var urlMod = require('url');
-var https = require('https');
-var http = require('http');
 var util = require('util');
 
 function ClientHttp () {
@@ -13,7 +11,6 @@ util.inherits(ClientHttp, clientMod.Client);
 
 ClientHttp.prototype.execute = function (descriptor, callback) {
   var options = this.formOptions(descriptor);
-  var mod = http;
   var scheme = options.protocol.split(':').shift();
   var mod = require(scheme);
   var buffer = new Buffer('', 'ascii');
