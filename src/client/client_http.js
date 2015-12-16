@@ -1,4 +1,4 @@
-var nullLogger = require('./null_logger');
+var nullLogger = require('../null_logger');
 var clientMod = require('./client');
 var urlMod = require('url');
 var util = require('util');

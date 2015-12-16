@@ -1,4 +1,4 @@
-var loggerMod = require('./null_logger');
+var loggerMod = require('../null_logger');
 
 function Client () {
   this.DEFAULT_ENDPOINT = 'https://rest.portatext.com';

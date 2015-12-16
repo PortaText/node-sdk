@@ -1,4 +1,4 @@
-var clientMod = require('../src/client');
+var clientMod = require('../src/client/client');
 var assert = require('assert');
 
 describe('Client', function() {

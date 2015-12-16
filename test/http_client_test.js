@@ -1,4 +1,4 @@
-var clientMod = require('../src/client_http');
+var clientMod = require('../src/client/client_http');
 var assert = require('assert');
 var http = require('http');
 
