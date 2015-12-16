@@ -37,8 +37,21 @@ Client.prototype.run = function (
     'Content-Type': contentType,
     'Accept': 'application/json'
   };
-  if (authType === 'api_key') {
-    headers['X-Api-Key'] = this.apiKey;
+  switch (authType) {
+    case 'api_key':
+      headers['X-Api-Key'] = this.apiKey;
+      break;
+    case 'session_token':
+      headers['X-Session-Token'] = this.sessionToken;
+      break;
+    case 'basic':
+      var authString = this.credentials[0] + ':' + this.credentials[1];
+      authString = new Buffer(authString).toString('base64');
+      headers['Authorization'] = 'Basic ' + authString;
+      break;
+    default:
+      callback('invalid_auth_type');
+      return;
   }
   this.logger.log('Calling ' + method + ' ' + uri + ' with ' + authType);
   var descriptor = {
