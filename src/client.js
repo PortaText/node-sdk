@@ -3,10 +3,16 @@ var loggerMod = require('./null_logger');
 function Client () {
   this.DEFAULT_ENDPOINT = 'https://rest.portatext.com';
   this.apiKey = null;
+  this.endpoint = this.DEFAULT_ENDPOINT;
   this.logger = new loggerMod.NullLogger();
   this.sessionToken = null;
   this.credentials = null;
 }
+
+Client.prototype.setEndpoint = function (endpoint) {
+  this.endpoint = endpoint;
+  return this;
+};
 
 Client.prototype.setApiKey = function (apiKey) {
   this.apiKey = apiKey;
@@ -26,7 +32,7 @@ Client.prototype.setLogger = function (logger) {
 Client.prototype.run = function (
   endpoint, method, contentType, body, authType, callback
 ) {
-  var uri = this.DEFAULT_ENDPOINT + '/' + endpoint;
+  var uri = this.endpoint + '/' + endpoint;
   var headers = {
     'Content-Type': contentType,
     'Accept': 'application/json'
