@@ -32,11 +32,15 @@ Client.prototype.setLogger = function (logger) {
 Client.prototype.run = function (
   endpoint, method, contentType, body, authType, callback
 ) {
+  var self = this;
   var uri = this.endpoint + '/' + endpoint;
   var headers = {
     'Content-Type': contentType,
     'Accept': 'application/json'
   };
+  if (!authType) {
+    authType = this.authMethod();
+  }
   switch (authType) {
     case 'api_key':
       headers['X-Api-Key'] = this.apiKey;
@@ -69,12 +73,56 @@ Client.prototype.run = function (
       }
       var result = {
         code: retCode,
+        success: (retCode > 199 && retCode < 300),
         headers: retHeaders,
-        body: JSON.parse(retBody)
+        data: JSON.parse(retBody)
       };
-      callback(undefined, result);
+      callback(self.errorFor(retCode), result);
     }
   });
+};
+
+Client.prototype.errorFor = function(code) {
+  var errors = {
+    400: "client_error",
+    401: "invalid_credentials",
+    402: "payment_required",
+    403: "forbidden",
+    404: "not_found",
+    405: "invalid_method",
+    415: "invalid_media",
+    429: "rate_limited",
+    500: "server_error"
+  };
+  return errors[code];
+};
+/*
+Client.prototype.login = function (callback) {
+  var self = this;
+  this.run(
+    "login", "post", "application/json", "", "basic", function(err, result) {
+      if(err) {
+        callback(err);
+      } else {
+        if (result.code === 401) {
+          callback("invalid_credentials");
+        } else {
+          self.sessionToken = result.data.token;
+          callback(undefined, result);
+        }
+      }
+    }
+  );
+};
+*/
+Client.prototype.authMethod = function () {
+  if (this.apiKey) {
+    return 'api_key';
+  }
+  if (this.sessionToken) {
+    return 'session_token';
+  }
+  return 'basic';
 };
 
 Client.prototype.execute = function (descriptor, callback) {

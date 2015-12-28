@@ -16,7 +16,7 @@ describe('Client', function() {
           'get',
           'text/plain',
           'abody',
-          'api_key',
+          null,
           function (err, result) {
             done();
           }

@@ -59,7 +59,7 @@ describe('Client', function() {
           'abody',
           'api_key',
           function (err, result) {
-            assert.equal(JSON.stringify(result.body), '{}');
+            assert.equal(JSON.stringify(result.data), '{}');
             done();
           }
         );
@@ -91,7 +91,7 @@ describe('Client', function() {
             assert.equal(result.code, 777);
             assert.equal(result.headers['retheader1'], 'value1');
             assert.equal(result.headers['retheader2'], 'value2');
-            assert.equal(result.body.success, true);
+            assert.equal(result.data.success, true);
             done();
           }
         );
