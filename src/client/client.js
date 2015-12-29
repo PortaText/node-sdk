@@ -40,8 +40,19 @@ Client.prototype.run = function (
       'Content-Type': contentType,
       'Accept': 'application/json'
     };
+    // When using basic auth, make the login, then retry with the session token.
     if (!authType) {
       authType = self.authMethod();
+      if (authType == 'basic') {
+        return self
+          .login()
+          .then(function (result) {
+            resolve(self.run(endpoint, method, contentType, body));
+          })
+          .catch(function (err) {
+            reject(err);
+          });
+      }
     }
     switch (authType) {
       case 'api_key':
@@ -91,10 +102,15 @@ Client.prototype.run = function (
           headers: retHeaders,
           data: retBody
         };
-        if (!result.success) {
-          reject(result);
+        if (retCode === 401 && authType == 'session_token') {
+          self.sessionToken = null;
+          resolve(self.run(endpoint, method, contentType, body));
         } else {
-          resolve(result);
+          if (!result.success) {
+            reject(result);
+          } else {
+            resolve(result);
+          }
         }
       }).catch(function (err) {
         reject(err);
@@ -117,15 +133,14 @@ Client.prototype.errorFor = function (code) {
   return errors[code];
 };
 
-Client.prototype.login = function (callback) {
+Client.prototype.login = function () {
   var self = this;
-  this.run(
-    'login', 'post', 'application/json', '', 'basic', function (err, result) {
-      if (err) return callback(err, result);
+  return this
+    .run('login', 'post', 'application/json', '', 'basic')
+    .then(function (result) {
       self.sessionToken = result.data.token;
-      callback(undefined, result);
-    }
-  );
+      return result;
+    });
 };
 
 Client.prototype.authMethod = function () {
