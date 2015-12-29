@@ -1,5 +1,5 @@
 [![License](http://img.shields.io/badge/license-APACHE2-blue.svg)](http://img.shields.io/badge/license-APACHE2-blue.svg)
-[![Gem Version](https://badge.fury.io/rb/portatext.svg)](https://badge.fury.io/rb/portatext)
+[![npm version](https://badge.fury.io/js/portatext.svg)](https://badge.fury.io/js/portatext)
 
 [![Build Status](https://travis-ci.org/PortaText/node-sdk.svg)](https://travis-ci.org/PortaText/node-sdk)
 [![Coverage Status](https://coveralls.io/repos/PortaText/node-sdk/badge.svg?branch=master&service=github)](https://coveralls.io/github/PortaText/node-sdk?branch=master)
