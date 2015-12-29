@@ -65,20 +65,17 @@ Client.prototype.run = function (
     body: body
   };
   this.execute(descriptor, function (err, retCode, retHeaders, retBody) {
-    if (err) {
-      callback(err);
-    } else {
-      if (retBody.length < 2) {
-        retBody = '{}';
-      }
-      var result = {
-        code: retCode,
-        success: (retCode > 199 && retCode < 300),
-        headers: retHeaders,
-        data: JSON.parse(retBody)
-      };
-      callback(self.errorFor(retCode), result);
+    if (err) return callback(err);
+    if (retBody.length < 2) {
+      retBody = '{}';
     }
+    var result = {
+      code: retCode,
+      success: (retCode > 199 && retCode < 300),
+      headers: retHeaders,
+      data: JSON.parse(retBody)
+    };
+    callback(self.errorFor(retCode), result);
   });
 };
 
@@ -96,32 +93,21 @@ Client.prototype.errorFor = function(code) {
   };
   return errors[code];
 };
-/*
+
 Client.prototype.login = function (callback) {
   var self = this;
   this.run(
     "login", "post", "application/json", "", "basic", function(err, result) {
-      if(err) {
-        callback(err);
-      } else {
-        if (result.code === 401) {
-          callback("invalid_credentials");
-        } else {
-          self.sessionToken = result.data.token;
-          callback(undefined, result);
-        }
-      }
+      if (err) return callback(err, result);
+      self.sessionToken = result.data.token;
+      callback(undefined, result);
     }
   );
 };
-*/
+
 Client.prototype.authMethod = function () {
-  if (this.apiKey) {
-    return 'api_key';
-  }
-  if (this.sessionToken) {
-    return 'session_token';
-  }
+  if (this.apiKey) return 'api_key';
+  if (this.sessionToken) return 'session_token';
   return 'basic';
 };
 
