@@ -31,70 +31,75 @@ Client.prototype.setLogger = function (logger) {
 };
 
 Client.prototype.run = function (
-  endpoint, method, contentType, body, authType, callback
+  endpoint, method, contentType, body, authType
 ) {
   var self = this;
-  var uri = this.endpoint + '/' + endpoint;
-  var headers = {
-    'Content-Type': contentType,
-    'Accept': 'application/json'
-  };
-  if (!authType) {
-    authType = this.authMethod();
-  }
-  switch (authType) {
-    case 'api_key':
-      headers['X-Api-Key'] = this.apiKey;
-      break;
-    case 'session_token':
-      headers['X-Session-Token'] = this.sessionToken;
-      break;
-    case 'basic':
-      var authString = this.credentials[0] + ':' + this.credentials[1];
-      authString = new Buffer(authString).toString('base64');
-      headers['Authorization'] = 'Basic ' + authString;
-      break;
-    default:
-      callback('invalid_auth_type');
-      return;
-  }
-  this.logger.log('Calling ' + method + ' ' + uri + ' with ' + authType);
-  var descriptor = {
-    method: method,
-    uri: uri,
-    headers: headers,
-    body: body
-  };
-  return this
-    .execute(descriptor)
-    .then(function (result) {
-      var retBody = '{}';
-      var retHeaders = result.headers;
-      var retCode = result.code;
-      if (result.body.length >= 2) {
-        retBody = result.body;
-      }
-      retBody = JSON.parse(retBody);
-      var error = self.errorFor(retCode);
-      var errors = [];
-      if (retBody.error_description) {
-        errors = retBody.error_description;
-      }
-      if (error) {
-        errors.push(error);
-      }
-      result = {
-        code: retCode,
-        success: (retCode > 199 && retCode < 300),
-        errors: errors,
-        headers: retHeaders,
-        data: retBody
-      };
-      if (!result.success) {
-        throw result;
-      }
-      return result;
-    }).nodeify(callback);
+  return new Promise(function (resolve, reject) {
+    var uri = self.endpoint + '/' + endpoint;
+    var headers = {
+      'Content-Type': contentType,
+      'Accept': 'application/json'
+    };
+    if (!authType) {
+      authType = self.authMethod();
+    }
+    switch (authType) {
+      case 'api_key':
+        headers['X-Api-Key'] = self.apiKey;
+        break;
+      case 'session_token':
+        headers['X-Session-Token'] = self.sessionToken;
+        break;
+      case 'basic':
+        var authString = self.credentials[0] + ':' + self.credentials[1];
+        authString = new Buffer(authString).toString('base64');
+        headers['Authorization'] = 'Basic ' + authString;
+        break;
+      default:
+        reject('invalid_auth_type');
+        return;
+    }
+    self.logger.log('Calling ' + method + ' ' + uri + ' with ' + authType);
+    var descriptor = {
+      method: method,
+      uri: uri,
+      headers: headers,
+      body: body
+    };
+    return self
+      .execute(descriptor)
+      .then(function (result) {
+        var retBody = '{}';
+        var retHeaders = result.headers;
+        var retCode = result.code;
+        if (result.body.length >= 2) {
+          retBody = result.body;
+        }
+        retBody = JSON.parse(retBody);
+        var error = self.errorFor(retCode);
+        var errors = [];
+        if (retBody.error_description) {
+          errors = retBody.error_description;
+        }
+        if (error) {
+          errors.push(error);
+        }
+        result = {
+          code: retCode,
+          success: (retCode > 199 && retCode < 300),
+          errors: errors,
+          headers: retHeaders,
+          data: retBody
+        };
+        if (!result.success) {
+          reject(result);
+        } else {
+          resolve(result);
+        }
+      }).catch(function (err) {
+        reject(err);
+      });
+  });
 };
 
 Client.prototype.errorFor = function (code) {
@@ -129,7 +134,7 @@ Client.prototype.authMethod = function () {
   return 'basic';
 };
 
-Client.prototype.execute = function (descriptor, callback) {
+Client.prototype.execute = function (descriptor) {
   return new Promise(function (resolve, reject) {
     reject('not_implemented');
   });

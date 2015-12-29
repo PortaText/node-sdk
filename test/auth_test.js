@@ -1,10 +1,15 @@
 var clientMod = require('../src/client/client');
 var assert = require('assert');
+var chai = require("chai");
+var chaiAsPromised = require("chai-as-promised");
+var expect = require('chai').expect;
 var Promise = require('promise');
+chai.use(chaiAsPromised);
+chai.should();
 
 describe('Client', function() {
   describe('run', function () {
-    it('should be able to use api key', function (done) {
+    it('should be able to use api key', function () {
       var client = new clientMod.Client();
       client.execute = function (descriptor) {
         assert.equal(descriptor.headers['X-Api-Key'], 'an_api_key');
@@ -16,21 +21,18 @@ describe('Client', function() {
           })
         });
       };
-      client
+      return client
         .setApiKey('an_api_key')
         .run(
           'endpoint',
           'get',
           'text/plain',
           'abody',
-          null,
-          function (err, result) {
-            done();
-          }
-        );
+          null
+        ).should.be.fulfilled;
     });
 
-    it('should be able to use session token', function (done) {
+    it('should be able to use session token', function () {
       var client = new clientMod.Client();
       client.execute = function (descriptor, callback) {
         assert.equal(descriptor.headers['X-Session-Token'], 'asessiontoken');
@@ -43,20 +45,17 @@ describe('Client', function() {
         });
       };
       client.sessionToken = 'asessiontoken';
-      client
+      return client
         .run(
           'endpoint',
           'get',
           'text/plain',
           'abody',
-          'session_token',
-          function (err, result) {
-            done();
-          }
-        );
+          'session_token'
+        ).should.be.fulfilled;
     });
 
-    it('should be able to use credentials', function (done) {
+    it('should be able to use credentials', function () {
       var client = new clientMod.Client();
       client.execute = function (descriptor, callback) {
         var authString = descriptor.headers['Authorization'].split(' ');
@@ -73,18 +72,15 @@ describe('Client', function() {
           })
         });
       };
-      client
+      return client
         .setCredentials('username', 'password')
         .run(
           'endpoint',
           'get',
           'text/plain',
           'abody',
-          'basic',
-          function (err, result) {
-            done();
-          }
-        );
+          'basic'
+        ).should.be.fulfilled;
     });
   });
 });

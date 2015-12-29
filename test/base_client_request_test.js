@@ -1,6 +1,11 @@
 var clientMod = require('../src/client/client');
 var assert = require('assert');
+var chai = require("chai");
+var chaiAsPromised = require("chai-as-promised");
+var expect = require('chai').expect;
 var Promise = require('promise');
+chai.use(chaiAsPromised);
+chai.should();
 
 describe('Client', function() {
   describe('run', function () {
@@ -12,51 +17,43 @@ describe('Client', function() {
       done();
     });
 
-    it('should return error on invalid auth type', function (done) {
+    it('should return error on invalid auth type', function () {
       var client = new clientMod.Client();
-      client.run(
+      return client.run(
         'some/endpoint',
         'method',
         'text/plain',
         '',
-        'whatever',
-        function (err) {
-          assert.equal(err, 'invalid_auth_type');
-          done();
-        }
-      );
+        'whatever'
+      ).should.eventually.be.rejectedWith('invalid_auth_type');
     });
 
-    it('should return error on abstract execute call', function (done) {
+    it('should return error on abstract execute call', function () {
       var client = new clientMod.Client();
-      client
+      return client
         .setApiKey('an_api_key')
         .run(
           'some/endpoint',
           'method',
           'text/plain',
           '',
-          'api_key',
-          function (err) {
-            assert.equal(err, 'not_implemented');
-            done();
-          }
-        );
+          'api_key'
+        ).should.eventually.be.rejectedWith('not_implemented');
     });
 
-    it('should handle empty body', function (done) {
+    it('should handle empty body', function () {
       var endpoint = 'http://1.1.1.1:999/path';
       var client = new clientMod.Client();
       client.execute = function (descriptor) {
         return new Promise(function(resolve, reject) {
           resolve({
-            code: 777,
+            code: 200,
             headers: {},
             body: ''
           })
         });
       };
-      client
+      return client
         .setEndpoint(endpoint)
         .setApiKey('an_api_key')
         .run(
@@ -64,15 +61,13 @@ describe('Client', function() {
           'amethod',
           'text/plain',
           'abody',
-          'api_key',
-          function (result) {
-            assert.equal(JSON.stringify(result.data), '{}');
-            done();
-          }
-        );
+          'api_key'
+        ).then(function (result) {
+          expect(JSON.stringify(result.data)).to.equal('{}');
+        });
     });
 
-    it('should issue requests with the right information', function (done) {
+    it('should issue requests with the right information', function () {
       var endpoint = 'http://1.1.1.1:999/path';
       var client = new clientMod.Client();
       client.execute = function (descriptor) {
@@ -82,7 +77,7 @@ describe('Client', function() {
         assert.equal(descriptor.body, 'abody');
         return new Promise(function(resolve, reject) {
           resolve({
-            code: 777,
+            code: 200,
             headers: {
               'retheader1': 'value1',
               'retheader2': 'value2'
@@ -91,7 +86,7 @@ describe('Client', function() {
           })
         });
       };
-      client
+      return client
         .setEndpoint(endpoint)
         .setApiKey('an_api_key')
         .run(
@@ -99,15 +94,13 @@ describe('Client', function() {
           'amethod',
           'text/plain',
           'abody',
-          'api_key',
-          function (result) {
-            assert.equal(result.code, 777);
-            assert.equal(result.headers['retheader1'], 'value1');
-            assert.equal(result.headers['retheader2'], 'value2');
-            assert.equal(result.data.success, true);
-            done();
-          }
-        );
+          'api_key'
+        ).then(function (result) {
+          expect(result.code).to.equal(200);
+          expect(result.headers['retheader1']).to.equal('value1');
+          expect(result.headers['retheader2']).to.equal('value2');
+          expect(result.data.success).to.equal(true);
+        });
     });
   });
 });
