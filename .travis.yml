@@ -8,3 +8,7 @@ node_js:
 
 after_success:
   - cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+addons:
+  code_climate:
+    repo_token: 0eddaa06f36d3adf6778cde23d9067686273a776cf709cd0aa10d1669abcf2e1
