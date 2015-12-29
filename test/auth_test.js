@@ -1,13 +1,20 @@
 var clientMod = require('../src/client/client');
 var assert = require('assert');
+var Promise = require('promise');
 
 describe('Client', function() {
   describe('run', function () {
     it('should be able to use api key', function (done) {
       var client = new clientMod.Client();
-      client.execute = function (descriptor, callback) {
+      client.execute = function (descriptor) {
         assert.equal(descriptor.headers['X-Api-Key'], 'an_api_key');
-        callback(undefined, 200, {}, '{"success": true}');
+        return new Promise(function(resolve, reject) {
+          resolve({
+            code: 200,
+            headers: {},
+            body: '{"success": true}'
+          })
+        });
       };
       client
         .setApiKey('an_api_key')
@@ -27,7 +34,13 @@ describe('Client', function() {
       var client = new clientMod.Client();
       client.execute = function (descriptor, callback) {
         assert.equal(descriptor.headers['X-Session-Token'], 'asessiontoken');
-        callback(undefined, 200, {}, '{"success": true}');
+        return new Promise(function(resolve, reject) {
+          resolve({
+            code: 200,
+            headers: {},
+            body: '{"success": true}'
+          })
+        });
       };
       client.sessionToken = 'asessiontoken';
       client
@@ -52,7 +65,13 @@ describe('Client', function() {
           .split(':');
         assert.equal(authString[0], 'username');
         assert.equal(authString[1], 'password');
-        callback(undefined, 200, {}, '{"success": true}');
+        return new Promise(function(resolve, reject) {
+          resolve({
+            code: 200,
+            headers: {},
+            body: '{"success": true}'
+          })
+        });
       };
       client
         .setCredentials('username', 'password')

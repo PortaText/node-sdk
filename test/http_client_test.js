@@ -1,27 +1,31 @@
 var clientMod = require('../src/client/client_http');
 var assert = require('assert');
 var http = require('http');
+var chai = require("chai");
+var chaiAsPromised = require("chai-as-promised");
+var expect = require('chai').expect;
+var Promise = require('promise');
+chai.use(chaiAsPromised);
+chai.should();
 
 describe('ClientHttp', function() {
   describe('execute', function () {
-    it('should return errors', function (done) {
+    it('should return errors', function () {
       var client = new clientMod.ClientHttp();
       address = '127.0.0.1';
       port = 1025;
-      client.execute({
-        uri: 'http://' + address + ':' + port +'/some/endpoint',
-        method: 'patch',
-        headers: {},
-        body: ''
-      }, function (err) {
-        assert.notEqual(err, undefined);
-        done();
-      });
+      return client
+        .execute({
+          uri: 'http://' + address + ':' + port +'/some/endpoint',
+          method: 'patch',
+          headers: {},
+          body: ''
+        }).should.eventually.be.rejected;
     });
 
-    it('should issue the request with the right method and body', function (done) {
+    it('should issue the request with the right method and body', function () {
       var address = '127.0.0.1';
-      var port = 50430;
+      var port = 50431;
       var server = http.createServer(function (request, response) {
         var buffer = new Buffer('', 'ascii');
         request.on('data', function (chunk) {
@@ -42,9 +46,14 @@ describe('ClientHttp', function() {
           response.end();
         });
       });
-      server.listen(port, address, function () {
+      var ret = new Promise(function(resolve, reject) {
+        server.listen(port, address, function() {
+          resolve();
+        });
+      });
+      return ret.then(function() {
         var client = new clientMod.ClientHttp();
-        client.execute({
+        return client.execute({
           uri: 'http://' + address + ':' + port +'/some/endpoint',
           method: 'patch',
           headers: {
@@ -52,15 +61,12 @@ describe('ClientHttp', function() {
             'X-Header-2': 'value 2'
           },
           body: 'Some body'
-        }, function (err, retCode, retHeaders, retBody) {
-          // Assert response parameters.
-          assert.equal(err, undefined);
-          assert.equal(retCode, 762);
-          assert.equal(retHeaders['x-returnheader-1'], 'value1');
-          assert.equal(retHeaders['x-returnheader-2'], 'value2');
-          assert.equal(retBody, 'Returned body');
-          done();
-        });
+        })
+      }).then(function(result) {
+        expect(result.code).to.equal(762);
+        expect(result.headers['x-returnheader-1']).to.equal('value1');
+        expect(result.headers['x-returnheader-2']).to.equal('value2');
+        expect(result.body).to.equal('Returned body');
       });
     });
   });

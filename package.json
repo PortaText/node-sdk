@@ -37,9 +37,13 @@
     "type": "git",
     "url": "https://github.com/portatext/node-sdk"
   },
-  "dependencies": {},
+  "dependencies": {
+    "promise": "~7.1"
+  },
   "devDependencies": {
     "mocha": "2.3.4",
+    "chai": "3.4.1",
+    "chai-as-promised": "5.2.0",
     "istanbul": "0.4.1",
     "jshint": "latest",
     "jsdoc": "latest",

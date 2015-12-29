@@ -1,5 +1,6 @@
 var clientMod = require('../src/client/client');
 var assert = require('assert');
+var Promise = require('promise');
 
 describe('Client', function() {
   describe('run', function () {
@@ -43,8 +44,10 @@ describe('Client', function() {
 
 var assertError = function(code, msg, callback) {
   var client = new clientMod.Client();
-  client.execute = function (descriptor, callback) {
-    callback(undefined, code, {}, '{"success": false}');
+  client.execute = function (descriptor) {
+    return new Promise(function (resolve, reject) {
+      resolve({code: code, headers: {}, body: '{"success": false}'});
+    });
   };
   client
     .setApiKey('an_api_key')
@@ -54,9 +57,9 @@ var assertError = function(code, msg, callback) {
       'text/plain',
       'abody',
       'api_key',
-      function (err, result) {
+      function (result) {
         assert.equal(result.code, code);
-        assert.equal(err, msg);
+        assert.equal(result.errors.shift(), msg);
         callback();
       }
     );

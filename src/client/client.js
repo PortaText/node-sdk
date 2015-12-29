@@ -1,4 +1,5 @@
 var loggerMod = require('../null_logger');
+var Promise = require('promise');
 
 function Client () {
   this.DEFAULT_ENDPOINT = 'https://rest.portatext.com';
@@ -64,19 +65,36 @@ Client.prototype.run = function (
     headers: headers,
     body: body
   };
-  this.execute(descriptor, function (err, retCode, retHeaders, retBody) {
-    if (err) return callback(err);
-    if (retBody.length < 2) {
-      retBody = '{}';
-    }
-    var result = {
-      code: retCode,
-      success: (retCode > 199 && retCode < 300),
-      headers: retHeaders,
-      data: JSON.parse(retBody)
-    };
-    callback(self.errorFor(retCode), result);
-  });
+  return this
+    .execute(descriptor)
+    .then(function(result) {
+      var retBody = '{}';
+      var retHeaders = result.headers;
+      var retCode = result.code;
+      if (result.body.length >= 2) {
+        retBody = result.body;
+      }
+      retBody = JSON.parse(retBody);
+      var error = self.errorFor(retCode);
+      var errors = [];
+      if (retBody.error_description) {
+        errors = retBody.error_description;
+      }
+      if (error) {
+        errors.push(error);
+      }
+      var result = {
+        code: retCode,
+        success: (retCode > 199 && retCode < 300),
+        errors: errors,
+        headers: retHeaders,
+        data: retBody
+      };
+      if (!result.success) {
+        throw result;
+      }
+      return result;
+    }).nodeify(callback);
 };
 
 Client.prototype.errorFor = function(code) {
@@ -112,7 +130,9 @@ Client.prototype.authMethod = function () {
 };
 
 Client.prototype.execute = function (descriptor, callback) {
-  callback('not_implemented');
+  return new Promise(function(resolve, reject) {
+    reject('not_implemented');
+  });
 };
 
 exports.Client = Client;

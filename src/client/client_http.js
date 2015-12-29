@@ -2,6 +2,7 @@ var nullLogger = require('../null_logger');
 var clientMod = require('./client');
 var urlMod = require('url');
 var util = require('util');
+var Promise = require('promise');
 
 function ClientHttp () {
   ClientHttp.super_.call(this);
@@ -9,27 +10,32 @@ function ClientHttp () {
 }
 util.inherits(ClientHttp, clientMod.Client);
 
-ClientHttp.prototype.execute = function (descriptor, callback) {
-  var options = this.formOptions(descriptor);
-  var scheme = options.protocol.split(':').shift();
-  var mod = require(scheme);
-  var buffer = new Buffer('', 'ascii');
-  var req = mod.request(options, function (res) {
-    res.setEncoding('ascii');
-    res.on('data', function (chunk) {
-      buffer = Buffer.concat([buffer, new Buffer(chunk, 'ascii')]);
+ClientHttp.prototype.execute = function (descriptor) {
+  var self = this;
+  return new Promise(function(resolve, reject) {
+    var options = self.formOptions(descriptor);
+    var scheme = options.protocol.split(':').shift();
+    var mod = require(scheme);
+    var buffer = new Buffer('', 'ascii');
+    var req = mod.request(options, function (res) {
+      res.setEncoding('ascii');
+      res.on('data', function (chunk) {
+        buffer = Buffer.concat([buffer, new Buffer(chunk, 'ascii')]);
+      });
+      res.on('end', function () {
+        resolve({
+          code: res.statusCode,
+          headers: res.headers,
+          body: buffer.toString('ascii')
+        });
+      });
     });
-    res.on('end', function () {
-      callback(
-        undefined, res.statusCode, res.headers, buffer.toString('ascii')
-      );
+    req.on('error', function (err) {
+      reject(err);
     });
+    req.write(descriptor.body);
+    req.end();
   });
-  req.on('error', function (err) {
-    callback(err);
-  });
-  req.write(descriptor.body);
-  req.end();
 };
 
 ClientHttp.prototype.formOptions = function (descriptor) {
