@@ -67,7 +67,7 @@ Client.prototype.run = function (
   };
   return this
     .execute(descriptor)
-    .then(function(result) {
+    .then(function (result) {
       var retBody = '{}';
       var retHeaders = result.headers;
       var retCode = result.code;
@@ -83,7 +83,7 @@ Client.prototype.run = function (
       if (error) {
         errors.push(error);
       }
-      var result = {
+      result = {
         code: retCode,
         success: (retCode > 199 && retCode < 300),
         errors: errors,
@@ -97,17 +97,17 @@ Client.prototype.run = function (
     }).nodeify(callback);
 };
 
-Client.prototype.errorFor = function(code) {
+Client.prototype.errorFor = function (code) {
   var errors = {
-    400: "client_error",
-    401: "invalid_credentials",
-    402: "payment_required",
-    403: "forbidden",
-    404: "not_found",
-    405: "invalid_method",
-    415: "invalid_media",
-    429: "rate_limited",
-    500: "server_error"
+    400: 'client_error',
+    401: 'invalid_credentials',
+    402: 'payment_required',
+    403: 'forbidden',
+    404: 'not_found',
+    405: 'invalid_method',
+    415: 'invalid_media',
+    429: 'rate_limited',
+    500: 'server_error'
   };
   return errors[code];
 };
@@ -115,7 +115,7 @@ Client.prototype.errorFor = function(code) {
 Client.prototype.login = function (callback) {
   var self = this;
   this.run(
-    "login", "post", "application/json", "", "basic", function(err, result) {
+    'login', 'post', 'application/json', '', 'basic', function (err, result) {
       if (err) return callback(err, result);
       self.sessionToken = result.data.token;
       callback(undefined, result);
@@ -130,7 +130,7 @@ Client.prototype.authMethod = function () {
 };
 
 Client.prototype.execute = function (descriptor, callback) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     reject('not_implemented');
   });
 };

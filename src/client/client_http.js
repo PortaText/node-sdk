@@ -12,7 +12,7 @@ util.inherits(ClientHttp, clientMod.Client);
 
 ClientHttp.prototype.execute = function (descriptor) {
   var self = this;
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     var options = self.formOptions(descriptor);
     var scheme = options.protocol.split(':').shift();
     var mod = require(scheme);
