@@ -61,63 +61,65 @@ When you specify a [username and password](https://github.com/PortaText/docs/wik
 automatically login and get a [session token](https://github.com/PortaText/docs/wiki/REST-API#auth_session) when needed.
 
 # Using the endpoints
-All the API commands can be found in the [Command/Api](https://github.com/PortaText/php-sdk/tree/master/src/PortaText/Command/Api)
+All the API commands can be found in the [command/api](https://github.com/PortaText/node-sdk/tree/master/src/command/api)
 directory. The client offers a way to instantiate them by just calling them by their name.
 
 ## Quick example
 As an example, to create a template, you would do:
 
-```php
-$result = $client
-  ->templates()                       // Get an instance of the Templates endpoint.
-  ->text("The text of my template")
-  ->description("My first template")
-  ->name("template1")
-  ->post();                           // Call the Templates endpoint with a POST.
+```js
+client
+  .templates()                       // Get an instance of the Templates endpoint.
+  .text("The text of my template")
+  .description("My first template")
+  .name("template1")
+  .post()                            // Call the Templates endpoint with a POST.
+  .then(function (result) {
+    // Handle result...
+  })
+  .catch(function (err) {
+    // Handle error...
+  });
 ```
 
 To get a template by id:
 
-```php
-$result = $client->templates()->id(45)->get();
+```js
+client.templates().id(45).get().then(function (result) { .... });
 ```
 
 Or, to get all the templates:
 
-```php
-$result = $client->templates()->get();
+```js
+client.templates().get().then(function (result) { .... });
 ```
 
 ## The result
-After calling an endpoint, one of two things can happen:
- * A [PortaText Exception](https://github.com/PortaText/php-sdk/tree/master/src/PortaText/Exception) is thrown.
- * A [Result](https://github.com/PortaText/php-sdk/blob/master/src/PortaText/Command/Result.php) instance is returned.
-
-Also, when possible, your PortaText exception will contain a `Result` object that
-can be retrieved by calling `getResult()` on the exception. This is usually useful for the
-[ClientError](https://github.com/PortaText/php-sdk/blob/master/src/PortaText/Exception/ClientError.php) exception, where
-you will be able to see if a field was missing or different than what was expected.
+Calling an endpoint will return a [Promise](https://github.com/then/promise). On fulfillment,
+a result object is returned (see below for how to handle it). On rejection, you can get a `string` or
+a result object (in case the request was made but the server returned one or more errors in its response,
+for example if a field was missing or different than what was expected).
 
 ### Testing for success
-```php
-if ($result->success) {
+```js
+if (result.success) {
     ...
 }
 ```
 
 ### Getting error strings back from the server
-```php
-if (!is_null($result->errors) {
-    foreach ($result->errors as $error) {
+```js
+if (result.errors) {
+    result.errors.forEach(function (error) {
         ...
-  }
+  });
 }
 ```
 
 ### Getting data back from the server
-```php
-if ($result->success) {
-    $data = $result->data;
+```js
+if (result.success) {
+    var data = result.data;
 }
 ```
 
