@@ -11,6 +11,9 @@ exports.mockResponse = function(code, headers, body) {
     var success = code >= 200 && code < 300;
     if (!body) {
       body = {success: success};
+      if (!success) {
+        body.error_description = [];
+      }
     }
     body = JSON.stringify(body);
   }

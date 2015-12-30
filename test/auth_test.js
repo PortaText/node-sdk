@@ -138,5 +138,24 @@ describe('Client', function() {
           'abody'
         ).should.be.fulfilled;
     });
+
+    it('should fail when not able to get a session token', function () {
+      var client = new clientMod.Client();
+      client.execute = function (descriptor) {
+        // Assert this is a login.
+        assert.equal(descriptor.headers['X-Session-Token'], undefined);
+        assert.notEqual(descriptor.headers['Authorization'], undefined);
+        assert.equal(descriptor.uri, client.DEFAULT_ENDPOINT + '/login');
+        return helper.mockResponse(401);
+      };
+      return client
+        .setCredentials('username', 'password')
+        .run(
+          'endpoint',
+          'get',
+          'text/plain',
+          'abody'
+        ).should.be.rejected;
+    });
   });
 });
