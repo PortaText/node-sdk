@@ -7,6 +7,10 @@
 <dd></dd>
 <dt><a href="#module_acl">acl</a></dt>
 <dd></dd>
+<dt><a href="#module_blacklist">blacklist</a></dt>
+<dd></dd>
+<dt><a href="#module_me">me</a></dt>
+<dd></dd>
 <dt><a href="#module_tariffs">tariffs</a></dt>
 <dd></dd>
 <dt><a href="#module_templates">templates</a></dt>
@@ -408,6 +412,460 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Acl](#module_acl..Acl)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_blacklist"></a>
+## blacklist
+
+* [blacklist](#module_blacklist)
+    * [~Blacklist](#module_blacklist..Blacklist) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Blacklist()](#new_module_blacklist..Blacklist_new)
+        * [.args](#module_command..Command+args)
+        * [.number(number)](#module_blacklist..Blacklist+number) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.csv(filename)](#module_blacklist..Blacklist+csv) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_blacklist..Blacklist"></a>
+### blacklist~Blacklist ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[blacklist](#module_blacklist)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#blacklistnumber Blacklist endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Blacklist](#module_blacklist..Blacklist) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Blacklist()](#new_module_blacklist..Blacklist_new)
+    * [.args](#module_command..Command+args)
+    * [.number(number)](#module_blacklist..Blacklist+number) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.csv(filename)](#module_blacklist..Blacklist+csv) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_blacklist..Blacklist_new"></a>
+#### new Blacklist()
+The Blacklist endpoint.
+
+<a name="module_command..Command+args"></a>
+#### blacklist.args
+**Kind**: instance property of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_blacklist..Blacklist+number"></a>
+#### blacklist.number(number) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the number.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| number | <code>string</code> | 
+
+<a name="module_blacklist..Blacklist+csv"></a>
+#### blacklist.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
+Send a CSV file to blacklist contacts.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| filename | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### blacklist.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### blacklist.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### blacklist.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### blacklist.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *blacklist.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### blacklist.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### blacklist.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### blacklist.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### blacklist.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### blacklist.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### blacklist.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### blacklist.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### blacklist.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_me"></a>
+## me
+
+* [me](#module_me)
+    * [~Me](#module_me..Me) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Me()](#new_module_me..Me_new)
+        * [.args](#module_command..Command+args)
+        * [.name(first, last)](#module_me..Me+name) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.company(company)](#module_me..Me+company) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.email(email)](#module_me..Me+email) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.callbackUrl(callbackUrl)](#module_me..Me+callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.timezone(timezone)](#module_me..Me+timezone) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_me..Me"></a>
+### me~Me ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[me](#module_me)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_me Me endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Me](#module_me..Me) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Me()](#new_module_me..Me_new)
+    * [.args](#module_command..Command+args)
+    * [.name(first, last)](#module_me..Me+name) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.company(company)](#module_me..Me+company) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.email(email)](#module_me..Me+email) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.callbackUrl(callbackUrl)](#module_me..Me+callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.timezone(timezone)](#module_me..Me+timezone) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_me..Me_new"></a>
+#### new Me()
+The Me endpoint.
+
+<a name="module_command..Command+args"></a>
+#### me.args
+**Kind**: instance property of <code>[Me](#module_me..Me)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_me..Me+name"></a>
+#### me.name(first, last) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the name.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| first | <code>string</code> | 
+| last | <code>string</code> | 
+
+<a name="module_me..Me+company"></a>
+#### me.company(company) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the company.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| company | <code>string</code> | 
+
+<a name="module_me..Me+email"></a>
+#### me.email(email) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the email.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| email | <code>string</code> | 
+
+<a name="module_me..Me+callbackUrl"></a>
+#### me.callbackUrl(callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the callback url.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| callbackUrl | <code>string</code> | 
+
+<a name="module_me..Me+timezone"></a>
+#### me.timezone(timezone) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the timezone.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| timezone | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### me.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### me.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### me.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### me.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *me.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Me](#module_me..Me)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### me.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### me.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### me.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### me.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### me.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### me.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### me.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### me.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
 **Access:** public  
 
 | Param | Type |

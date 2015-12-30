@@ -7,6 +7,7 @@ var clientMod = require('./client');
 var urlMod = require('url');
 var util = require('util');
 var Promise = require('promise');
+var fs = require('fs');
 
 /**
  * This is our basic client
@@ -26,6 +27,13 @@ util.inherits(ClientHttp, clientMod.Client);
 ClientHttp.prototype.execute = function (descriptor) {
   var self = this;
   return new Promise(function (resolve, reject) {
+    var file = null;
+    if (/^file:/i.test(descriptor.body)) {
+      var fileData = descriptor.body.split('file:');
+      file = fileData[1];
+      var stats = fs.statSync(file);
+      descriptor.headers['Content-Length'] = stats['size'];
+    }
     var options = self.formOptions(descriptor);
     var scheme = options.protocol.split(':').shift();
     var mod = require(scheme);
@@ -46,8 +54,14 @@ ClientHttp.prototype.execute = function (descriptor) {
     req.on('error', function (err) {
       reject(err);
     });
-    req.write(descriptor.body);
-    req.end();
+    if (/^file:/i.test(descriptor.body)) {
+      fs
+        .createReadStream(file, { bufferSize: 4 * 1024 })
+        .pipe(req, { end: true });
+    } else {
+      req.write(descriptor.body);
+      req.end();
+    }
   });
 };
 

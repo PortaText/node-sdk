@@ -5,6 +5,7 @@ var chai = require("chai");
 var chaiAsPromised = require("chai-as-promised");
 var expect = require('chai').expect;
 var Promise = require('promise');
+var fs = require('fs');
 chai.use(chaiAsPromised);
 chai.should();
 
@@ -21,6 +22,44 @@ describe('ClientHttp', function() {
           headers: {},
           body: ''
         }).should.eventually.be.rejected;
+    });
+
+    it('should issue a request with file', function () {
+      var address = '127.0.0.1';
+      var port = 50432;
+      var dataFile = '/tmp/data50432';
+      fs.writeFileSync(dataFile, 'upload this one');
+
+      var server = http.createServer(function (request, response) {
+        var buffer = new Buffer('', 'ascii');
+        request.on('data', function (chunk) {
+          buffer = new Buffer.concat([buffer, new Buffer(chunk, 'ascii')]);
+        });
+        request.on('end', function () {
+          assert.equal(request.headers['content-length'], 15);
+          assert.equal(buffer.toString(), 'upload this one');
+          response.writeHead(762, {
+            'X-ReturnHeader-1': 'value1',
+            'X-ReturnHeader-2': 'value2'
+          });
+          response.write('Returned body');
+          response.end();
+        });
+      });
+      var ret = new Promise(function(resolve, reject) {
+        server.listen(port, address, function() {
+          resolve();
+        });
+      });
+      return ret.then(function() {
+        var client = new clientMod.ClientHttp();
+        return client.execute({
+          uri: 'http://' + address + ':' + port +'/some/endpoint',
+          method: 'put',
+          headers: {},
+          body: 'file:' + dataFile
+        })
+      }).should.be.fulfilled
     });
 
     it('should issue the request with the right method and body', function () {
