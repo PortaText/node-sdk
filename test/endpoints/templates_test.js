@@ -17,7 +17,7 @@ describe('Timezones', function() {
         .should.be.fulfilled;
     });
 
-    it('should be able to get one templates', function () {
+    it('should be able to get one template', function () {
       return helper
         .mockClientForCommand('templates/44')
         .templates()
