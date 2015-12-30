@@ -7,7 +7,7 @@ var Promise = require('promise');
 chai.use(chaiAsPromised);
 chai.should();
 
-describe('Timezones', function() {
+describe('Tariffs', function() {
   describe('get', function () {
     it('should be able to get all tariffs', function () {
       return helper
