@@ -214,8 +214,8 @@ This is our basic client
     * [~Command](#module_command..Command)
         * [new Command()](#new_module_command..Command_new)
         * [.args](#module_command..Command+args)
-        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>undefined</code>
-        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>undefined</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>Command</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>Command</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
         * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
@@ -238,8 +238,8 @@ This is our basic client
 * [~Command](#module_command..Command)
     * [new Command()](#new_module_command..Command_new)
     * [.args](#module_command..Command+args)
-    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>undefined</code>
-    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>undefined</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>Command</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>Command</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
     * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
@@ -268,7 +268,7 @@ A base command.
 | <code>Array</code> | Arguments for this command. |
 
 <a name="module_command..Command+setArgument"></a>
-#### command.setArgument(method) ⇒ <code>undefined</code>
+#### command.setArgument(method) ⇒ <code>Command</code>
 Sets the given argument to the given value.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  
@@ -279,7 +279,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
-#### command.delArgument(method) ⇒ <code>undefined</code>
+#### command.delArgument(method) ⇒ <code>Command</code>
 Deletes an argument.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  

@@ -12,11 +12,11 @@
  */
 function Command () {
   /**
-   * @property {Array} - Arguments for this command.
-   * @default []
+   * @property {Object} - Arguments for this command.
+   * @default {}
    * @readonly
    */
-  this.args = [];
+  this.args = {};
 }
 
 /**
@@ -25,10 +25,11 @@ function Command () {
  * @param {HttpMethod} method
  *
  * @access protected
- * @return {undefined}
+ * @return {Command}
  */
 Command.prototype.setArgument = function (key, value) {
   this.args[key] = value;
+  return this;
 };
 
 /**
@@ -37,10 +38,11 @@ Command.prototype.setArgument = function (key, value) {
  * @param {HttpMethod} method
  *
  * @access protected
- * @return {undefined}
+ * @return {Command}
  */
 Command.prototype.delArgument = function (key) {
   delete this.args[key];
+  return this;
 };
 
 /**
@@ -93,7 +95,7 @@ Command.prototype.body = function (method) {
   if (file) {
     return 'file:' + file;
   }
-  if (this.args.length > 0) {
+  if (Object.keys(this.args).length > 0) {
     return JSON.stringify(this.args);
   }
   return '';
@@ -195,5 +197,6 @@ Command.prototype.setClient = function (client) {
 
 exports.Command = Command;
 exports.KnownCommands = [
-  ['Timezones', 'timezones']
+  ['Timezones', 'timezones'],
+  ['Templates', 'templates']
 ];

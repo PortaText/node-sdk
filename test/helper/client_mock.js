@@ -36,6 +36,9 @@ exports.mockClientForCommand = function (
   if (!assertBody) {
     assertBody = '';
   }
+  if (typeof assertBody === 'object') {
+    assertBody = JSON.stringify(assertBody);
+  }
   if (!assertContentType) {
     assertContentType = 'application/json';
   }

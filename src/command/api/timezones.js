@@ -5,7 +5,7 @@ var commandMod = require('../command');
 var util = require('util');
 
 /**
- * The Timezone endpoint.
+ * The Timezones endpoint.
  *
  * @link https://github.com/PortaText/docs/wiki/REST-API#api_timezones Timezones endpoint.
  * @class
@@ -21,7 +21,7 @@ function Timezones () {
 util.inherits(Timezones, commandMod.Command);
 
 Timezones.prototype.endpoint = function (method) {
-  return "timezones";
+  return 'timezones';
 };
 
 exports.Timezones = Timezones;
