@@ -43,7 +43,7 @@ Client.prototype.run = function (
     // When using basic auth, make the login, then retry with the session token.
     if (!authType) {
       authType = self.authMethod();
-      if (authType == 'basic') {
+      if (authType === 'basic') {
         return self
           .login()
           .then(function (result) {
@@ -102,7 +102,7 @@ Client.prototype.run = function (
           headers: retHeaders,
           data: retBody
         };
-        if (retCode === 401 && authType == 'session_token') {
+        if (retCode === 401 && authType === 'session_token') {
           self.sessionToken = null;
           resolve(self.run(endpoint, method, contentType, body));
         } else {
