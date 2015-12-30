@@ -103,15 +103,15 @@ for example if a field was missing or different than what was expected).
 ### Testing for success
 ```js
 if (result.success) {
-    ...
+  ...
 }
 ```
 
 ### Getting error strings back from the server
 ```js
 if (result.errors) {
-    result.errors.forEach(function (error) {
-        ...
+  result.errors.forEach(function (error) {
+    ...
   });
 }
 ```
@@ -119,7 +119,7 @@ if (result.errors) {
 ### Getting data back from the server
 ```js
 if (result.success) {
-    var data = result.data;
+  var data = result.data;
 }
 ```
 
