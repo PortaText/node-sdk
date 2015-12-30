@@ -202,5 +202,6 @@ exports.KnownCommands = [
   ['Tariffs'],
   ['Acl'],
   ['Me'],
-  ['Blacklist']
+  ['Blacklist'],
+  ['Sms']
 ];
