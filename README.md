@@ -1,6 +1,5 @@
 [![License](http://img.shields.io/badge/license-APACHE2-blue.svg)](http://img.shields.io/badge/license-APACHE2-blue.svg)
 [![npm version](https://badge.fury.io/js/portatext.svg)](https://badge.fury.io/js/portatext)
-[![Documentation Status](https://readthedocs.org/projects/portatext-node-sdk/badge/?version=latest)](http://portatext-node-sdk.readthedocs.org/en/latest/?badge=latest)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 [![Build Status](https://travis-ci.org/PortaText/node-sdk.svg)](https://travis-ci.org/PortaText/node-sdk)
