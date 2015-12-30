@@ -7,7 +7,7 @@ var util = require('util');
 /**
  * The Blacklist endpoint.
  *
- * @link https://github.com/PortaText/docs/wiki/REST-API#https://github.com/PortaText/docs/wiki/REST-API#blacklistnumber Blacklist endpoint.
+ * @link https://github.com/PortaText/docs/wiki/REST-API#blacklistnumber Blacklist endpoint.
  * @class
  * @author Marcelo Gornstein <marcelog@portatext.com>
  * @license Apache-2.0
