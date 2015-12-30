@@ -199,5 +199,6 @@ exports.Command = Command;
 exports.KnownCommands = [
   ['Timezones'],
   ['Templates'],
-  ['Tariffs']
+  ['Tariffs'],
+  ['Acl']
 ];
