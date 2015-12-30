@@ -197,6 +197,7 @@ Command.prototype.setClient = function (client) {
 
 exports.Command = Command;
 exports.KnownCommands = [
-  ['Timezones', 'timezones'],
-  ['Templates', 'templates']
+  ['Timezones'],
+  ['Templates'],
+  ['Tariffs']
 ];

@@ -67,9 +67,12 @@ function Client () {
   var self = this;
   commandMod.KnownCommands.forEach(function (c) {
     var className = c[0];
-    var modName = c[1];
-    var mod = require('../command/api/' + modName);
     var method = className[0].toLowerCase() + className.substring(1);
+    var modName = c[1];
+    if (!modName) {
+      modName = method;
+    }
+    var mod = require('../command/api/' + modName);
     self[method] = function () {
       var c = new mod[className]();
       return c.setClient(self);

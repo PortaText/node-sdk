@@ -20,16 +20,6 @@ function Templates () {
 
 util.inherits(Templates, commandMod.Command);
 
-Templates.prototype.endpoint = function (method) {
-  var endpoint = 'templates';
-  var id = this.getArgument('id');
-  if (id) {
-    this.delArgument('id');
-    endpoint = endpoint + '/' + id;
-  }
-  return endpoint;
-};
-
 /**
  * Sets the name.
  *
@@ -76,6 +66,16 @@ Templates.prototype.text = function (text) {
  */
 Templates.prototype.id = function (id) {
   return this.setArgument('id', id);
+};
+
+Templates.prototype.endpoint = function (method) {
+  var endpoint = 'templates';
+  var id = this.getArgument('id');
+  if (id) {
+    this.delArgument('id');
+    endpoint = endpoint + '/' + id;
+  }
+  return endpoint;
 };
 
 exports.Templates = Templates;
