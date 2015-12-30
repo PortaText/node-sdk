@@ -1,13 +1,37 @@
 ## Modules
 
 <dl>
+<dt><a href="#module_client_http">client_http</a></dt>
+<dd></dd>
 <dt><a href="#module_client">client</a></dt>
 <dd></dd>
-<dt><a href="#module_client_http">client_http</a></dt>
+<dt><a href="#module_templates">templates</a></dt>
+<dd></dd>
+<dt><a href="#module_timezones">timezones</a></dt>
 <dd></dd>
 <dt><a href="#module_command">command</a></dt>
 <dd></dd>
+<dt><a href="#module_null_logger">null_logger</a></dt>
+<dd></dd>
 </dl>
+
+<a name="module_client_http"></a>
+## client_http
+
+* [client_http](#module_client_http)
+    * [~ClientHttp](#module_client_http..ClientHttp) ⇐ <code>Client</code>
+        * [new ClientHttp()](#new_module_client_http..ClientHttp_new)
+
+<a name="module_client_http..ClientHttp"></a>
+### client_http~ClientHttp ⇐ <code>Client</code>
+**Kind**: inner class of <code>[client_http](#module_client_http)</code>  
+**Extends:** <code>Client</code>  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+<a name="new_module_client_http..ClientHttp_new"></a>
+#### new ClientHttp()
+This is our basic client
 
 <a name="module_client"></a>
 ## client
@@ -189,23 +213,99 @@ Executes the given request through the underlying implementation.
 | --- | --- | --- |
 | descriptor | <code>Descriptor</code> | The request descriptor. |
 
-<a name="module_client_http"></a>
-## client_http
+<a name="module_templates"></a>
+## templates
 
-* [client_http](#module_client_http)
-    * [~ClientHttp](#module_client_http..ClientHttp) ⇐ <code>Client</code>
-        * [new ClientHttp()](#new_module_client_http..ClientHttp_new)
+* [templates](#module_templates)
+    * [~Templates](#module_templates..Templates) ⇐ <code>Command</code>
+        * [new Templates()](#new_module_templates..Templates_new)
+        * [.name(name)](#module_templates..Templates+name) ⇒ <code>Command</code>
+        * [.description(description)](#module_templates..Templates+description) ⇒ <code>Command</code>
+        * [.text(text)](#module_templates..Templates+text) ⇒ <code>Command</code>
+        * [.id(id)](#module_templates..Templates+id) ⇒ <code>Command</code>
 
-<a name="module_client_http..ClientHttp"></a>
-### client_http~ClientHttp ⇐ <code>Client</code>
-**Kind**: inner class of <code>[client_http](#module_client_http)</code>  
-**Extends:** <code>Client</code>  
+<a name="module_templates..Templates"></a>
+### templates~Templates ⇐ <code>Command</code>
+**Kind**: inner class of <code>[templates](#module_templates)</code>  
+**Extends:** <code>Command</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_templates Templates endpoint.  
 **Author:** Marcelo Gornstein <marcelog@portatext.com>  
 **License**: Apache-2.0  
 **Copyright**: 2015 PortaText  
-<a name="new_module_client_http..ClientHttp_new"></a>
-#### new ClientHttp()
-This is our basic client
+
+* [~Templates](#module_templates..Templates) ⇐ <code>Command</code>
+    * [new Templates()](#new_module_templates..Templates_new)
+    * [.name(name)](#module_templates..Templates+name) ⇒ <code>Command</code>
+    * [.description(description)](#module_templates..Templates+description) ⇒ <code>Command</code>
+    * [.text(text)](#module_templates..Templates+text) ⇒ <code>Command</code>
+    * [.id(id)](#module_templates..Templates+id) ⇒ <code>Command</code>
+
+<a name="new_module_templates..Templates_new"></a>
+#### new Templates()
+The Templates endpoint.
+
+<a name="module_templates..Templates+name"></a>
+#### templates.name(name) ⇒ <code>Command</code>
+Sets the name.
+
+**Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| name | <code>string</code> | 
+
+<a name="module_templates..Templates+description"></a>
+#### templates.description(description) ⇒ <code>Command</code>
+Sets the description.
+
+**Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| description | <code>string</code> | 
+
+<a name="module_templates..Templates+text"></a>
+#### templates.text(text) ⇒ <code>Command</code>
+Sets the template text.
+
+**Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| text | <code>string</code> | 
+
+<a name="module_templates..Templates+id"></a>
+#### templates.id(id) ⇒ <code>Command</code>
+Sets the id.
+
+**Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| id | <code>integer</code> | 
+
+<a name="module_timezones"></a>
+## timezones
+
+* [timezones](#module_timezones)
+    * [~Timezones](#module_timezones..Timezones) ⇐ <code>Command</code>
+        * [new Timezones()](#new_module_timezones..Timezones_new)
+
+<a name="module_timezones..Timezones"></a>
+### timezones~Timezones ⇐ <code>Command</code>
+**Kind**: inner class of <code>[timezones](#module_timezones)</code>  
+**Extends:** <code>Command</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_timezones Timezones endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+<a name="new_module_timezones..Timezones_new"></a>
+#### new Timezones()
+The Timezones endpoint.
 
 <a name="module_command"></a>
 ## command
@@ -259,13 +359,13 @@ A base command.
 <a name="module_command..Command+args"></a>
 #### command.args
 **Kind**: instance property of <code>[Command](#module_command..Command)</code>  
-**Default**: <code>[]</code>  
+**Default**: <code>{}</code>  
 **Read only**: true  
 **Properties**
 
 | Type | Description |
 | --- | --- |
-| <code>Array</code> | Arguments for this command. |
+| <code>Object</code> | Arguments for this command. |
 
 <a name="module_command..Command+setArgument"></a>
 #### command.setArgument(method) ⇒ <code>Command</code>
@@ -384,4 +484,39 @@ Returns a command to use.
 | Param | Type |
 | --- | --- |
 | client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_null_logger"></a>
+## null_logger
+
+* [null_logger](#module_null_logger)
+    * [~NullLogger](#module_null_logger..NullLogger)
+        * [new NullLogger()](#new_module_null_logger..NullLogger_new)
+        * [.log(message)](#module_null_logger..NullLogger+log) ⇒ <code>null</code>
+
+<a name="module_null_logger..NullLogger"></a>
+### null_logger~NullLogger
+**Kind**: inner class of <code>[null_logger](#module_null_logger)</code>  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~NullLogger](#module_null_logger..NullLogger)
+    * [new NullLogger()](#new_module_null_logger..NullLogger_new)
+    * [.log(message)](#module_null_logger..NullLogger+log) ⇒ <code>null</code>
+
+<a name="new_module_null_logger..NullLogger_new"></a>
+#### new NullLogger()
+This is our null logger, used in case none is setup.
+
+<a name="module_null_logger..NullLogger+log"></a>
+#### nullLogger.log(message) ⇒ <code>null</code>
+Discards the log message when called. This is the only method used by us.
+
+**Kind**: instance method of <code>[NullLogger](#module_null_logger..NullLogger)</code>  
+**Returns**: <code>null</code> - Always returns null.  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| message | <code>string</code> | The message to log. |
 
