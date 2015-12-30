@@ -1,11 +1,12 @@
 [![License](http://img.shields.io/badge/license-APACHE2-blue.svg)](http://img.shields.io/badge/license-APACHE2-blue.svg)
 [![npm version](https://badge.fury.io/js/portatext.svg)](https://badge.fury.io/js/portatext)
+[![Documentation Status](https://readthedocs.org/projects/portatext-node-sdk/badge/?version=latest)](http://portatext-node-sdk.readthedocs.org/en/latest/?badge=latest)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 [![Build Status](https://travis-ci.org/PortaText/node-sdk.svg)](https://travis-ci.org/PortaText/node-sdk)
 [![Coverage Status](https://coveralls.io/repos/PortaText/node-sdk/badge.svg?branch=master&service=github)](https://coveralls.io/github/PortaText/node-sdk?branch=master)
 [![Code Climate](https://codeclimate.com/github/PortaText/node-sdk/badges/gpa.svg)](https://codeclimate.com/github/PortaText/node-sdk)
 [![Issue Count](https://codeclimate.com/github/PortaText/node-sdk/badges/issue_count.svg)](https://codeclimate.com/github/PortaText/node-sdk)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 # node-sdk
 Official NodeJS Client for the [PortaText](https://www.portatext.com/) API.
@@ -59,6 +60,66 @@ portatext.setCredentials(username, password);
 When you specify a [username and password](https://github.com/PortaText/docs/wiki/REST-API#auth_basic) instead of an api key, the sdk will
 automatically login and get a [session token](https://github.com/PortaText/docs/wiki/REST-API#auth_session) when needed.
 
+# Using the endpoints
+All the API commands can be found in the [Command/Api](https://github.com/PortaText/php-sdk/tree/master/src/PortaText/Command/Api)
+directory. The client offers a way to instantiate them by just calling them by their name.
+
+## Quick example
+As an example, to create a template, you would do:
+
+```php
+$result = $client
+  ->templates()                       // Get an instance of the Templates endpoint.
+  ->text("The text of my template")
+  ->description("My first template")
+  ->name("template1")
+  ->post();                           // Call the Templates endpoint with a POST.
+```
+
+To get a template by id:
+
+```php
+$result = $client->templates()->id(45)->get();
+```
+
+Or, to get all the templates:
+
+```php
+$result = $client->templates()->get();
+```
+
+## The result
+After calling an endpoint, one of two things can happen:
+ * A [PortaText Exception](https://github.com/PortaText/php-sdk/tree/master/src/PortaText/Exception) is thrown.
+ * A [Result](https://github.com/PortaText/php-sdk/blob/master/src/PortaText/Command/Result.php) instance is returned.
+
+Also, when possible, your PortaText exception will contain a `Result` object that
+can be retrieved by calling `getResult()` on the exception. This is usually useful for the
+[ClientError](https://github.com/PortaText/php-sdk/blob/master/src/PortaText/Exception/ClientError.php) exception, where
+you will be able to see if a field was missing or different than what was expected.
+
+### Testing for success
+```php
+if ($result->success) {
+    ...
+}
+```
+
+### Getting error strings back from the server
+```php
+if (!is_null($result->errors) {
+    foreach ($result->errors as $error) {
+        ...
+  }
+}
+```
+
+### Getting data back from the server
+```php
+if ($result->success) {
+    $data = $result->data;
+}
+```
 
 # Developers
 This project uses standard [npm scripts](https://docs.npmjs.com/cli/run-script). Current tasks include:

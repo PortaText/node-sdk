@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3>portatext 0.0.3</h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><p><a href="http://img.shields.io/badge/license-APACHE2-blue.svg"><img src="http://img.shields.io/badge/license-APACHE2-blue.svg" alt="License"></a>
+<a href="https://badge.fury.io/js/portatext"><img src="https://badge.fury.io/js/portatext.svg" alt="npm version"></a>
+<a href="http://portatext-node-sdk.readthedocs.org/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/portatext-node-sdk/badge/?version=latest" alt="Documentation Status"></a>
+<a href="https://github.com/feross/standard"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="js-standard-style"></a></p>
+<p><a href="https://travis-ci.org/PortaText/node-sdk"><img src="https://travis-ci.org/PortaText/node-sdk.svg" alt="Build Status"></a>
+<a href="https://coveralls.io/github/PortaText/node-sdk?branch=master"><img src="https://coveralls.io/repos/PortaText/node-sdk/badge.svg?branch=master&amp;service=github" alt="Coverage Status"></a>
+<a href="https://codeclimate.com/github/PortaText/node-sdk"><img src="https://codeclimate.com/github/PortaText/node-sdk/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://codeclimate.com/github/PortaText/node-sdk"><img src="https://codeclimate.com/github/PortaText/node-sdk/badges/issue_count.svg" alt="Issue Count"></a></p>
+<h1>node-sdk</h1><p>Official NodeJS Client for the <a href="https://www.portatext.com/">PortaText</a> API.</p>
+<h1>Documentation</h1><ul>
+<li>The <a href="https://github.com/PortaText/node-sdk/tree/master/test/endpoints">endpoint tests</a> should also serve as good doucmentation on how to use the API.</li>
+<li>General PortaText documentation (including the REST API) can be found at the <a href="https://github.com/PortaText/docs/wiki">PortaText wiki</a>.</li>
+</ul>
+<h1>Installing</h1><p>Add this library to your <a href="https://docs.npmjs.com/getting-started/using-a-package.json">package.json</a> configuration:</p>
+<pre class="prettyprint source lang-json"><code>  &quot;dependencies&quot;: {
+    &quot;portatext&quot;: &quot;latest&quot;
+  }</code></pre><h1>Basic use</h1><h2>Getting a client instance</h2><p>The first thing is to get a <a href="https://github.com/PortaText/node-sdk/blob/master/src/client/client.js">Client</a> instance, for example
+the <a href="https://github.com/PortaText/node-sdk/blob/master/src/client/client_http.js">Curl</a> implementation:</p>
+<pre class="prettyprint source lang-js"><code>var portatextMod = require('portatext');
+var portatext = new portatextMod.ClientHttp();</code></pre><h2>(Optional) Set your logger</h2><p>You can optionally set a <a href="https://nodejs.org/api/console.html">Console</a> compatible logger:</p>
+<pre class="prettyprint source lang-js"><code>portatext.setLogger(console);</code></pre><p>By default, the client will use the <a href="https://github.com/PortaText/node-sdk/blob/master/src/null_logger.js">NullLogger</a>.</p>
+<h2>Authenticating</h2><p>You can authenticate to the endpoints by using your <a href="https://github.com/PortaText/docs/wiki/REST-API#auth_api">API key</a> or your username/password. This translates to
+either doing this:</p>
+<pre class="prettyprint source lang-js"><code>portatext.setApiKey(apiKey);</code></pre><p>Or this:</p>
+<pre class="prettyprint source lang-js"><code>portatext.setCredentials(username, password);</code></pre><p>When you specify a <a href="https://github.com/PortaText/docs/wiki/REST-API#auth_basic">username and password</a> instead of an api key, the sdk will
+automatically login and get a <a href="https://github.com/PortaText/docs/wiki/REST-API#auth_session">session token</a> when needed.</p>
+<h1>Using the endpoints</h1><p>All the API commands can be found in the <a href="https://github.com/PortaText/php-sdk/tree/master/src/PortaText/Command/Api">Command/Api</a>
+directory. The client offers a way to instantiate them by just calling them by their name.</p>
+<h2>Quick example</h2><p>As an example, to create a template, you would do:</p>
+<pre class="prettyprint source lang-php"><code>$result = $client
+  ->templates()                       // Get an instance of the Templates endpoint.
+  ->text(&quot;The text of my template&quot;)
+  ->description(&quot;My first template&quot;)
+  ->name(&quot;template1&quot;)
+  ->post();                           // Call the Templates endpoint with a POST.</code></pre><p>To get a template by id:</p>
+<pre class="prettyprint source lang-php"><code>$result = $client->templates()->id(45)->get();</code></pre><p>Or, to get all the templates:</p>
+<pre class="prettyprint source lang-php"><code>$result = $client->templates()->get();</code></pre><h2>The result</h2><p>After calling an endpoint, one of two things can happen:</p>
+<ul>
+<li>A <a href="https://github.com/PortaText/php-sdk/tree/master/src/PortaText/Exception">PortaText Exception</a> is thrown.</li>
+<li>A <a href="https://github.com/PortaText/php-sdk/blob/master/src/PortaText/Command/Result.php">Result</a> instance is returned.</li>
+</ul>
+<p>Also, when possible, your PortaText exception will contain a <code>Result</code> object that
+can be retrieved by calling <code>getResult()</code> on the exception. This is usually useful for the
+<a href="https://github.com/PortaText/php-sdk/blob/master/src/PortaText/Exception/ClientError.php">ClientError</a> exception, where
+you will be able to see if a field was missing or different than what was expected.</p>
+<h3>Testing for success</h3><pre class="prettyprint source lang-php"><code>if ($result->success) {
+    ...
+}</code></pre><h3>Getting error strings back from the server</h3><pre class="prettyprint source lang-php"><code>if (!is_null($result->errors) {
+    foreach ($result->errors as $error) {
+        ...
+  }
+}</code></pre><h3>Getting data back from the server</h3><pre class="prettyprint source lang-php"><code>if ($result->success) {
+    $data = $result->data;
+}</code></pre><h1>Developers</h1><p>This project uses standard <a href="https://docs.npmjs.com/cli/run-script">npm scripts</a>. Current tasks include:</p>
+<ul>
+<li>test: Runs <a href="https://mochajs.org/">Mocha</a> tests.</li>
+<li>jsdoc: Runs <a href="http://usejsdoc.org/">JSDoc</a>.</li>
+<li>eslint: Runs <a href="http://eslint.org/">ESLint</a>.</li>
+<li>coverage: Runs the tests and then <a href="https://gotwarlost.github.io/istanbul/">Instanbul</a> to get a coverage report.</li>
+<li>build: This is the default task, and will run all the other tasks.</li>
+</ul>
+<h2>Running a phing task</h2><p>To run a task, just do:</p>
+<pre class="prettyprint source lang-sh"><code>npm run build</code></pre><h2>Contributing</h2><p>To contribute:</p>
+<ul>
+<li>Make sure you open a <strong>concise</strong> and <strong>short</strong> pull request.</li>
+<li>Throw in any needed unit tests to accomodate the new code or the
+changes involved.</li>
+<li>Run <code>npm run build</code> and make sure everything is ok before submitting the pull
+request (make eslint happy).</li>
+<li>Your code must comply with the <a href="https://github.com/feross/standard">Javascript Standard Style</a>,
+ESLint should take care of that.</li>
+<li>If your code is accepted, it will belong to PortaText and will be published
+under the Apache2 License.</li>
+</ul>
+<h1>License</h1><p>The source code is released under Apache 2 License.</p>
+<p>Check <a href="https://github.com/PortaText/node-sdk/blob/master/LICENSE">LICENSE</a> file for more information.</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-client.html">client</a></li><li><a href="module-client_http.html">client_http</a></li><li><a href="module-null_logger.html">null_logger</a></li></ul><h3>Classes</h3><ul><li><a href="module-client_http-ClientHttp.html">ClientHttp</a></li><li><a href="module-client-Client.html">Client</a></li><li><a href="module-null_logger-NullLogger.html">NullLogger</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Dec 30 2015 11:56:39 GMT-0300 (ART)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
