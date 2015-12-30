@@ -12,7 +12,7 @@ var util = require('util');
  * @author Marcelo Gornstein <marcelog@portatext.com>
  * @license Apache-2.0
  * @copyright 2015 PortaText
- * @extends {Command}
+ * @extends {module:command~Command}
  */
 function Templates () {
   Templates.super_.call(this);
@@ -36,7 +36,7 @@ Templates.prototype.endpoint = function (method) {
  * @param {string} name
  *
  * @access public
- * @return {Command}
+ * @return {module:command~Command}
  */
 Templates.prototype.name = function (name) {
   return this.setArgument('name', name);
@@ -48,7 +48,7 @@ Templates.prototype.name = function (name) {
  * @param {string} description
  *
  * @access public
- * @return {Command}
+ * @return {module:command~Command}
  */
 Templates.prototype.description = function (description) {
   return this.setArgument('description', description);
@@ -60,7 +60,7 @@ Templates.prototype.description = function (description) {
  * @param {string} text
  *
  * @access public
- * @return {Command}
+ * @return {module:command~Command}
  */
 Templates.prototype.text = function (text) {
   return this.setArgument('text', text);
@@ -72,7 +72,7 @@ Templates.prototype.text = function (text) {
  * @param {integer} id
  *
  * @access public
- * @return {Command}
+ * @return {module:command~Command}
  */
 Templates.prototype.id = function (id) {
   return this.setArgument('id', id);

@@ -12,7 +12,7 @@ var util = require('util');
  * @author Marcelo Gornstein <marcelog@portatext.com>
  * @license Apache-2.0
  * @copyright 2015 PortaText
- * @extends {Command}
+ * @extends {module:command~Command}
  */
 function Timezones () {
   Timezones.super_.call(this);

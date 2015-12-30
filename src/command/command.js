@@ -25,7 +25,7 @@ function Command () {
  * @param {HttpMethod} method
  *
  * @access protected
- * @return {Command}
+ * @return {module:command~Command}
  */
 Command.prototype.setArgument = function (key, value) {
   this.args[key] = value;
@@ -38,7 +38,7 @@ Command.prototype.setArgument = function (key, value) {
  * @param {HttpMethod} method
  *
  * @access protected
- * @return {Command}
+ * @return {module:command~Command}
  */
 Command.prototype.delArgument = function (key) {
   delete this.args[key];
@@ -188,7 +188,7 @@ Command.prototype.run = function (method) {
  * @param {module:client~Client} client
  *
  * @access public
- * @return {Command}
+ * @return {module:command~Command}
  */
 Command.prototype.setClient = function (client) {
   this.client = client;
