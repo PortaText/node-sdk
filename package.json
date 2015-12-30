@@ -23,7 +23,7 @@
     "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --ui bdd -R spec -t 5000",
     "eslint": "./node_modules/eslint/bin/eslint.js src/**/*.js",
     "lint": "./node_modules/jshint/bin/jshint src/**/*.js",
-    "jsdoc": "./node_modules/.bin/jsdoc src/** --verbose -R ./README.md -r -P ./package.json --access all --destination doc",
+    "jsdoc": "./node_modules/.bin/jsdoc src/** --verbose -R ./README.md -r --access all --destination doc",
     "jsdox": "./node_modules/.bin/jsdox --output doc src/**",
     "build": "npm run jsdoc && npm run eslint && npm run coverage"
   },

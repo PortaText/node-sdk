@@ -21,7 +21,7 @@ var Promise = require('promise');
  * @license Apache-2.0
  * @copyright 2015 PortaText
  */
- function Client () {
+function Client () {
   /**
    * @constant {string} - The default base HTTP endpoint
    * @default
