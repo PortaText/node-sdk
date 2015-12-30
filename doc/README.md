@@ -5,6 +5,8 @@
 <dd></dd>
 <dt><a href="#module_client_http">client_http</a></dt>
 <dd></dd>
+<dt><a href="#module_command">command</a></dt>
+<dd></dd>
 </dl>
 
 <a name="module_client"></a>
@@ -76,7 +78,7 @@ This is our basic client
 <a name="module_client..Client+logger"></a>
 #### client.logger
 **Kind**: instance property of <code>[Client](#module_client..Client)</code>  
-**Default**: <code>{NullLogger}</code>  
+**Default**: <code>{module:null_logger~NullLogger}</code>  
 **Read only**: true  
 **Properties**
 
@@ -204,4 +206,182 @@ Executes the given request through the underlying implementation.
 <a name="new_module_client_http..ClientHttp_new"></a>
 #### new ClientHttp()
 This is our basic client
+
+<a name="module_command"></a>
+## command
+
+* [command](#module_command)
+    * [~Command](#module_command..Command)
+        * [new Command()](#new_module_command..Command_new)
+        * [.args](#module_command..Command+args)
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>undefined</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>undefined</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>Command</code>
+
+<a name="module_command..Command"></a>
+### command~Command
+**Kind**: inner class of <code>[command](#module_command)</code>  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Command](#module_command..Command)
+    * [new Command()](#new_module_command..Command_new)
+    * [.args](#module_command..Command+args)
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>undefined</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>undefined</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>Command</code>
+
+<a name="new_module_command..Command_new"></a>
+#### new Command()
+A base command.
+
+<a name="module_command..Command+args"></a>
+#### command.args
+**Kind**: instance property of <code>[Command](#module_command..Command)</code>  
+**Default**: <code>[]</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Array</code> | Arguments for this command. |
+
+<a name="module_command..Command+setArgument"></a>
+#### command.setArgument(method) ⇒ <code>undefined</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### command.delArgument(method) ⇒ <code>undefined</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### command.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### command.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *command.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### command.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### command.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### command.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### command.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### command.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### command.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### command.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### command.setClient(client) ⇒ <code>Command</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
 

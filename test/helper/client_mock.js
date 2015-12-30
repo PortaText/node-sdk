@@ -1,6 +1,8 @@
 var Promise = require('promise');
+var clientMod = require('../../src/client/client');
+var expect = require('chai').expect;
 
-exports.mockResponse = function(code, headers, body) {
+exports.mockResponse = function (code, headers, body) {
   if (!code) {
     code = 200;
   }
@@ -25,3 +27,24 @@ exports.mockResponse = function(code, headers, body) {
     })
   });
 };
+
+exports.mockClientForCommand = function (
+  assertEndpoint, assertBody, assertContentType
+) {
+  var client = new clientMod.Client();
+  client.setApiKey('anapikey');
+  if (!assertBody) {
+    assertBody = '';
+  }
+  if (!assertContentType) {
+    assertContentType = 'application/json';
+  }
+  client.execute = function (descriptor) {
+    expect(descriptor.uri).to.equal(client.endpoint + '/' + assertEndpoint);
+    expect(descriptor.headers['Content-Type']).to.equal(assertContentType);
+    expect(descriptor.body).to.equal(assertBody);
+    return exports.mockResponse();
+  }
+  return client;
+};
+

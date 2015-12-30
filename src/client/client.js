@@ -12,6 +12,7 @@
  */
 var loggerMod = require('../null_logger');
 var Promise = require('promise');
+var commandMod = require('../command/command');
 
 /**
  * This is our basic client
@@ -43,7 +44,7 @@ function Client () {
 
   /**
    * @property {Object} - The logger to use.
-   * @default {NullLogger}
+   * @default {module:null_logger~NullLogger}
    * @readonly
    */
   this.logger = new loggerMod.NullLogger();
@@ -61,6 +62,19 @@ function Client () {
    * @readonly
    */
   this.credentials = null;
+
+  // Load up all commands.
+  var self = this;
+  commandMod.KnownCommands.forEach(function (c) {
+    var className = c[0];
+    var modName = c[1];
+    var mod = require('../command/api/' + modName);
+    var method = className[0].toLowerCase() + className.substring(1);
+    self[method] = function () {
+      var c = new mod[className]();
+      return c.setClient(self);
+    };
+  });
 }
 
 /**
