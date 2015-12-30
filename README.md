@@ -47,13 +47,13 @@ You can authenticate to the endpoints by using your [API key](https://github.com
 either doing this:
 
 ```js
-portatext->setApiKey(apiKey);
+portatext.setApiKey(apiKey);
 ```
 
 Or this:
 
 ```js
-portatext->setCredentials(username, password);
+portatext.setCredentials(username, password);
 ```
 
 When you specify a [username and password](https://github.com/PortaText/docs/wiki/REST-API#auth_basic) instead of an api key, the sdk will
