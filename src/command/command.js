@@ -203,5 +203,6 @@ exports.KnownCommands = [
   ['Acl'],
   ['Me'],
   ['Blacklist'],
-  ['Sms']
+  ['Sms'],
+  ['CampaignLifecycle', 'campaign_lifecycle']
 ];

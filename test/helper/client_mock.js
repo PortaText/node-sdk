@@ -43,9 +43,11 @@ exports.mockClientForCommand = function (
     assertContentType = 'application/json';
   }
   client.execute = function (descriptor) {
-    expect(descriptor.uri).to.equal(client.endpoint + '/' + assertEndpoint);
-    expect(descriptor.headers['Content-Type']).to.equal(assertContentType);
-    expect(descriptor.body).to.equal(assertBody);
+    if (assertEndpoint) {
+      expect(descriptor.uri).to.equal(client.endpoint + '/' + assertEndpoint);
+      expect(descriptor.headers['Content-Type']).to.equal(assertContentType);
+      expect(descriptor.body).to.equal(assertBody);
+    }
     return exports.mockResponse();
   }
   return client;

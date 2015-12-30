@@ -9,6 +9,8 @@
 <dd></dd>
 <dt><a href="#module_blacklist">blacklist</a></dt>
 <dd></dd>
+<dt><a href="#module_campaign_lifecycle">campaign_lifecycle</a></dt>
+<dd></dd>
 <dt><a href="#module_me">me</a></dt>
 <dd></dd>
 <dt><a href="#module_sms">sms</a></dt>
@@ -621,6 +623,200 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_campaign_lifecycle"></a>
+## campaign_lifecycle
+
+* [campaign_lifecycle](#module_campaign_lifecycle)
+    * [~CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new CampaignLifecycle()](#new_module_campaign_lifecycle..CampaignLifecycle_new)
+        * [.args](#module_command..Command+args)
+        * [.forCountry(countryIso)](#module_campaign_lifecycle..CampaignLifecycle+forCountry) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_campaign_lifecycle..CampaignLifecycle"></a>
+### campaign_lifecycle~CampaignLifecycle ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[campaign_lifecycle](#module_campaign_lifecycle)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_campaigns_lifecycle CampaignLifecycle endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new CampaignLifecycle()](#new_module_campaign_lifecycle..CampaignLifecycle_new)
+    * [.args](#module_command..Command+args)
+    * [.forCountry(countryIso)](#module_campaign_lifecycle..CampaignLifecycle+forCountry) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_campaign_lifecycle..CampaignLifecycle_new"></a>
+#### new CampaignLifecycle()
+The CampaignLifecycle endpoint.
+
+<a name="module_command..Command+args"></a>
+#### campaignLifecycle.args
+**Kind**: instance property of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_campaign_lifecycle..CampaignLifecycle+forCountry"></a>
+#### campaignLifecycle.forCountry(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the tariff country ISO code.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| countryIso | <code>string</code> | 2-letter ISO code. |
+
+<a name="module_command..Command+setArgument"></a>
+#### campaignLifecycle.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### campaignLifecycle.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### campaignLifecycle.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### campaignLifecycle.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *campaignLifecycle.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### campaignLifecycle.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### campaignLifecycle.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### campaignLifecycle.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### campaignLifecycle.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### campaignLifecycle.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### campaignLifecycle.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### campaignLifecycle.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### campaignLifecycle.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 
 | Param | Type |
