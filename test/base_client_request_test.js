@@ -1,3 +1,4 @@
+var helper = require('./helper/client_mock');
 var clientMod = require('../src/client/client');
 var assert = require('assert');
 var chai = require("chai");
@@ -45,13 +46,7 @@ describe('Client', function() {
       var endpoint = 'http://1.1.1.1:999/path';
       var client = new clientMod.Client();
       client.execute = function (descriptor) {
-        return new Promise(function(resolve, reject) {
-          resolve({
-            code: 200,
-            headers: {},
-            body: ''
-          })
-        });
+        return helper.mockResponse(null, null, '');
       };
       return client
         .setEndpoint(endpoint)
@@ -75,16 +70,13 @@ describe('Client', function() {
         assert.equal(descriptor.method, 'amethod');
         assert.equal(descriptor.headers['Content-Type'], 'text/plain');
         assert.equal(descriptor.body, 'abody');
-        return new Promise(function(resolve, reject) {
-          resolve({
-            code: 200,
-            headers: {
-              'retheader1': 'value1',
-              'retheader2': 'value2'
-            },
-            body: '{"success": true}'
-          })
-        });
+        return helper.mockResponse(
+          null,
+          {
+            'retheader1': 'value1',
+            'retheader2': 'value2'
+          }
+        );
       };
       return client
         .setEndpoint(endpoint)

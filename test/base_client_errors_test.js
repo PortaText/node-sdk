@@ -1,3 +1,4 @@
+var helper = require('./helper/client_mock');
 var clientMod = require('../src/client/client');
 var assert = require('assert');
 var expect = require('chai').expect;
@@ -50,9 +51,7 @@ describe('Client', function() {
 var assertError = function(code, msg) {
   var client = new clientMod.Client();
   client.execute = function (descriptor) {
-    return new Promise(function (resolve, reject) {
-      resolve({code: code, headers: {}, body: '{"success": false}'});
-    });
+    return helper.mockResponse(code, null);
   };
   return client
     .setApiKey('an_api_key')
