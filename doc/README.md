@@ -13,6 +13,8 @@
 <dd></dd>
 <dt><a href="#module_me">me</a></dt>
 <dd></dd>
+<dt><a href="#module_settings">settings</a></dt>
+<dd></dd>
 <dt><a href="#module_sms">sms</a></dt>
 <dd></dd>
 <dt><a href="#module_tariffs">tariffs</a></dt>
@@ -636,7 +638,11 @@ Returns a command to use.
     * [~CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle) ⇐ <code>[Command](#module_command..Command)</code>
         * [new CampaignLifecycle()](#new_module_campaign_lifecycle..CampaignLifecycle_new)
         * [.args](#module_command..Command+args)
-        * [.forCountry(countryIso)](#module_campaign_lifecycle..CampaignLifecycle+forCountry) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.id()](#module_campaign_lifecycle..CampaignLifecycle+id) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.start()](#module_campaign_lifecycle..CampaignLifecycle+start) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.resume()](#module_campaign_lifecycle..CampaignLifecycle+resume) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.pause()](#module_campaign_lifecycle..CampaignLifecycle+pause) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.cancel()](#module_campaign_lifecycle..CampaignLifecycle+cancel) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -663,7 +669,11 @@ Returns a command to use.
 * [~CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle) ⇐ <code>[Command](#module_command..Command)</code>
     * [new CampaignLifecycle()](#new_module_campaign_lifecycle..CampaignLifecycle_new)
     * [.args](#module_command..Command+args)
-    * [.forCountry(countryIso)](#module_campaign_lifecycle..CampaignLifecycle+forCountry) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.id()](#module_campaign_lifecycle..CampaignLifecycle+id) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.start()](#module_campaign_lifecycle..CampaignLifecycle+start) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.resume()](#module_campaign_lifecycle..CampaignLifecycle+resume) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.pause()](#module_campaign_lifecycle..CampaignLifecycle+pause) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.cancel()](#module_campaign_lifecycle..CampaignLifecycle+cancel) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -693,17 +703,36 @@ The CampaignLifecycle endpoint.
 | --- | --- |
 | <code>Object</code> | Arguments for this command. |
 
-<a name="module_campaign_lifecycle..CampaignLifecycle+forCountry"></a>
-#### campaignLifecycle.forCountry(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
-Sets the tariff country ISO code.
+<a name="module_campaign_lifecycle..CampaignLifecycle+id"></a>
+#### campaignLifecycle.id() ⇒ <code>[Command](#module_command..Command)</code>
+Sets the campaign id.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
+<a name="module_campaign_lifecycle..CampaignLifecycle+start"></a>
+#### campaignLifecycle.start() ⇒ <code>[Command](#module_command..Command)</code>
+Starts a campaign.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| countryIso | <code>string</code> | 2-letter ISO code. |
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_campaign_lifecycle..CampaignLifecycle+resume"></a>
+#### campaignLifecycle.resume() ⇒ <code>[Command](#module_command..Command)</code>
+Resumes a campaign.
 
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_campaign_lifecycle..CampaignLifecycle+pause"></a>
+#### campaignLifecycle.pause() ⇒ <code>[Command](#module_command..Command)</code>
+Pauses a campaign.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+<a name="module_campaign_lifecycle..CampaignLifecycle+cancel"></a>
+#### campaignLifecycle.cancel() ⇒ <code>[Command](#module_command..Command)</code>
+Cancels a campaign.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
 <a name="module_command..Command+setArgument"></a>
 #### campaignLifecycle.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
@@ -1064,6 +1093,252 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_settings"></a>
+## settings
+
+* [settings](#module_settings)
+    * [~Settings](#module_settings..Settings) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Settings()](#new_module_settings..Settings_new)
+        * [.args](#module_command..Command+args)
+        * [.dontAlertOnLowCredit()](#module_settings..Settings+dontAlertOnLowCredit) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.alertWhenCreditLessThan(value)](#module_settings..Settings+alertWhenCreditLessThan) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.dontSendInboundByEmail()](#module_settings..Settings+dontSendInboundByEmail) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.sendInboundByEmail(email)](#module_settings..Settings+sendInboundByEmail) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.disableAutoRecharges()](#module_settings..Settings+disableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.enableAutoRecharges(whenCredit, cardId, total)](#module_settings..Settings+enableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_settings..Settings"></a>
+### settings~Settings ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[settings](#module_settings)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_settings Settings endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Settings](#module_settings..Settings) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Settings()](#new_module_settings..Settings_new)
+    * [.args](#module_command..Command+args)
+    * [.dontAlertOnLowCredit()](#module_settings..Settings+dontAlertOnLowCredit) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.alertWhenCreditLessThan(value)](#module_settings..Settings+alertWhenCreditLessThan) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.dontSendInboundByEmail()](#module_settings..Settings+dontSendInboundByEmail) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.sendInboundByEmail(email)](#module_settings..Settings+sendInboundByEmail) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.disableAutoRecharges()](#module_settings..Settings+disableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.enableAutoRecharges(whenCredit, cardId, total)](#module_settings..Settings+enableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_settings..Settings_new"></a>
+#### new Settings()
+The Settings endpoint.
+
+<a name="module_command..Command+args"></a>
+#### settings.args
+**Kind**: instance property of <code>[Settings](#module_settings..Settings)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_settings..Settings+dontAlertOnLowCredit"></a>
+#### settings.dontAlertOnLowCredit() ⇒ <code>[Command](#module_command..Command)</code>
+Dont send an alert by email on low credit.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_settings..Settings+alertWhenCreditLessThan"></a>
+#### settings.alertWhenCreditLessThan(value) ⇒ <code>[Command](#module_command..Command)</code>
+Sends an alert by email when credit reaches the given threshold.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| value | <code>integer</code> | 
+
+<a name="module_settings..Settings+dontSendInboundByEmail"></a>
+#### settings.dontSendInboundByEmail() ⇒ <code>[Command](#module_command..Command)</code>
+Don't send emails on inbound messages.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_settings..Settings+sendInboundByEmail"></a>
+#### settings.sendInboundByEmail(email) ⇒ <code>[Command](#module_command..Command)</code>
+Set email where to send inbound messages to.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| email | <code>string</code> | 
+
+<a name="module_settings..Settings+disableAutoRecharges"></a>
+#### settings.disableAutoRecharges() ⇒ <code>[Command](#module_command..Command)</code>
+Disables auto recharges.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_settings..Settings+enableAutoRecharges"></a>
+#### settings.enableAutoRecharges(whenCredit, cardId, total) ⇒ <code>[Command](#module_command..Command)</code>
+Enables auto recharges.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| whenCredit | <code>integer</code> | 
+| cardId | <code>integer</code> | 
+| total | <code>number</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### settings.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### settings.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### settings.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### settings.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *settings.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Settings](#module_settings..Settings)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### settings.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### settings.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### settings.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### settings.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### settings.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### settings.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### settings.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### settings.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 
 | Param | Type |
