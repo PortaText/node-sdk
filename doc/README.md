@@ -11,9 +11,15 @@
 <dd></dd>
 <dt><a href="#module_campaign_lifecycle">campaign_lifecycle</a></dt>
 <dd></dd>
+<dt><a href="#module_cnam">cnam</a></dt>
+<dd></dd>
 <dt><a href="#module_credit_cards">credit_cards</a></dt>
 <dd></dd>
 <dt><a href="#module_did_settings">did_settings</a></dt>
+<dd></dd>
+<dt><a href="#module_email_verify">email_verify</a></dt>
+<dd></dd>
+<dt><a href="#module_jobs">jobs</a></dt>
 <dd></dd>
 <dt><a href="#module_me">me</a></dt>
 <dd></dd>
@@ -858,6 +864,200 @@ Returns a command to use.
 | --- | --- |
 | client | <code>[Client](#module_client..Client)</code> | 
 
+<a name="module_cnam"></a>
+## cnam
+
+* [cnam](#module_cnam)
+    * [~Cnam](#module_cnam..Cnam) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Cnam()](#new_module_cnam..Cnam_new)
+        * [.args](#module_command..Command+args)
+        * [.forNumber(countryIso)](#module_cnam..Cnam+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_cnam..Cnam"></a>
+### cnam~Cnam ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[cnam](#module_cnam)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_cnam Cnam endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Cnam](#module_cnam..Cnam) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Cnam()](#new_module_cnam..Cnam_new)
+    * [.args](#module_command..Command+args)
+    * [.forNumber(countryIso)](#module_cnam..Cnam+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_cnam..Cnam_new"></a>
+#### new Cnam()
+The Cnam endpoint.
+
+<a name="module_command..Command+args"></a>
+#### cnam.args
+**Kind**: instance property of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_cnam..Cnam+forNumber"></a>
+#### cnam.forNumber(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
+Asks for CNAM info for the specific number.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| countryIso | <code>string</code> | 2-letter ISO code. |
+
+<a name="module_command..Command+setArgument"></a>
+#### cnam.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### cnam.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### cnam.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### cnam.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *cnam.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### cnam.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### cnam.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### cnam.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### cnam.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### cnam.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### cnam.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### cnam.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### cnam.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
 <a name="module_credit_cards"></a>
 ## credit_cards
 
@@ -865,10 +1065,10 @@ Returns a command to use.
     * [~CreditCards](#module_credit_cards..CreditCards) ⇐ <code>[Command](#module_command..Command)</code>
         * [new CreditCards()](#new_module_credit_cards..CreditCards_new)
         * [.args](#module_command..Command+args)
-        * [.id(company)](#module_credit_cards..CreditCards+id) ⇒ <code>[Command](#module_command..Command)</code>
-        * [.nameOnCard(email)](#module_credit_cards..CreditCards+nameOnCard) ⇒ <code>[Command](#module_command..Command)</code>
-        * [.cardInfo(callbackUrl)](#module_credit_cards..CreditCards+cardInfo) ⇒ <code>[Command](#module_command..Command)</code>
-        * [.address(timezone)](#module_credit_cards..CreditCards+address) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.id(id)](#module_credit_cards..CreditCards+id) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.nameOnCard(firstname, lastname)](#module_credit_cards..CreditCards+nameOnCard) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.cardInfo(number, expirationDate, code)](#module_credit_cards..CreditCards+cardInfo) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.address(streetAddress, city, state, zip, country)](#module_credit_cards..CreditCards+address) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -895,10 +1095,10 @@ Returns a command to use.
 * [~CreditCards](#module_credit_cards..CreditCards) ⇐ <code>[Command](#module_command..Command)</code>
     * [new CreditCards()](#new_module_credit_cards..CreditCards_new)
     * [.args](#module_command..Command+args)
-    * [.id(company)](#module_credit_cards..CreditCards+id) ⇒ <code>[Command](#module_command..Command)</code>
-    * [.nameOnCard(email)](#module_credit_cards..CreditCards+nameOnCard) ⇒ <code>[Command](#module_command..Command)</code>
-    * [.cardInfo(callbackUrl)](#module_credit_cards..CreditCards+cardInfo) ⇒ <code>[Command](#module_command..Command)</code>
-    * [.address(timezone)](#module_credit_cards..CreditCards+address) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.id(id)](#module_credit_cards..CreditCards+id) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.nameOnCard(firstname, lastname)](#module_credit_cards..CreditCards+nameOnCard) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.cardInfo(number, expirationDate, code)](#module_credit_cards..CreditCards+cardInfo) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.address(streetAddress, city, state, zip, country)](#module_credit_cards..CreditCards+address) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -929,7 +1129,7 @@ The CreditCards endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_credit_cards..CreditCards+id"></a>
-#### creditCards.id(company) ⇒ <code>[Command](#module_command..Command)</code>
+#### creditCards.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the credit card id.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
@@ -937,10 +1137,10 @@ Sets the credit card id.
 
 | Param | Type |
 | --- | --- |
-| company | <code>string</code> | 
+| id | <code>integer</code> | 
 
 <a name="module_credit_cards..CreditCards+nameOnCard"></a>
-#### creditCards.nameOnCard(email) ⇒ <code>[Command](#module_command..Command)</code>
+#### creditCards.nameOnCard(firstname, lastname) ⇒ <code>[Command](#module_command..Command)</code>
 Set name on card.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
@@ -948,21 +1148,24 @@ Set name on card.
 
 | Param | Type |
 | --- | --- |
-| email | <code>string</code> | 
+| firstname | <code>string</code> | 
+| lastname | <code>string</code> | 
 
 <a name="module_credit_cards..CreditCards+cardInfo"></a>
-#### creditCards.cardInfo(callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
+#### creditCards.cardInfo(number, expirationDate, code) ⇒ <code>[Command](#module_command..Command)</code>
 Set card information.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
 **Access:** public  
 
-| Param | Type |
-| --- | --- |
-| callbackUrl | <code>string</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| number | <code>string</code> |  |
+| expirationDate | <code>string</code> | In format: YYYY-MM. |
+| code | <code>string</code> |  |
 
 <a name="module_credit_cards..CreditCards+address"></a>
-#### creditCards.address(timezone) ⇒ <code>[Command](#module_command..Command)</code>
+#### creditCards.address(streetAddress, city, state, zip, country) ⇒ <code>[Command](#module_command..Command)</code>
 Set card billing address.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
@@ -970,7 +1173,11 @@ Set card billing address.
 
 | Param | Type |
 | --- | --- |
-| timezone | <code>string</code> | 
+| streetAddress | <code>string</code> | 
+| city | <code>string</code> | 
+| state | <code>string</code> | 
+| zip | <code>string</code> | 
+| country | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### creditCards.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
@@ -1321,6 +1528,394 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_email_verify"></a>
+## email_verify
+
+* [email_verify](#module_email_verify)
+    * [~EmailVerify](#module_email_verify..EmailVerify) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new EmailVerify()](#new_module_email_verify..EmailVerify_new)
+        * [.args](#module_command..Command+args)
+        * [.withNonce(nonce)](#module_email_verify..EmailVerify+withNonce) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_email_verify..EmailVerify"></a>
+### email_verify~EmailVerify ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[email_verify](#module_email_verify)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_email_verify EmailVerify endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~EmailVerify](#module_email_verify..EmailVerify) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new EmailVerify()](#new_module_email_verify..EmailVerify_new)
+    * [.args](#module_command..Command+args)
+    * [.withNonce(nonce)](#module_email_verify..EmailVerify+withNonce) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_email_verify..EmailVerify_new"></a>
+#### new EmailVerify()
+The EmailVerify endpoint.
+
+<a name="module_command..Command+args"></a>
+#### emailVerify.args
+**Kind**: instance property of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_email_verify..EmailVerify+withNonce"></a>
+#### emailVerify.withNonce(nonce) ⇒ <code>[Command](#module_command..Command)</code>
+Use this nonce to verify.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| nonce | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### emailVerify.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### emailVerify.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### emailVerify.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### emailVerify.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *emailVerify.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### emailVerify.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### emailVerify.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### emailVerify.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### emailVerify.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### emailVerify.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### emailVerify.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### emailVerify.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### emailVerify.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_jobs"></a>
+## jobs
+
+* [jobs](#module_jobs)
+    * [~Jobs](#module_jobs..Jobs) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Jobs()](#new_module_jobs..Jobs_new)
+        * [.args](#module_command..Command+args)
+        * [.id(id)](#module_jobs..Jobs+id) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_jobs..Jobs"></a>
+### jobs~Jobs ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[jobs](#module_jobs)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_jobs Jobs endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Jobs](#module_jobs..Jobs) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Jobs()](#new_module_jobs..Jobs_new)
+    * [.args](#module_command..Command+args)
+    * [.id(id)](#module_jobs..Jobs+id) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_jobs..Jobs_new"></a>
+#### new Jobs()
+The Jobs endpoint.
+
+<a name="module_command..Command+args"></a>
+#### jobs.args
+**Kind**: instance property of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_jobs..Jobs+id"></a>
+#### jobs.id(id) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the id.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| id | <code>integer</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### jobs.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### jobs.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### jobs.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### jobs.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *jobs.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### jobs.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### jobs.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### jobs.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### jobs.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### jobs.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### jobs.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### jobs.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### jobs.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
 **Access:** public  
 
 | Param | Type |
