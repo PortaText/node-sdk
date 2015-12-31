@@ -210,6 +210,7 @@ exports.KnownCommands = [
   ['Recharge'],
   ['EmailVerify', 'email_verify'],
   ['CreditCards', 'credit_cards'],
+  ['ContactLists', 'contact_lists'],
   ['CampaignLifecycle', 'campaign_lifecycle'],
   ['DidSettings', 'did_settings']
 ];
