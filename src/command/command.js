@@ -208,10 +208,12 @@ exports.KnownCommands = [
   ['Jobs'],
   ['Settings'],
   ['Recharge'],
+  ['Campaigns'],
   ['DidSearch', 'did_search'],
   ['EmailVerify', 'email_verify'],
   ['CreditCards', 'credit_cards'],
   ['ContactLists', 'contact_lists'],
+  ['SmsCampaign', 'sms_campaign'],
   ['CampaignLifecycle', 'campaign_lifecycle'],
   ['DidSettings', 'did_settings']
 ];

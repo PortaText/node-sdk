@@ -11,9 +11,15 @@
 <dd></dd>
 <dt><a href="#module_campaign_lifecycle">campaign_lifecycle</a></dt>
 <dd></dd>
+<dt><a href="#module_campaign">campaign</a></dt>
+<dd></dd>
 <dt><a href="#module_cnam">cnam</a></dt>
 <dd></dd>
+<dt><a href="#module_contact_lists">contact_lists</a></dt>
+<dd></dd>
 <dt><a href="#module_credit_cards">credit_cards</a></dt>
+<dd></dd>
+<dt><a href="#module_did_search">did_search</a></dt>
 <dd></dd>
 <dt><a href="#module_did_settings">did_settings</a></dt>
 <dd></dd>
@@ -26,6 +32,8 @@
 <dt><a href="#module_recharge">recharge</a></dt>
 <dd></dd>
 <dt><a href="#module_settings">settings</a></dt>
+<dd></dd>
+<dt><a href="#module_sms_campaign">sms_campaign</a></dt>
 <dd></dd>
 <dt><a href="#module_sms">sms</a></dt>
 <dd></dd>
@@ -864,6 +872,252 @@ Returns a command to use.
 | --- | --- |
 | client | <code>[Client](#module_client..Client)</code> | 
 
+<a name="module_campaign"></a>
+## campaign
+
+* [campaign](#module_campaign)
+    * [~Campaigns](#module_campaign..Campaigns) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Campaigns()](#new_module_campaign..Campaigns_new)
+        * [.args](#module_command..Command+args)
+        * [.id(id)](#module_campaign..Campaigns+id) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.name(name)](#module_campaign..Campaigns+name) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.description(description)](#module_campaign..Campaigns+description) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.from(from)](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.toContactLists(contactLists)](#module_campaign..Campaigns+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_campaign..Campaigns"></a>
+### campaign~Campaigns ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[campaign](#module_campaign)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_campaigns Campaigns endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Campaigns](#module_campaign..Campaigns) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Campaigns()](#new_module_campaign..Campaigns_new)
+    * [.args](#module_command..Command+args)
+    * [.id(id)](#module_campaign..Campaigns+id) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.name(name)](#module_campaign..Campaigns+name) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.description(description)](#module_campaign..Campaigns+description) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.from(from)](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.toContactLists(contactLists)](#module_campaign..Campaigns+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_campaign..Campaigns_new"></a>
+#### new Campaigns()
+The Campaigns endpoint.
+
+<a name="module_command..Command+args"></a>
+#### campaigns.args
+**Kind**: instance property of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_campaign..Campaigns+id"></a>
+#### campaigns.id(id) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the id.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| id | <code>integer</code> | 
+
+<a name="module_campaign..Campaigns+name"></a>
+#### campaigns.name(name) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the name.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| name | <code>string</code> | 
+
+<a name="module_campaign..Campaigns+description"></a>
+#### campaigns.description(description) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the description.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| description | <code>string</code> | 
+
+<a name="module_campaign..Campaigns+from"></a>
+#### campaigns.from(from) ⇒ <code>[Command](#module_command..Command)</code>
+Specifies source telephone number for the campaign.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| from | <code>string</code> | 
+
+<a name="module_campaign..Campaigns+toContactLists"></a>
+#### campaigns.toContactLists(contactLists) ⇒ <code>[Command](#module_command..Command)</code>
+Contact list IDs to use.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| contactLists | <code>Array.&lt;integer&gt;</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### campaigns.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### campaigns.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### campaigns.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### campaigns.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *campaigns.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### campaigns.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### campaigns.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### campaigns.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### campaigns.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### campaigns.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### campaigns.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### campaigns.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### campaigns.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
 <a name="module_cnam"></a>
 ## cnam
 
@@ -1052,6 +1306,239 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_contact_lists"></a>
+## contact_lists
+
+* [contact_lists](#module_contact_lists)
+    * [~ContactLists](#module_contact_lists..ContactLists) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new ContactLists()](#new_module_contact_lists..ContactLists_new)
+        * [.args](#module_command..Command+args)
+        * [.id(id)](#module_contact_lists..ContactLists+id) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.name(name)](#module_contact_lists..ContactLists+name) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.description(description)](#module_contact_lists..ContactLists+description) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_contact_lists..ContactLists"></a>
+### contact_lists~ContactLists ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[contact_lists](#module_contact_lists)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_contact_lists ContactLists endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~ContactLists](#module_contact_lists..ContactLists) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new ContactLists()](#new_module_contact_lists..ContactLists_new)
+    * [.args](#module_command..Command+args)
+    * [.id(id)](#module_contact_lists..ContactLists+id) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.name(name)](#module_contact_lists..ContactLists+name) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.description(description)](#module_contact_lists..ContactLists+description) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_contact_lists..ContactLists_new"></a>
+#### new ContactLists()
+The ContactLists endpoint.
+
+<a name="module_command..Command+args"></a>
+#### contactLists.args
+**Kind**: instance property of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_contact_lists..ContactLists+id"></a>
+#### contactLists.id(id) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the id.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| id | <code>integer</code> | 
+
+<a name="module_contact_lists..ContactLists+name"></a>
+#### contactLists.name(name) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the name.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| name | <code>string</code> | 
+
+<a name="module_contact_lists..ContactLists+description"></a>
+#### contactLists.description(description) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the description.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| description | <code>string</code> | 
+
+<a name="module_contact_lists..ContactLists+csv"></a>
+#### contactLists.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
+Send a CSV file to import contacts.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| filename | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### contactLists.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### contactLists.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### contactLists.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### contactLists.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *contactLists.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### contactLists.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### contactLists.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### contactLists.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### contactLists.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### contactLists.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### contactLists.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### contactLists.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### contactLists.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
 **Access:** public  
 
 | Param | Type |
@@ -1292,6 +1779,285 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_did_search"></a>
+## did_search
+
+* [did_search](#module_did_search)
+    * [~DidSearch](#module_did_search..DidSearch) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new DidSearch()](#new_module_did_search..DidSearch_new)
+        * [.args](#module_command..Command+args)
+        * [.forCountry(countryIso)](#module_did_search..DidSearch+forCountry) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.tollFree()](#module_did_search..DidSearch+tollFree) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.local()](#module_did_search..DidSearch+local) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.national()](#module_did_search..DidSearch+national) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.mobile()](#module_did_search..DidSearch+mobile) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.page(page)](#module_did_search..DidSearch+page) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.startsWith(pattern)](#module_did_search..DidSearch+startsWith) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.endsWith(pattern)](#module_did_search..DidSearch+endsWith) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.contains(pattern)](#module_did_search..DidSearch+contains) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_did_search..DidSearch"></a>
+### did_search~DidSearch ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[did_search](#module_did_search)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_dids_search DidSearch endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~DidSearch](#module_did_search..DidSearch) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new DidSearch()](#new_module_did_search..DidSearch_new)
+    * [.args](#module_command..Command+args)
+    * [.forCountry(countryIso)](#module_did_search..DidSearch+forCountry) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.tollFree()](#module_did_search..DidSearch+tollFree) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.local()](#module_did_search..DidSearch+local) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.national()](#module_did_search..DidSearch+national) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.mobile()](#module_did_search..DidSearch+mobile) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.page(page)](#module_did_search..DidSearch+page) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.startsWith(pattern)](#module_did_search..DidSearch+startsWith) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.endsWith(pattern)](#module_did_search..DidSearch+endsWith) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.contains(pattern)](#module_did_search..DidSearch+contains) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_did_search..DidSearch_new"></a>
+#### new DidSearch()
+The DidSearch endpoint.
+
+<a name="module_command..Command+args"></a>
+#### didSearch.args
+**Kind**: instance property of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_did_search..DidSearch+forCountry"></a>
+#### didSearch.forCountry(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
+Searches for DIDs for this specific country.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| countryIso | <code>string</code> | 2-letter ISO code. |
+
+<a name="module_did_search..DidSearch+tollFree"></a>
+#### didSearch.tollFree() ⇒ <code>[Command](#module_command..Command)</code>
+Search only for toll free numbers.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_did_search..DidSearch+local"></a>
+#### didSearch.local() ⇒ <code>[Command](#module_command..Command)</code>
+Search only for local numbers.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_did_search..DidSearch+national"></a>
+#### didSearch.national() ⇒ <code>[Command](#module_command..Command)</code>
+Search only for national numbers.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_did_search..DidSearch+mobile"></a>
+#### didSearch.mobile() ⇒ <code>[Command](#module_command..Command)</code>
+Search only for mobile numbers.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_did_search..DidSearch+page"></a>
+#### didSearch.page(page) ⇒ <code>[Command](#module_command..Command)</code>
+Return the specific page of results.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| page | <code>integer</code> | 
+
+<a name="module_did_search..DidSearch+startsWith"></a>
+#### didSearch.startsWith(pattern) ⇒ <code>[Command](#module_command..Command)</code>
+Searches numbers that start with the specific pattern.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| pattern | <code>string</code> | 
+
+<a name="module_did_search..DidSearch+endsWith"></a>
+#### didSearch.endsWith(pattern) ⇒ <code>[Command](#module_command..Command)</code>
+Searches numbers that ends with the specific pattern.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| pattern | <code>string</code> | 
+
+<a name="module_did_search..DidSearch+contains"></a>
+#### didSearch.contains(pattern) ⇒ <code>[Command](#module_command..Command)</code>
+Searches numbers that contains the specific pattern.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| pattern | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### didSearch.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### didSearch.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### didSearch.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### didSearch.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *didSearch.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### didSearch.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Overrides:** <code>[body](#module_command..Command+body)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### didSearch.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### didSearch.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### didSearch.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### didSearch.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### didSearch.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### didSearch.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### didSearch.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 
 | Param | Type |
@@ -2616,6 +3382,213 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_sms_campaign"></a>
+## sms_campaign
+
+* [sms_campaign](#module_sms_campaign)
+    * [~SmsCampaign](#module_sms_campaign..SmsCampaign) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new SmsCampaign()](#new_module_sms_campaign..SmsCampaign_new)
+        * [.args](#module_command..Command+args)
+        * [.useTemplate(templateId, variables)](#module_sms_campaign..SmsCampaign+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.text(text)](#module_sms_campaign..SmsCampaign+text) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_sms_campaign..SmsCampaign"></a>
+### sms_campaign~SmsCampaign ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[sms_campaign](#module_sms_campaign)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_campaigns Campaigns endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~SmsCampaign](#module_sms_campaign..SmsCampaign) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new SmsCampaign()](#new_module_sms_campaign..SmsCampaign_new)
+    * [.args](#module_command..Command+args)
+    * [.useTemplate(templateId, variables)](#module_sms_campaign..SmsCampaign+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.text(text)](#module_sms_campaign..SmsCampaign+text) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_sms_campaign..SmsCampaign_new"></a>
+#### new SmsCampaign()
+The Campaigns endpoint (SMS).
+
+<a name="module_command..Command+args"></a>
+#### smsCampaign.args
+**Kind**: instance property of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_sms_campaign..SmsCampaign+useTemplate"></a>
+#### smsCampaign.useTemplate(templateId, variables) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the template id to use.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| templateId | <code>integer</code> | 
+| variables | <code>Object</code> | 
+
+<a name="module_sms_campaign..SmsCampaign+text"></a>
+#### smsCampaign.text(text) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the message text.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| text | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### smsCampaign.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### smsCampaign.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### smsCampaign.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### smsCampaign.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *smsCampaign.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### smsCampaign.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### smsCampaign.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### smsCampaign.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### smsCampaign.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### smsCampaign.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### smsCampaign.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### smsCampaign.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### smsCampaign.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
 **Access:** public  
 
 | Param | Type |
