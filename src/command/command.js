@@ -206,6 +206,7 @@ exports.KnownCommands = [
   ['Sms'],
   ['Settings'],
   ['Recharge'],
+  ['CreditCards', 'credit_cards'],
   ['CampaignLifecycle', 'campaign_lifecycle'],
   ['DidSettings', 'did_settings']
 ];

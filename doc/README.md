@@ -11,9 +11,13 @@
 <dd></dd>
 <dt><a href="#module_campaign_lifecycle">campaign_lifecycle</a></dt>
 <dd></dd>
+<dt><a href="#module_credit_cards">credit_cards</a></dt>
+<dd></dd>
 <dt><a href="#module_did_settings">did_settings</a></dt>
 <dd></dd>
 <dt><a href="#module_me">me</a></dt>
+<dd></dd>
+<dt><a href="#module_recharge">recharge</a></dt>
 <dd></dd>
 <dt><a href="#module_settings">settings</a></dt>
 <dd></dd>
@@ -854,6 +858,239 @@ Returns a command to use.
 | --- | --- |
 | client | <code>[Client](#module_client..Client)</code> | 
 
+<a name="module_credit_cards"></a>
+## credit_cards
+
+* [credit_cards](#module_credit_cards)
+    * [~CreditCards](#module_credit_cards..CreditCards) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new CreditCards()](#new_module_credit_cards..CreditCards_new)
+        * [.args](#module_command..Command+args)
+        * [.id(company)](#module_credit_cards..CreditCards+id) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.nameOnCard(email)](#module_credit_cards..CreditCards+nameOnCard) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.cardInfo(callbackUrl)](#module_credit_cards..CreditCards+cardInfo) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.address(timezone)](#module_credit_cards..CreditCards+address) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_credit_cards..CreditCards"></a>
+### credit_cards~CreditCards ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[credit_cards](#module_credit_cards)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_credit_cards CreditCards endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~CreditCards](#module_credit_cards..CreditCards) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new CreditCards()](#new_module_credit_cards..CreditCards_new)
+    * [.args](#module_command..Command+args)
+    * [.id(company)](#module_credit_cards..CreditCards+id) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.nameOnCard(email)](#module_credit_cards..CreditCards+nameOnCard) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.cardInfo(callbackUrl)](#module_credit_cards..CreditCards+cardInfo) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.address(timezone)](#module_credit_cards..CreditCards+address) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_credit_cards..CreditCards_new"></a>
+#### new CreditCards()
+The CreditCards endpoint.
+
+<a name="module_command..Command+args"></a>
+#### creditCards.args
+**Kind**: instance property of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_credit_cards..CreditCards+id"></a>
+#### creditCards.id(company) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the credit card id.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| company | <code>string</code> | 
+
+<a name="module_credit_cards..CreditCards+nameOnCard"></a>
+#### creditCards.nameOnCard(email) ⇒ <code>[Command](#module_command..Command)</code>
+Set name on card.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| email | <code>string</code> | 
+
+<a name="module_credit_cards..CreditCards+cardInfo"></a>
+#### creditCards.cardInfo(callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
+Set card information.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| callbackUrl | <code>string</code> | 
+
+<a name="module_credit_cards..CreditCards+address"></a>
+#### creditCards.address(timezone) ⇒ <code>[Command](#module_command..Command)</code>
+Set card billing address.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| timezone | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### creditCards.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### creditCards.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### creditCards.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### creditCards.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *creditCards.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### creditCards.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### creditCards.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### creditCards.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### creditCards.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### creditCards.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### creditCards.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### creditCards.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### creditCards.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
 <a name="module_did_settings"></a>
 ## did_settings
 
@@ -1331,6 +1568,213 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_recharge"></a>
+## recharge
+
+* [recharge](#module_recharge)
+    * [~Recharge](#module_recharge..Recharge) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Recharge()](#new_module_recharge..Recharge_new)
+        * [.args](#module_command..Command+args)
+        * [.withCard(cardId)](#module_recharge..Recharge+withCard) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.total(total)](#module_recharge..Recharge+total) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_recharge..Recharge"></a>
+### recharge~Recharge ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[recharge](#module_recharge)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_recharge Recharge endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Recharge](#module_recharge..Recharge) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Recharge()](#new_module_recharge..Recharge_new)
+    * [.args](#module_command..Command+args)
+    * [.withCard(cardId)](#module_recharge..Recharge+withCard) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.total(total)](#module_recharge..Recharge+total) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_recharge..Recharge_new"></a>
+#### new Recharge()
+The Recharge endpoint.
+
+<a name="module_command..Command+args"></a>
+#### recharge.args
+**Kind**: instance property of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_recharge..Recharge+withCard"></a>
+#### recharge.withCard(cardId) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the card id to use for recharge.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| cardId | <code>integer</code> | 
+
+<a name="module_recharge..Recharge+total"></a>
+#### recharge.total(total) ⇒ <code>[Command](#module_command..Command)</code>
+Amount of money to recharge.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| total | <code>float</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### recharge.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### recharge.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### recharge.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### recharge.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *recharge.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### recharge.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### recharge.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### recharge.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### recharge.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### recharge.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### recharge.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### recharge.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### recharge.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
 **Access:** public  
 
 | Param | Type |
