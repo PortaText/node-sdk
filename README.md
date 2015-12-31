@@ -126,7 +126,7 @@ if (result.success) {
 # Developers
 This project uses standard [npm scripts](https://docs.npmjs.com/cli/run-script). Current tasks include:
  * test: Runs [Mocha](https://mochajs.org/) tests.
- * jsdoc: Runs [JSDoc](http://usejsdoc.org/).
+ * jsdoc: Runs [JSDoc3](http://usejsdoc.org/).
  * eslint: Runs [ESLint](http://eslint.org/).
  * coverage: Runs the tests and then [Instanbul](https://gotwarlost.github.io/istanbul/) to get a coverage report.
  * build: This is the default task, and will run all the other tasks.
