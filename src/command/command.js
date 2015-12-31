@@ -204,6 +204,7 @@ exports.KnownCommands = [
   ['Me'],
   ['Blacklist'],
   ['Sms'],
+  ['Cnam'],
   ['Settings'],
   ['Recharge'],
   ['EmailVerify', 'email_verify'],
