@@ -21,6 +21,36 @@ function MyPassword () {
 util.inherits(MyPassword, commandMod.Command);
 
 /**
+ * Use this nonce to reset a password.
+ *
+ * @param {string} nonce
+ * @param {string} newPassword
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+MyPassword.prototype.withNonce = function (nonce, newPassword) {
+  this.setArgument('new_password', newPassword);
+  return this.setArgument('nonce', nonce);
+};
+
+/**
+ * Ask to reset the password for this email.
+ *
+ * @param {string} email
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+MyPassword.prototype.forEmail = function (email) {
+  return this.setArgument('email', email);
+};
+
+MyPassword.prototype.reset = function () {
+  return this.setArgument('reset', true);
+};
+
+/**
  * Sets the name.
  *
  * @param {string} oldPassword
@@ -35,7 +65,18 @@ MyPassword.prototype.change = function (oldPassword, newPassword) {
 };
 
 MyPassword.prototype.endpoint = function (method) {
-  return 'me/password';
+  var endpoint = 'me/password';
+  var reset = this.getArgument('reset');
+  var nonce = this.getArgument('nonce');
+  if (reset) {
+      endpoint = endpoint + '/reset';
+      this.delArgument('reset');
+  }
+  if (nonce) {
+      endpoint = endpoint + '/' + nonce;
+      this.delArgument('nonce');
+  }
+  return endpoint;
 };
 
 exports.MyPassword = MyPassword;

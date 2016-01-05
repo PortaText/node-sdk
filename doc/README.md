@@ -2944,6 +2944,8 @@ Returns a command to use.
     * [~MyPassword](#module_my_password..MyPassword) ⇐ <code>[Command](#module_command..Command)</code>
         * [new MyPassword()](#new_module_my_password..MyPassword_new)
         * [.args](#module_command..Command+args)
+        * [.withNonce(nonce, newPassword)](#module_my_password..MyPassword+withNonce) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.forEmail(email)](#module_my_password..MyPassword+forEmail) ⇒ <code>[Command](#module_command..Command)</code>
         * [.change(oldPassword, newPassword)](#module_my_password..MyPassword+change) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -2971,6 +2973,8 @@ Returns a command to use.
 * [~MyPassword](#module_my_password..MyPassword) ⇐ <code>[Command](#module_command..Command)</code>
     * [new MyPassword()](#new_module_my_password..MyPassword_new)
     * [.args](#module_command..Command+args)
+    * [.withNonce(nonce, newPassword)](#module_my_password..MyPassword+withNonce) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.forEmail(email)](#module_my_password..MyPassword+forEmail) ⇒ <code>[Command](#module_command..Command)</code>
     * [.change(oldPassword, newPassword)](#module_my_password..MyPassword+change) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -3000,6 +3004,29 @@ The Me/Password endpoint.
 | Type | Description |
 | --- | --- |
 | <code>Object</code> | Arguments for this command. |
+
+<a name="module_my_password..MyPassword+withNonce"></a>
+#### myPassword.withNonce(nonce, newPassword) ⇒ <code>[Command](#module_command..Command)</code>
+Use this nonce to reset a password.
+
+**Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| nonce | <code>string</code> | 
+| newPassword | <code>string</code> | 
+
+<a name="module_my_password..MyPassword+forEmail"></a>
+#### myPassword.forEmail(email) ⇒ <code>[Command](#module_command..Command)</code>
+Ask to reset the password for this email.
+
+**Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| email | <code>string</code> | 
 
 <a name="module_my_password..MyPassword+change"></a>
 #### myPassword.change(oldPassword, newPassword) ⇒ <code>[Command](#module_command..Command)</code>

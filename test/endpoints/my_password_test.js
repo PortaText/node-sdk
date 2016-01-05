@@ -8,7 +8,33 @@ chai.use(chaiAsPromised);
 chai.should();
 
 describe('MyPassword', function() {
-  describe('pud', function () {
+  describe('post', function () {
+    it('should be able to ask to reset a password', function () {
+      return helper
+        .mockClientForCommand('me/password/reset', {
+          email: 'john@doe.com'
+        })
+        .myPassword()
+        .reset()
+        .forEmail('john@doe.com')
+        .post()
+        .should.be.fulfilled;
+    });
+  });
+
+  describe('put', function () {
+    it('should be able to reset password', function () {
+      return helper
+        .mockClientForCommand('me/password/reset/a_nonce', {
+          new_password: 'newPassword33%'
+        })
+        .myPassword()
+        .reset()
+        .withNonce('a_nonce', 'newPassword33%')
+        .put()
+        .should.be.fulfilled;
+    });
+
     it('should be able to change password', function () {
       return helper
         .mockClientForCommand('me/password', {
