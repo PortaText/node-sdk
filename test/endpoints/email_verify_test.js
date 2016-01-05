@@ -8,17 +8,16 @@ chai.use(chaiAsPromised);
 chai.should();
 
 describe('EmailVerify', function() {
-  describe('get', function () {
+  describe('post', function () {
     it('should be able to verify an email', function () {
       return helper
         .mockClientForCommand('me/email_verify/one_big_nonce')
         .emailVerify()
         .withNonce('one_big_nonce')
-        .get()
+        .post()
         .should.be.fulfilled;
     });
-  });
-  describe('post', function () {
+
     it('should be able to request an email verification', function () {
       return helper
         .mockClientForCommand('me/email_verify')
