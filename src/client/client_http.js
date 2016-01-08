@@ -40,16 +40,23 @@ ClientHttp.prototype.execute = function (descriptor) {
     var buffer = new Buffer('', 'ascii');
     var req = mod.request(options, function (res) {
       res.setEncoding('ascii');
-      res.on('data', function (chunk) {
-        buffer = Buffer.concat([buffer, new Buffer(chunk, 'ascii')]);
-      });
-      res.on('end', function () {
+      var doResolve = function() {
         resolve({
           code: res.statusCode,
           headers: res.headers,
           body: buffer.toString('ascii')
         });
-      });
+      };
+      if (descriptor.outputFile) {
+        var file = fs.createWriteStream(descriptor.outputFile);
+        res.pipe(file);
+        file.on('close', doResolve);
+      } else {
+        res.on('data', function (chunk) {
+          buffer = Buffer.concat([buffer, new Buffer(chunk, 'ascii')]);
+        });
+        res.on('end', doResolve);
+      }
     });
     req.on('error', function (err) {
       reject(err);
