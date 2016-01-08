@@ -1405,6 +1405,7 @@ Returns a command to use.
         * [.name(name)](#module_contact_lists..ContactLists+name) ⇒ <code>[Command](#module_command..Command)</code>
         * [.description(description)](#module_contact_lists..ContactLists+description) ⇒ <code>[Command](#module_command..Command)</code>
         * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.saveTo(file)](#module_contact_lists..ContactLists+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1436,6 +1437,7 @@ Returns a command to use.
     * [.name(name)](#module_contact_lists..ContactLists+name) ⇒ <code>[Command](#module_command..Command)</code>
     * [.description(description)](#module_contact_lists..ContactLists+description) ⇒ <code>[Command](#module_command..Command)</code>
     * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.saveTo(file)](#module_contact_lists..ContactLists+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1509,6 +1511,17 @@ Send a CSV file to import contacts.
 | Param | Type |
 | --- | --- |
 | filename | <code>string</code> | 
+
+<a name="module_contact_lists..ContactLists+saveTo"></a>
+#### contactLists.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
+Saves the contact list to the given filename.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| file | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### contactLists.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>

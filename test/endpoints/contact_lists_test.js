@@ -8,6 +8,20 @@ chai.use(chaiAsPromised);
 chai.should();
 
 describe('ContactLists', function() {
+  describe('get', function() {
+    it('should be able to export the contact list to a file', function () {
+      return helper
+        .mockClientForCommand(
+          'contact_lists/33/contacts', '', 'application/json', 'text/csv'
+        )
+        .contactLists()
+        .id(33)
+        .saveTo('/tmp/contact_list.csv')
+        .get()
+        .should.be.fulfilled;
+    });
+  });
+
   describe('delete', function () {
     it('should be able to delete a contact list', function () {
       return helper

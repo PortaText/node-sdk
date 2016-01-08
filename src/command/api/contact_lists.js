@@ -68,6 +68,18 @@ ContactLists.prototype.csv = function (filename) {
   return this.setArgument('file', filename);
 };
 
+/**
+ * Saves the contact list to the given filename.
+ *
+ * @param {string} file
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+ContactLists.prototype.saveTo = function (file) {
+  return this.setArgument('accept_file', file);
+};
+
 ContactLists.prototype.endpoint = function (method) {
   var endpoint = 'contact_lists';
   var id = this.getArgument('id');
@@ -76,7 +88,8 @@ ContactLists.prototype.endpoint = function (method) {
     this.delArgument('id');
   }
   var file = this.getArgument('file');
-  if (file) {
+  var saveTo = this.getArgument('accept_file');
+  if (file || saveTo) {
     endpoint = endpoint + '/' + 'contacts';
   }
   return endpoint;
