@@ -24,7 +24,9 @@ describe('Client', function() {
         'some/endpoint',
         'method',
         'text/plain',
+        'application/json',
         '',
+        null,
         'whatever'
       ).should.eventually.be.rejectedWith('invalid_auth_type');
     });
@@ -37,7 +39,9 @@ describe('Client', function() {
           'some/endpoint',
           'method',
           'text/plain',
+          'application/json',
           '',
+          null,
           'api_key'
         ).should.eventually.be.rejectedWith('not_implemented');
     });
@@ -55,7 +59,9 @@ describe('Client', function() {
           'some/endpoint',
           'amethod',
           'text/plain',
+          'application/json',
           'abody',
+          null,
           'api_key'
         ).then(function (result) {
           expect(JSON.stringify(result.data)).to.equal('{}');
@@ -69,6 +75,7 @@ describe('Client', function() {
         assert.equal(descriptor.uri, endpoint + '/some/endpoint');
         assert.equal(descriptor.method, 'amethod');
         assert.equal(descriptor.headers['Content-Type'], 'text/plain');
+        assert.equal(descriptor.headers['Accept'], 'text/plain22');
         assert.equal(descriptor.body, 'abody');
         return helper.mockResponse(
           null,
@@ -85,7 +92,9 @@ describe('Client', function() {
           'some/endpoint',
           'amethod',
           'text/plain',
+          'text/plain22',
           'abody',
+          null,
           'api_key'
         ).then(function (result) {
           expect(result.code).to.equal(200);

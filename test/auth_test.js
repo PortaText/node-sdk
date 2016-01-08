@@ -22,6 +22,7 @@ describe('Client', function() {
           'endpoint',
           'get',
           'text/plain',
+          'text/plain',
           'abody',
           null
         ).should.be.fulfilled;
@@ -39,7 +40,9 @@ describe('Client', function() {
           'endpoint',
           'get',
           'text/plain',
+          'text/plain',
           'abody',
+          null,
           'session_token'
         ).should.be.fulfilled;
     });
@@ -61,7 +64,9 @@ describe('Client', function() {
           'endpoint',
           'get',
           'text/plain',
+          'text/plain',
           'abody',
+          null,
           'basic'
         ).should.be.fulfilled;
     });
@@ -92,6 +97,8 @@ describe('Client', function() {
           'endpoint',
           'get',
           'text/plain',
+          'text/plain',
+          null,
           'abody'
         ).should.be.fulfilled;
     });
@@ -135,6 +142,8 @@ describe('Client', function() {
           'endpoint',
           'get',
           'text/plain',
+          'text/plain',
+          null,
           'abody'
         ).should.be.fulfilled;
     });
@@ -154,6 +163,8 @@ describe('Client', function() {
           'endpoint',
           'get',
           'text/plain',
+          'text/plain',
+          null,
           'abody'
         ).should.be.rejected;
     });

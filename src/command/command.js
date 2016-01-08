@@ -118,6 +118,22 @@ Command.prototype.contentType = function (method) {
 };
 
 /**
+ * Returns the Accept header for this endpoint.
+ *
+ * @param {HttpMethod} method
+ *
+ * @access public
+ * @return {string}
+ */
+Command.prototype.acceptContentType = function (method) {
+  var file = this.args.accept_file;
+  if (file) {
+    return 'text/csv';
+  }
+  return 'application/json';
+};
+
+/**
  * Runs this command with a GET method and returns the result.
  *
  * @access public
@@ -177,9 +193,12 @@ Command.prototype.put = function () {
  */
 Command.prototype.run = function (method) {
   var endpoint = this.endpoint(method);
-  var body = this.body(method);
   var cType = this.contentType(method);
-  return this.client.run(endpoint, method, cType, body);
+  var aCType = this.acceptContentType(method);
+  var file = this.args.accept_file;
+  delete this.args.accept_file;
+  var body = this.body(method);
+  return this.client.run(endpoint, method, cType, aCType, body, file);
 };
 
 /**

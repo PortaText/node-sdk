@@ -29,7 +29,7 @@ exports.mockResponse = function (code, headers, body) {
 };
 
 exports.mockClientForCommand = function (
-  assertEndpoint, assertBody, assertContentType
+  assertEndpoint, assertBody, assertContentType, assertAcceptContentType
 ) {
   var client = new clientMod.Client();
   client.setApiKey('anapikey');
@@ -42,10 +42,14 @@ exports.mockClientForCommand = function (
   if (!assertContentType) {
     assertContentType = 'application/json';
   }
+  if (!assertAcceptContentType) {
+    assertAcceptContentType = 'application/json';
+  }
   client.execute = function (descriptor) {
     if (assertEndpoint) {
       expect(descriptor.uri).to.equal(client.endpoint + '/' + assertEndpoint);
       expect(descriptor.headers['Content-Type']).to.equal(assertContentType);
+      expect(descriptor.headers['Accept']).to.equal(assertAcceptContentType);
       expect(descriptor.body).to.equal(assertBody);
     }
     return exports.mockResponse();

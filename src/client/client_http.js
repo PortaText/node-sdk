@@ -40,7 +40,7 @@ ClientHttp.prototype.execute = function (descriptor) {
     var buffer = new Buffer('', 'ascii');
     var req = mod.request(options, function (res) {
       res.setEncoding('ascii');
-      var doResolve = function() {
+      var doResolve = function () {
         resolve({
           code: res.statusCode,
           headers: res.headers,

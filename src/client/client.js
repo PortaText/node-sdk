@@ -143,21 +143,23 @@ Client.prototype.setLogger = function (logger) {
  * @param {string} endpoint Relative to the base endpoint (e.g: "login")
  * @param {HttpMethod} method
  * @param {string} contentType E.g: "application/json"
+ * @param {string} acceptContentType E.g: "application/json"
  * @param {string} body
+ * @param {string} outputFile
  * @param {AuthMethod} [authType] - If not supplied, will be automatically chosen.
  *
  * @access public
  * @return {Promise}
  */
 Client.prototype.run = function (
-  endpoint, method, contentType, body, authType
+  endpoint, method, contentType, acceptContentType, body, outputFile, authType
 ) {
   var self = this;
   return new Promise(function (resolve, reject) {
     var uri = self.endpoint + '/' + endpoint;
     var headers = {
       'Content-Type': contentType,
-      'Accept': 'application/json'
+      'Accept': acceptContentType
     };
     // When using basic auth, make the login, then retry with the session token.
     if (!authType) {
@@ -166,7 +168,10 @@ Client.prototype.run = function (
         return self
           .login()
           .then(function (result) {
-            resolve(self.run(endpoint, method, contentType, body));
+            resolve(self.run(
+              endpoint, method, contentType, acceptContentType,
+              body, outputFile
+            ));
           })
           .catch(function (err) {
             reject(err);
@@ -194,7 +199,8 @@ Client.prototype.run = function (
       method: method,
       uri: uri,
       headers: headers,
-      body: body
+      body: body,
+      outputFile: outputFile
     };
     return self
       .execute(descriptor)
@@ -223,7 +229,9 @@ Client.prototype.run = function (
         };
         if (retCode === 401 && authType === 'session_token') {
           self.sessionToken = null;
-          resolve(self.run(endpoint, method, contentType, body));
+          resolve(self.run(
+            endpoint, method, contentType, acceptContentType, body, outputFile
+          ));
         } else {
           if (!result.success) {
             reject(result);
@@ -269,7 +277,9 @@ Client.prototype.errorFor = function (code) {
 Client.prototype.login = function () {
   var self = this;
   return this
-    .run('login', 'post', 'application/json', '', 'basic')
+    .run(
+      'login', 'post', 'application/json', 'application/json', '', null, 'basic'
+    )
     .then(function (result) {
       self.sessionToken = result.data.token;
       return result;

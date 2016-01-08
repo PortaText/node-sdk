@@ -67,7 +67,7 @@
         * [.setApiKey(apiKey)](#module_client..Client+setApiKey) ⇒ <code>Client</code>
         * [.setCredentials(username, password)](#module_client..Client+setCredentials) ⇒ <code>Client</code>
         * [.setLogger(logger)](#module_client..Client+setLogger) ⇒ <code>Client</code>
-        * [.run(endpoint, method, contentType, body, [authType])](#module_client..Client+run) ⇒ <code>Promise</code>
+        * [.run(endpoint, method, contentType, acceptContentType, body, outputFile, [authType])](#module_client..Client+run) ⇒ <code>Promise</code>
         * *[.execute(descriptor)](#module_client..Client+execute) ⇒ <code>Promise</code>*
 
 <a name="module_client..Client"></a>
@@ -89,7 +89,7 @@
     * [.setApiKey(apiKey)](#module_client..Client+setApiKey) ⇒ <code>Client</code>
     * [.setCredentials(username, password)](#module_client..Client+setCredentials) ⇒ <code>Client</code>
     * [.setLogger(logger)](#module_client..Client+setLogger) ⇒ <code>Client</code>
-    * [.run(endpoint, method, contentType, body, [authType])](#module_client..Client+run) ⇒ <code>Promise</code>
+    * [.run(endpoint, method, contentType, acceptContentType, body, outputFile, [authType])](#module_client..Client+run) ⇒ <code>Promise</code>
     * *[.execute(descriptor)](#module_client..Client+execute) ⇒ <code>Promise</code>*
 
 <a name="new_module_client..Client_new"></a>
@@ -205,7 +205,7 @@ compatible with the console object).
 | logger | <code>Object</code> | 
 
 <a name="module_client..Client+run"></a>
-#### client.run(endpoint, method, contentType, body, [authType]) ⇒ <code>Promise</code>
+#### client.run(endpoint, method, contentType, acceptContentType, body, outputFile, [authType]) ⇒ <code>Promise</code>
 Sets a logger. The object to set must contain a "log" method (i.e:
 compatible with the console object).
 
@@ -217,7 +217,9 @@ compatible with the console object).
 | endpoint | <code>string</code> | Relative to the base endpoint (e.g: "login") |
 | method | <code>HttpMethod</code> |  |
 | contentType | <code>string</code> | E.g: "application/json" |
+| acceptContentType | <code>string</code> | E.g: "application/json" |
 | body | <code>string</code> |  |
+| outputFile | <code>string</code> |  |
 | [authType] | <code>AuthMethod</code> | If not supplied, will be automatically chosen. |
 
 <a name="module_client..Client+execute"></a>
@@ -264,6 +266,7 @@ This is our basic client
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -291,6 +294,7 @@ This is our basic client
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -405,6 +409,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### acl.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Acl](#module_acl..Acl)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### acl.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -454,6 +469,7 @@ Returns a command to use.
         * [new Blacklist()](#new_module_blacklist..Blacklist_new)
         * [.args](#module_command..Command+args)
         * [.number(number)](#module_blacklist..Blacklist+number) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.saveTo(file)](#module_blacklist..Blacklist+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
         * [.csv(filename)](#module_blacklist..Blacklist+csv) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -462,6 +478,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -482,6 +499,7 @@ Returns a command to use.
     * [new Blacklist()](#new_module_blacklist..Blacklist_new)
     * [.args](#module_command..Command+args)
     * [.number(number)](#module_blacklist..Blacklist+number) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.saveTo(file)](#module_blacklist..Blacklist+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
     * [.csv(filename)](#module_blacklist..Blacklist+csv) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -490,6 +508,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -522,6 +541,17 @@ Sets the number.
 | Param | Type |
 | --- | --- |
 | number | <code>string</code> | 
+
+<a name="module_blacklist..Blacklist+saveTo"></a>
+#### blacklist.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
+Saves the blacklist to the given filename.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| file | <code>string</code> | 
 
 <a name="module_blacklist..Blacklist+csv"></a>
 #### blacklist.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
@@ -612,6 +642,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### blacklist.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### blacklist.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -672,6 +713,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -703,6 +745,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -833,6 +876,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### campaignLifecycle.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### campaignLifecycle.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -893,6 +947,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -924,6 +979,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1079,6 +1135,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### campaigns.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### campaigns.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -1135,6 +1202,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1162,6 +1230,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1273,6 +1342,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### cnam.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### cnam.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -1332,6 +1412,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1362,6 +1443,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1506,6 +1588,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### contactLists.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### contactLists.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -1565,6 +1658,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1595,6 +1689,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1746,6 +1841,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### creditCards.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### creditCards.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -1810,6 +1916,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -1845,6 +1952,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2025,6 +2133,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### didSearch.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### didSearch.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -2085,6 +2204,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2116,6 +2236,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2261,6 +2382,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### didSettings.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### didSettings.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -2317,6 +2449,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2344,6 +2477,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2455,6 +2589,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### emailVerify.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### emailVerify.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -2511,6 +2656,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2538,6 +2684,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2649,6 +2796,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### jobs.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### jobs.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -2709,6 +2867,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2740,6 +2899,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2896,6 +3056,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### me.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### me.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -2954,6 +3125,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -2983,6 +3155,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3118,6 +3291,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### myPassword.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### myPassword.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -3175,6 +3359,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3203,6 +3388,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3325,6 +3511,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### recharge.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### recharge.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -3386,6 +3583,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3418,6 +3616,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3571,6 +3770,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### settings.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### settings.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -3632,6 +3842,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3664,6 +3875,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3831,6 +4043,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### sms.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### sms.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -3888,6 +4111,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -3916,6 +4140,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4038,6 +4263,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### smsCampaign.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### smsCampaign.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -4094,6 +4330,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4121,6 +4358,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4232,6 +4470,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### tariffs.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### tariffs.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -4291,6 +4540,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4321,6 +4571,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4465,6 +4716,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### templates.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### templates.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -4520,6 +4782,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4546,6 +4809,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4646,6 +4910,17 @@ Returns the content type for this endpoint.
 | --- | --- |
 | method | <code>HttpMethod</code> | 
 
+<a name="module_command..Command+acceptContentType"></a>
+#### timezones.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Timezones](#module_timezones..Timezones)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
 <a name="module_command..Command+get"></a>
 #### timezones.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
@@ -4701,6 +4976,7 @@ Returns a command to use.
         * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
         * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
         * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
         * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
         * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
         * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4725,6 +5001,7 @@ Returns a command to use.
     * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
     * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
     * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
     * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
     * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
     * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
@@ -4816,6 +5093,17 @@ Returns the body for this endpoint.
 <a name="module_command..Command+contentType"></a>
 #### command.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Command](#module_command..Command)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+acceptContentType"></a>
+#### command.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  
 **Access:** public  

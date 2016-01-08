@@ -59,7 +59,9 @@ var assertError = function(code, msg) {
       'some/endpoint',
       'amethod',
       'text/plain',
+      'text/plain',
       'abody',
+      null,
       'api_key'
     ).then(function (result) {
       assert.fail(result, undefined, 'Should have failed');

@@ -7,7 +7,20 @@ var Promise = require('promise');
 chai.use(chaiAsPromised);
 chai.should();
 
-describe('ACL', function() {
+describe('Blacklist', function() {
+  describe('get', function() {
+    it('should be able to export the blacklist to a file', function () {
+      return helper
+        .mockClientForCommand(
+          'blacklist/contacts', '', 'application/json', 'text/csv'
+        )
+        .blacklist()
+        .saveTo('/tmp/blacklist.csv')
+        .get()
+        .should.be.fulfilled;
+    });
+  });
+
   describe('put', function () {
     it('should be able to blacklist a number', function () {
       return helper
