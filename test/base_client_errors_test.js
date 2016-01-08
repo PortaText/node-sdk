@@ -26,6 +26,10 @@ describe('Client', function() {
       return assertError(405, "invalid_method");
     });
 
+    it('should handle a not acceptable', function () {
+      return assertError(406, "not_acceptable");
+    });
+
     it('should handle a not found', function () {
       return assertError(404, "not_found");
     });

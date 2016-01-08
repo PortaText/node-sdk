@@ -261,6 +261,7 @@ Client.prototype.errorFor = function (code) {
     403: 'forbidden',
     404: 'not_found',
     405: 'invalid_method',
+    406: 'not_acceptable',
     415: 'invalid_media',
     429: 'rate_limited',
     500: 'server_error'
