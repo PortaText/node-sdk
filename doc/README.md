@@ -45,6 +45,8 @@
 <dd></dd>
 <dt><a href="#module_timezones">timezones</a></dt>
 <dd></dd>
+<dt><a href="#module_variables">variables</a></dt>
+<dd></dd>
 <dt><a href="#module_command">command</a></dt>
 <dd></dd>
 <dt><a href="#module_null_logger">null_logger</a></dt>
@@ -4969,6 +4971,253 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Timezones](#module_timezones..Timezones)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_variables"></a>
+## variables
+
+* [variables](#module_variables)
+    * [~Variables](#module_variables..Variables) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Variables()](#new_module_variables..Variables_new)
+        * [.args](#module_command..Command+args)
+        * [.forContact(number)](#module_variables..Variables+forContact) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.name(name)](#module_variables..Variables+name) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.set(name, value)](#module_variables..Variables+set) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setAll(variables)](#module_variables..Variables+setAll) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_variables..Variables"></a>
+### variables~Variables ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[variables](#module_variables)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_variables Variables endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Variables](#module_variables..Variables) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Variables()](#new_module_variables..Variables_new)
+    * [.args](#module_command..Command+args)
+    * [.forContact(number)](#module_variables..Variables+forContact) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.name(name)](#module_variables..Variables+name) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.set(name, value)](#module_variables..Variables+set) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setAll(variables)](#module_variables..Variables+setAll) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_variables..Variables_new"></a>
+#### new Variables()
+The Variables endpoint.
+
+<a name="module_command..Command+args"></a>
+#### variables.args
+**Kind**: instance property of <code>[Variables](#module_variables..Variables)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_variables..Variables+forContact"></a>
+#### variables.forContact(number) ⇒ <code>[Command](#module_command..Command)</code>
+Use this contact number.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| number | <code>string</code> | 
+
+<a name="module_variables..Variables+name"></a>
+#### variables.name(name) ⇒ <code>[Command](#module_command..Command)</code>
+Specify only a variable name.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| name | <code>string</code> | 
+
+<a name="module_variables..Variables+set"></a>
+#### variables.set(name, value) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given variable.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| name | <code>string</code> | 
+| value | <code>string</code> | 
+
+<a name="module_variables..Variables+setAll"></a>
+#### variables.setAll(variables) ⇒ <code>[Command](#module_command..Command)</code>
+Sets all the given variables.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| variables | <code>Object</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### variables.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### variables.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### variables.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### variables.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *variables.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Variables](#module_variables..Variables)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### variables.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### variables.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+acceptContentType"></a>
+#### variables.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### variables.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### variables.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### variables.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### variables.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### variables.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### variables.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
 **Access:** public  
 
 | Param | Type |
