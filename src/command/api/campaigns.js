@@ -3,6 +3,7 @@
  */
 var commandMod = require('../command');
 var util = require('util');
+var qs = require('querystring');
 
 /**
  * The Campaigns endpoint.
@@ -80,12 +81,31 @@ Campaigns.prototype.toContactLists = function (contactLists) {
   return this.setArgument('contact_list_ids', contactLists);
 };
 
+/**
+ * Send a CSV file to import contacts.
+ *
+ * @param {string} filename
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.csv = function (filename) {
+  return this.setArgument('file', filename);
+};
+
 Campaigns.prototype.endpoint = function (method) {
   var endpoint = 'campaigns';
   var id = this.getArgument('id');
   if (id) {
     this.delArgument('id');
     endpoint = endpoint + '/' + id;
+  }
+  var file = this.getArgument('file');
+  if (file) {
+    var args = JSON.parse(JSON.stringify(this.getArguments()));
+    delete args.file;
+    args = {settings: JSON.stringify(args)};
+    endpoint = endpoint + '?' + qs.stringify(args);
   }
   return endpoint;
 };

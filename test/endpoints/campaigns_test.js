@@ -4,6 +4,7 @@ var chai = require("chai");
 var chaiAsPromised = require("chai-as-promised");
 var expect = require('chai').expect;
 var Promise = require('promise');
+var qs = require('querystring');
 chai.use(chaiAsPromised);
 chai.should();
 
@@ -41,6 +42,30 @@ describe('Campaigns', function() {
 
 describe('SmsCampaign', function() {
   describe('post', function () {
+    it('should be able to create a campaign using a csv file', function () {
+      var settings = qs.stringify({settings: JSON.stringify({
+        type: 'sms',
+        name: 'this is the name',
+        description: 'and this is the description',
+        from: '12223334444',
+        settings: {
+          text: 'Hello world'
+        }
+      })});
+      return helper
+        .mockClientForCommand(
+          'campaigns?' + settings, 'file:/tmp/contacts.csv', 'text/csv'
+        )
+        .smsCampaign()
+        .name('this is the name')
+        .description('and this is the description')
+        .csv('/tmp/contacts.csv')
+        .from('12223334444')
+        .text('Hello world')
+        .post()
+        .should.be.fulfilled;
+    });
+
     it('should be able to create a campaign using text', function () {
       return helper
         .mockClientForCommand('campaigns', {
@@ -49,7 +74,9 @@ describe('SmsCampaign', function() {
           description: 'and this is the description',
           contact_list_ids: [1, 3, 5, 7, 9],
           from: '12223334444',
-          text: 'Hello world'
+          settings: {
+            text: 'Hello world'
+          }
         })
         .smsCampaign()
         .name('this is the name')
@@ -69,8 +96,10 @@ describe('SmsCampaign', function() {
           description: 'and this is the description',
           contact_list_ids: [1, 3, 5, 7, 9],
           from: '12223334444',
-          template_id: 987,
-          variables: {key1: 'value1'}
+          settings: {
+            template_id: 987,
+            variables: {key1: 'value1'}
+          }
         })
         .smsCampaign()
         .name('this is the name')
