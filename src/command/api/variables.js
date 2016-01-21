@@ -74,8 +74,35 @@ Variables.prototype.setAll = function (variables) {
   return this.setArgument('variables', vars);
 };
 
+/**
+ * Saves the variables to the given filename.
+ *
+ * @param {string} file
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Variables.prototype.saveTo = function (file) {
+  return this.setArgument('accept_file', file);
+};
+
+/**
+ * Send a CSV file to import variables from.
+ *
+ * @param {string} filename
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Variables.prototype.csv = function (filename) {
+  return this.setArgument('file', filename);
+};
+
 Variables.prototype.endpoint = function (method) {
   var number = this.getArgument('number');
+  if (!number) {
+    return 'contacts/variables';
+  }
   this.delArgument('number');
   var endpoint = 'contacts/' + number + '/variables';
   var name = this.getArgument('name');

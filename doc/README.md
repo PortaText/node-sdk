@@ -5001,6 +5001,8 @@ Returns a command to use.
         * [.name(name)](#module_variables..Variables+name) ⇒ <code>[Command](#module_command..Command)</code>
         * [.set(name, value)](#module_variables..Variables+set) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setAll(variables)](#module_variables..Variables+setAll) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.saveTo(file)](#module_variables..Variables+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.csv(filename)](#module_variables..Variables+csv) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -5032,6 +5034,8 @@ Returns a command to use.
     * [.name(name)](#module_variables..Variables+name) ⇒ <code>[Command](#module_command..Command)</code>
     * [.set(name, value)](#module_variables..Variables+set) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setAll(variables)](#module_variables..Variables+setAll) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.saveTo(file)](#module_variables..Variables+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.csv(filename)](#module_variables..Variables+csv) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -5106,6 +5110,28 @@ Sets all the given variables.
 | Param | Type |
 | --- | --- |
 | variables | <code>Object</code> | 
+
+<a name="module_variables..Variables+saveTo"></a>
+#### variables.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
+Saves the variables to the given filename.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| file | <code>string</code> | 
+
+<a name="module_variables..Variables+csv"></a>
+#### variables.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
+Send a CSV file to import variables from.
+
+**Kind**: instance method of <code>[Variables](#module_variables..Variables)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| filename | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### variables.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>

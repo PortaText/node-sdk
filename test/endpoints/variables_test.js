@@ -29,6 +29,16 @@ describe('Variables', function() {
   });
 
   describe('get', function() {
+    it('should be able to export all variables to csv', function () {
+      return helper
+        .mockClientForCommand(
+          'contacts/variables', '', 'application/json', 'text/csv'
+        )
+        .variables()
+        .saveTo('/tmp/contacts.csv')
+        .get()
+        .should.be.fulfilled;
+    });
     it('should be able to get all variables', function () {
       return helper
         .mockClientForCommand('contacts/12223334444/variables')
@@ -49,6 +59,16 @@ describe('Variables', function() {
   });
 
   describe('put', function() {
+    it('should be able to import all variables from csv', function () {
+      return helper
+        .mockClientForCommand(
+          'contacts/variables', 'file:/tmp/contacts.csv', 'text/csv'
+        )
+        .variables()
+        .csv('/tmp/contacts.csv')
+        .put()
+        .should.be.fulfilled;
+    });
     it('should be able to put all variables', function () {
       return helper
         .mockClientForCommand(
