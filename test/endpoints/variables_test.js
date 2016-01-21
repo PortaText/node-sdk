@@ -11,7 +11,7 @@ describe('Variables', function() {
   describe('delete', function() {
     it('should be able to delete all variables', function () {
       return helper
-        .mockClientForCommand('contact/12223334444/variables')
+        .mockClientForCommand('contacts/12223334444/variables')
         .variables()
         .forContact('12223334444')
         .delete()
@@ -19,7 +19,7 @@ describe('Variables', function() {
     });
     it('should be able to delete one variable', function () {
       return helper
-        .mockClientForCommand('contact/12223334444/variables/first_name')
+        .mockClientForCommand('contacts/12223334444/variables/first_name')
         .variables()
         .forContact('12223334444')
         .name('first_name')
@@ -31,7 +31,7 @@ describe('Variables', function() {
   describe('get', function() {
     it('should be able to get all variables', function () {
       return helper
-        .mockClientForCommand('contact/12223334444/variables')
+        .mockClientForCommand('contacts/12223334444/variables')
         .variables()
         .forContact('12223334444')
         .get()
@@ -39,7 +39,7 @@ describe('Variables', function() {
     });
     it('should be able to get one variable', function () {
       return helper
-        .mockClientForCommand('contact/12223334444/variables/first_name')
+        .mockClientForCommand('contacts/12223334444/variables/first_name')
         .variables()
         .forContact('12223334444')
         .name('first_name')
@@ -52,7 +52,7 @@ describe('Variables', function() {
     it('should be able to put all variables', function () {
       return helper
         .mockClientForCommand(
-          'contact/12223334444/variables', {
+          'contacts/12223334444/variables', {
             variables: [
               {key: 'first_name', value: 'John'},
               {key: 'last_name', value: 'Doe'}
@@ -71,7 +71,7 @@ describe('Variables', function() {
     it('should be able to put one variable', function () {
       return helper
         .mockClientForCommand(
-          'contact/12223334444/variables/first_name', {value: 'John'}
+          'contacts/12223334444/variables/first_name', {value: 'John'}
         )
         .variables()
         .forContact('12223334444')

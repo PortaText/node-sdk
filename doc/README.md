@@ -942,6 +942,7 @@ Returns a command to use.
         * [.description(description)](#module_campaign..Campaigns+description) ⇒ <code>[Command](#module_command..Command)</code>
         * [.from(from)](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
         * [.toContactLists(contactLists)](#module_campaign..Campaigns+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.csv(filename)](#module_campaign..Campaigns+csv) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -974,6 +975,7 @@ Returns a command to use.
     * [.description(description)](#module_campaign..Campaigns+description) ⇒ <code>[Command](#module_command..Command)</code>
     * [.from(from)](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
     * [.toContactLists(contactLists)](#module_campaign..Campaigns+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.csv(filename)](#module_campaign..Campaigns+csv) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1058,6 +1060,17 @@ Contact list IDs to use.
 | Param | Type |
 | --- | --- |
 | contactLists | <code>Array.&lt;integer&gt;</code> | 
+
+<a name="module_campaign..Campaigns+csv"></a>
+#### campaigns.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
+Send a CSV file to import contacts.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| filename | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### campaigns.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>

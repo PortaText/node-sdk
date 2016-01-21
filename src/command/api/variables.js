@@ -77,7 +77,7 @@ Variables.prototype.setAll = function (variables) {
 Variables.prototype.endpoint = function (method) {
   var number = this.getArgument('number');
   this.delArgument('number');
-  var endpoint = 'contact/' + number + '/variables';
+  var endpoint = 'contacts/' + number + '/variables';
   var name = this.getArgument('name');
   if (name) {
     this.delArgument('name');
