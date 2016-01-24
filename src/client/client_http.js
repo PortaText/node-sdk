@@ -2,7 +2,6 @@
  * @module client_http
  */
 
-var nullLogger = require('../null_logger');
 var clientMod = require('./client');
 var urlMod = require('url');
 var util = require('util');
@@ -20,7 +19,6 @@ var fs = require('fs');
  */
 function ClientHttp () {
   ClientHttp.super_.call(this);
-  this.logger = nullLogger.NullLogger;
 }
 util.inherits(ClientHttp, clientMod.Client);
 
