@@ -94,6 +94,18 @@ Sms.prototype.clientRef = function (clientRef) {
   return this.setArgument('client_ref', clientRef);
 };
 
+/**
+ * Contact list IDs to use.
+ *
+ * @param {integer[]} contactLists
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Sms.prototype.toContactLists = function (contactLists) {
+  return this.setArgument('contact_list_ids', contactLists);
+};
+
 Sms.prototype.endpoint = function (method) {
   var endpoint = 'sms';
   var operationId = this.getArgument('id');

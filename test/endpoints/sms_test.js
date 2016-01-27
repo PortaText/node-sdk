@@ -9,6 +9,24 @@ chai.should();
 
 describe('Sms', function() {
   describe('post', function () {
+    it('should be able to send to contact lists', function () {
+      return helper
+        .mockClientForCommand('sms', {
+          from: '12223334444',
+          contact_list_ids: [1, 2],
+          template_id: 44,
+          variables: {var1: 'value'},
+          client_ref: 'custom_client_ref'
+        })
+        .sms()
+        .from('12223334444')
+        .toContactLists([1, 2])
+        .useTemplate(44, {var1: 'value'})
+        .clientRef('custom_client_ref')
+        .post()
+        .should.be.fulfilled;
+    });
+
     it('should be able to send an sms using a template', function () {
       return helper
         .mockClientForCommand('sms', {

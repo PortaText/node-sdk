@@ -3863,6 +3863,7 @@ Returns a command to use.
         * [.useTemplate(templateId, variables)](#module_sms..Sms+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
         * [.text(text)](#module_sms..Sms+text) ⇒ <code>[Command](#module_command..Command)</code>
         * [.clientRef(text)](#module_sms..Sms+clientRef) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -3896,6 +3897,7 @@ Returns a command to use.
     * [.useTemplate(templateId, variables)](#module_sms..Sms+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
     * [.text(text)](#module_sms..Sms+text) ⇒ <code>[Command](#module_command..Command)</code>
     * [.clientRef(text)](#module_sms..Sms+clientRef) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -3992,6 +3994,17 @@ Set a specific custom client reference.
 | Param | Type |
 | --- | --- |
 | text | <code>string</code> | 
+
+<a name="module_sms..Sms+toContactLists"></a>
+#### sms.toContactLists(contactLists) ⇒ <code>[Command](#module_command..Command)</code>
+Contact list IDs to use.
+
+**Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| contactLists | <code>Array.&lt;integer&gt;</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### sms.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
