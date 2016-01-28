@@ -23,6 +23,16 @@ describe('ContactLists', function() {
   });
 
   describe('delete', function () {
+    it('should be able to delete a number from a contact list', function () {
+      return helper
+        .mockClientForCommand('contact_lists/421/contacts/12223334444')
+        .contactLists()
+        .id(421)
+        .withNumber('12223334444')
+        .delete()
+        .should.be.fulfilled;
+    });
+
     it('should be able to delete a contact list', function () {
       return helper
         .mockClientForCommand('contact_lists/421')
@@ -51,6 +61,16 @@ describe('ContactLists', function() {
   });
 
   describe('put', function () {
+    it('should be able to add a number to a contact list', function () {
+      return helper
+        .mockClientForCommand('contact_lists/421/contacts/12223334444')
+        .contactLists()
+        .id(421)
+        .withNumber('12223334444')
+        .put()
+        .should.be.fulfilled;
+    });
+
     it('should be able to update a contact list', function () {
       return helper
         .mockClientForCommand(

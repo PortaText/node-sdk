@@ -80,12 +80,29 @@ ContactLists.prototype.saveTo = function (file) {
   return this.setArgument('accept_file', file);
 };
 
+/**
+ * Adds or removes the given number to the given contact list.
+ *
+ * @param {string} number
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+ContactLists.prototype.withNumber = function (number) {
+  return this.setArgument('number', number);
+};
+
 ContactLists.prototype.endpoint = function (method) {
   var endpoint = 'contact_lists';
   var id = this.getArgument('id');
   if (id) {
     endpoint = endpoint + '/' + id;
     this.delArgument('id');
+  }
+  var number = this.getArgument('number');
+  if (number) {
+    this.delArgument('number');
+    return endpoint + '/contacts/' + number;
   }
   var file = this.getArgument('file');
   var saveTo = this.getArgument('accept_file');
