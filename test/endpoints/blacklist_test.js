@@ -9,6 +9,15 @@ chai.should();
 
 describe('Blacklist', function() {
   describe('get', function() {
+    it('should be able to check for a blacklisted number', function () {
+      return helper
+        .mockClientForCommand('blacklist/12223334444')
+        .blacklist()
+        .number('12223334444')
+        .get()
+        .should.be.fulfilled;
+    });
+
     it('should be able to export the blacklist to a file', function () {
       return helper
         .mockClientForCommand(
