@@ -32,12 +32,29 @@ Jobs.prototype.id = function (id) {
   return this.setArgument('id', id);
 };
 
+/**
+ * Return the specific page of results.
+ *
+ * @param {integer} page
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Jobs.prototype.page = function (page) {
+  return this.setArgument('page', page);
+};
+
 Jobs.prototype.endpoint = function (method) {
   var endpoint = 'jobs';
   var id = this.getArgument('id');
+  var page = this.getArgument('page');
+  this.delArgument('page');
   if (id) {
     this.delArgument('id');
     endpoint = endpoint + '/' + id;
+  }
+  if (page) {
+    endpoint = endpoint + '?page=' + page;
   }
   return endpoint;
 };
