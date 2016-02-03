@@ -56,12 +56,30 @@ Blacklist.prototype.csv = function (filename) {
   return this.setArgument('file', filename);
 };
 
+/**
+ * Return the specific page of results.
+ *
+ * @param {integer} page
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Blacklist.prototype.page = function (page) {
+  return this.setArgument('page', page);
+};
+
 Blacklist.prototype.endpoint = function (method) {
   var endpoint = 'blacklist/contacts';
   var number = this.getArgument('number');
   if (number) {
     endpoint = 'blacklist/' + number;
     this.delArgument('number');
+    return endpoint;
+  }
+  var page = this.getArgument('page');
+  if (page) {
+    endpoint = 'blacklist?page=' + page;
+    this.delArgument('page');
     return endpoint;
   }
   return endpoint;

@@ -473,6 +473,7 @@ Returns a command to use.
         * [.number(number)](#module_blacklist..Blacklist+number) ⇒ <code>[Command](#module_command..Command)</code>
         * [.saveTo(file)](#module_blacklist..Blacklist+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
         * [.csv(filename)](#module_blacklist..Blacklist+csv) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.page(page)](#module_blacklist..Blacklist+page) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -503,6 +504,7 @@ Returns a command to use.
     * [.number(number)](#module_blacklist..Blacklist+number) ⇒ <code>[Command](#module_command..Command)</code>
     * [.saveTo(file)](#module_blacklist..Blacklist+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
     * [.csv(filename)](#module_blacklist..Blacklist+csv) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.page(page)](#module_blacklist..Blacklist+page) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -565,6 +567,17 @@ Send a CSV file to blacklist contacts.
 | Param | Type |
 | --- | --- |
 | filename | <code>string</code> | 
+
+<a name="module_blacklist..Blacklist+page"></a>
+#### blacklist.page(page) ⇒ <code>[Command](#module_command..Command)</code>
+Return the specific page of results.
+
+**Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| page | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### blacklist.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
