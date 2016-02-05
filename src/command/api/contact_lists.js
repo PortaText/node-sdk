@@ -92,6 +92,18 @@ ContactLists.prototype.withNumber = function (number) {
   return this.setArgument('number', number);
 };
 
+/**
+ * Return the specific page of results.
+ *
+ * @param {integer} page
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+ContactLists.prototype.page = function (page) {
+  return this.setArgument('page', page);
+};
+
 ContactLists.prototype.endpoint = function (method) {
   var endpoint = 'contact_lists';
   var id = this.getArgument('id');
@@ -108,6 +120,12 @@ ContactLists.prototype.endpoint = function (method) {
   var saveTo = this.getArgument('accept_file');
   if (file || saveTo) {
     endpoint = endpoint + '/' + 'contacts';
+  }
+  var page = this.getArgument('page');
+  if (page) {
+    endpoint = endpoint + '/contacts?page=' + page;
+    this.delArgument('page');
+    return endpoint;
   }
   return endpoint;
 };

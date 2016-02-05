@@ -9,6 +9,16 @@ chai.should();
 
 describe('ContactLists', function() {
   describe('get', function() {
+    it('should be able to paginate a contact list', function () {
+      return helper
+        .mockClientForCommand('contact_lists/33/contacts?page=55')
+        .contactLists()
+        .id(33)
+        .page(55)
+        .get()
+        .should.be.fulfilled;
+    });
+
     it('should be able to export the contact list to a file', function () {
       return helper
         .mockClientForCommand(
