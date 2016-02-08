@@ -31,6 +31,8 @@
 <dd></dd>
 <dt><a href="#module_my_password">my_password</a></dt>
 <dd></dd>
+<dt><a href="#module_number_verify">number_verify</a></dt>
+<dd></dd>
 <dt><a href="#module_recharge">recharge</a></dt>
 <dd></dd>
 <dt><a href="#module_settings">settings</a></dt>
@@ -1222,7 +1224,7 @@ Returns a command to use.
     * [~Cnam](#module_cnam..Cnam) ⇐ <code>[Command](#module_command..Command)</code>
         * [new Cnam()](#new_module_cnam..Cnam_new)
         * [.args](#module_command..Command+args)
-        * [.forNumber(countryIso)](#module_cnam..Cnam+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.forNumber(number)](#module_cnam..Cnam+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1250,7 +1252,7 @@ Returns a command to use.
 * [~Cnam](#module_cnam..Cnam) ⇐ <code>[Command](#module_command..Command)</code>
     * [new Cnam()](#new_module_cnam..Cnam_new)
     * [.args](#module_command..Command+args)
-    * [.forNumber(countryIso)](#module_cnam..Cnam+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.forNumber(number)](#module_cnam..Cnam+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1282,7 +1284,7 @@ The Cnam endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_cnam..Cnam+forNumber"></a>
-#### cnam.forNumber(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
+#### cnam.forNumber(number) ⇒ <code>[Command](#module_command..Command)</code>
 Asks for CNAM info for the specific number.
 
 **Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
@@ -1290,7 +1292,7 @@ Asks for CNAM info for the specific number.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| countryIso | <code>string</code> | 2-letter ISO code. |
+| number | <code>string</code> | The target number. |
 
 <a name="module_command..Command+setArgument"></a>
 #### cnam.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
@@ -1435,6 +1437,7 @@ Returns a command to use.
         * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
         * [.saveTo(file)](#module_contact_lists..ContactLists+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
         * [.withNumber(number)](#module_contact_lists..ContactLists+withNumber) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.page(page)](#module_contact_lists..ContactLists+page) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1468,6 +1471,7 @@ Returns a command to use.
     * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
     * [.saveTo(file)](#module_contact_lists..ContactLists+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
     * [.withNumber(number)](#module_contact_lists..ContactLists+withNumber) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.page(page)](#module_contact_lists..ContactLists+page) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1563,6 +1567,17 @@ Adds or removes the given number to the given contact list.
 | Param | Type |
 | --- | --- |
 | number | <code>string</code> | 
+
+<a name="module_contact_lists..ContactLists+page"></a>
+#### contactLists.page(page) ⇒ <code>[Command](#module_command..Command)</code>
+Return the specific page of results.
+
+**Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| page | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### contactLists.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
@@ -3404,6 +3419,253 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_number_verify"></a>
+## number_verify
+
+* [number_verify](#module_number_verify)
+    * [~NumberVerify](#module_number_verify..NumberVerify) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new NumberVerify()](#new_module_number_verify..NumberVerify_new)
+        * [.args](#module_command..Command+args)
+        * [.forNumber(countryIso)](#module_number_verify..NumberVerify+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.verifyWith(to)](#module_number_verify..NumberVerify+verifyWith) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.from(from)](#module_number_verify..NumberVerify+from) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.useTemplate(templateId, variables)](#module_number_verify..NumberVerify+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_number_verify..NumberVerify"></a>
+### number_verify~NumberVerify ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[number_verify](#module_number_verify)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_number_verify Number Verify endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~NumberVerify](#module_number_verify..NumberVerify) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new NumberVerify()](#new_module_number_verify..NumberVerify_new)
+    * [.args](#module_command..Command+args)
+    * [.forNumber(countryIso)](#module_number_verify..NumberVerify+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.verifyWith(to)](#module_number_verify..NumberVerify+verifyWith) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.from(from)](#module_number_verify..NumberVerify+from) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.useTemplate(templateId, variables)](#module_number_verify..NumberVerify+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_number_verify..NumberVerify_new"></a>
+#### new NumberVerify()
+The Number Verify endpoint.
+
+<a name="module_command..Command+args"></a>
+#### numberVerify.args
+**Kind**: instance property of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_number_verify..NumberVerify+forNumber"></a>
+#### numberVerify.forNumber(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the target number.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| countryIso | <code>string</code> | 2-letter ISO code. |
+
+<a name="module_number_verify..NumberVerify+verifyWith"></a>
+#### numberVerify.verifyWith(to) ⇒ <code>[Command](#module_command..Command)</code>
+Uses the given code to verify the phone number.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| to | <code>string</code> | 
+
+<a name="module_number_verify..NumberVerify+from"></a>
+#### numberVerify.from(from) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the message source number.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| from | <code>string</code> | 
+
+<a name="module_number_verify..NumberVerify+useTemplate"></a>
+#### numberVerify.useTemplate(templateId, variables) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the template id to use.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| templateId | <code>integer</code> | 
+| variables | <code>Object</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### numberVerify.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### numberVerify.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### numberVerify.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### numberVerify.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *numberVerify.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### numberVerify.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### numberVerify.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+acceptContentType"></a>
+#### numberVerify.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### numberVerify.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### numberVerify.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### numberVerify.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### numberVerify.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### numberVerify.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### numberVerify.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
 **Access:** public  
 
 | Param | Type |

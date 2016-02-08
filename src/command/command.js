@@ -229,6 +229,7 @@ exports.KnownCommands = [
   ['Recharge'],
   ['Campaigns'],
   ['Variables'],
+  ['NumberVerify', 'number_verify'],
   ['DidSearch', 'did_search'],
   ['EmailVerify', 'email_verify'],
   ['CreditCards', 'credit_cards'],

@@ -23,7 +23,7 @@ util.inherits(Cnam, commandMod.Command);
 /**
  * Asks for CNAM info for the specific number.
  *
- * @param {string} countryIso 2-letter ISO code.
+ * @param {string} number The target number.
  *
  * @access public
  * @return {module:command~Command}

@@ -9,7 +9,7 @@ chai.should();
 
 describe('Cnam', function() {
   describe('post', function () {
-    it('should not be able to proceed without a campaign id', function (done) {
+    it('should not be able to proceed without a number', function (done) {
       var obj = helper.mockClientForCommand().cnam();
       assert.throws(
         function() { obj.post.call(obj); },
