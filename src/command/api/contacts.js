@@ -1,24 +1,25 @@
 /**
- * @module variables
+ * @module contacts
  */
 var commandMod = require('../command');
 var util = require('util');
+var qs = require('querystring');
 
 /**
- * The Variables endpoint.
+ * The Contacts endpoint.
  *
- * @link https://github.com/PortaText/docs/wiki/REST-API#api_variables Variables endpoint.
+ * @link https://github.com/PortaText/docs/wiki/REST-API#api_all_contacts Contacts endpoint.
  * @class
  * @author Marcelo Gornstein <marcelog@portatext.com>
  * @license Apache-2.0
  * @copyright 2015 PortaText
  * @extends {module:command~Command}
  */
-function Variables () {
-  Variables.super_.call(this);
+function Contacts () {
+  Contacts.super_.call(this);
 }
 
-util.inherits(Variables, commandMod.Command);
+util.inherits(Contacts, commandMod.Command);
 
 /**
  * Use this contact number.
@@ -28,7 +29,7 @@ util.inherits(Variables, commandMod.Command);
  * @access public
  * @return {module:command~Command}
  */
-Variables.prototype.forContact = function (number) {
+Contacts.prototype.id = function (number) {
   return this.setArgument('number', number);
 };
 
@@ -40,7 +41,7 @@ Variables.prototype.forContact = function (number) {
  * @access public
  * @return {module:command~Command}
  */
-Variables.prototype.name = function (name) {
+Contacts.prototype.name = function (name) {
   return this.setArgument('name', name);
 };
 
@@ -53,9 +54,31 @@ Variables.prototype.name = function (name) {
  * @access public
  * @return {module:command~Command}
  */
-Variables.prototype.set = function (name, value) {
+Contacts.prototype.set = function (name, value) {
   this.setArgument('name', name);
   return this.setArgument('value', value);
+};
+
+/**
+ * Include contact list ids in the export.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Contacts.prototype.withContactLists = function () {
+  return this.setArgument('with_contact_lists', true);
+};
+
+/**
+ * Return the specific page of results.
+ *
+ * @param {integer} page
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Contacts.prototype.page = function (page) {
+  return this.setArgument('page', page);
 };
 
 /**
@@ -66,7 +89,7 @@ Variables.prototype.set = function (name, value) {
  * @access public
  * @return {module:command~Command}
  */
-Variables.prototype.setAll = function (variables) {
+Contacts.prototype.setAll = function (variables) {
   var vars = [];
   for (var k in variables) {
     vars.push({key: k, value: variables[k]});
@@ -82,7 +105,7 @@ Variables.prototype.setAll = function (variables) {
  * @access public
  * @return {module:command~Command}
  */
-Variables.prototype.saveTo = function (file) {
+Contacts.prototype.saveTo = function (file) {
   return this.setArgument('accept_file', file);
 };
 
@@ -94,14 +117,25 @@ Variables.prototype.saveTo = function (file) {
  * @access public
  * @return {module:command~Command}
  */
-Variables.prototype.csv = function (filename) {
+Contacts.prototype.csv = function (filename) {
   return this.setArgument('file', filename);
 };
 
-Variables.prototype.endpoint = function (method) {
+Contacts.prototype.endpoint = function (method) {
+  var queryString = {};
+  if (this.getArgument('with_contact_lists')) {
+    queryString.with_contact_lists = 'true';
+    this.delArgument('with_contact_lists');
+  }
+  var page = this.getArgument('page');
+  if (page) {
+    queryString.page = page;
+    this.delArgument('page');
+  }
+
   var number = this.getArgument('number');
   if (!number) {
-    return 'contacts/variables';
+    return 'contacts?' + qs.stringify(queryString);
   }
   this.delArgument('number');
   var endpoint = 'contacts/' + number + '/variables';
@@ -113,4 +147,4 @@ Variables.prototype.endpoint = function (method) {
   return endpoint;
 };
 
-exports.Variables = Variables;
+exports.Contacts = Contacts;
