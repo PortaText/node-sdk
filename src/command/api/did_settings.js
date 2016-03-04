@@ -83,7 +83,7 @@ DidSettings.prototype.endpoint = function (method) {
     throw new Error('DID number cant be null');
   }
   this.delArgument('id');
-  return 'me/dids/' + id;
+  return 'dids/' + id;
 };
 
 exports.DidSettings = DidSettings;

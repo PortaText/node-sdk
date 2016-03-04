@@ -22,7 +22,7 @@ describe('DidSettings', function() {
   describe('patch', function () {
     it('should be able to enable cnam', function () {
       return helper
-        .mockClientForCommand('me/dids/12223334444', {cnam_enabled: true})
+        .mockClientForCommand('dids/12223334444', {cnam_enabled: true})
         .didSettings()
         .forNumber('12223334444')
         .enableCnam()
@@ -32,7 +32,7 @@ describe('DidSettings', function() {
 
     it('should be able to disable cnam', function () {
       return helper
-        .mockClientForCommand('me/dids/12223334444', {cnam_enabled: false})
+        .mockClientForCommand('dids/12223334444', {cnam_enabled: false})
         .didSettings()
         .forNumber('12223334444')
         .disableCnam()
@@ -42,7 +42,7 @@ describe('DidSettings', function() {
 
     it('should be able to enable autoresponder', function () {
       return helper
-        .mockClientForCommand('me/dids/12223334444', {
+        .mockClientForCommand('dids/12223334444', {
           autoresponder_text: 'Thanks for contacting us',
           autoresponder_enabled: true
         })
@@ -55,7 +55,7 @@ describe('DidSettings', function() {
 
     it('should be able to disable autoresponder', function () {
       return helper
-        .mockClientForCommand('me/dids/12223334444', {
+        .mockClientForCommand('dids/12223334444', {
           autoresponder_enabled: false
         })
         .didSettings()
