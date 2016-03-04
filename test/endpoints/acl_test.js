@@ -11,7 +11,7 @@ describe('ACL', function() {
   describe('get', function () {
     it('should be able to get acl', function () {
       return helper
-        .mockClientForCommand('me/acl')
+        .mockClientForCommand('acl')
         .acl()
         .get()
         .should.be.fulfilled;
@@ -20,7 +20,7 @@ describe('ACL', function() {
   describe('put', function () {
     it('should be set the acl', function () {
       return helper
-        .mockClientForCommand('me/acl', {
+        .mockClientForCommand('acl', {
           acl: [
             {
               ip: '192.168.0.1',

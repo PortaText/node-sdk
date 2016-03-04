@@ -56,7 +56,7 @@ Acl.prototype.body = function (method) {
 };
 
 Acl.prototype.endpoint = function (method) {
-  return 'me/acl';
+  return 'acl';
 };
 
 exports.Acl = Acl;
