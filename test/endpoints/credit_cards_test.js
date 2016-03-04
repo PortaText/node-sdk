@@ -11,7 +11,7 @@ describe('CreditCards', function() {
   describe('get', function () {
     it('should be able to get all credit cards', function () {
       return helper
-        .mockClientForCommand('me/credit_cards')
+        .mockClientForCommand('credit_cards')
         .creditCards()
         .get()
         .should.be.fulfilled;
@@ -21,7 +21,7 @@ describe('CreditCards', function() {
   describe('delete', function () {
     it('should be able to delete a credit card', function () {
       return helper
-        .mockClientForCommand('me/credit_cards/44')
+        .mockClientForCommand('credit_cards/44')
         .creditCards()
         .id(44)
         .delete()
@@ -32,7 +32,7 @@ describe('CreditCards', function() {
   describe('post', function () {
     it('should be able to create a credit card', function () {
       return helper
-        .mockClientForCommand('me/credit_cards', {
+        .mockClientForCommand('credit_cards', {
           first_name: 'John',
           last_name: 'Doe',
           address: '1234 NW 12TH STREET',

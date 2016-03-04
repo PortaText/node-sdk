@@ -85,7 +85,7 @@ CreditCards.prototype.address = function (
 };
 
 CreditCards.prototype.endpoint = function (method) {
-  var endpoint = 'me/credit_cards';
+  var endpoint = 'credit_cards';
   var id = this.getArgument('id');
   if (id) {
     this.delArgument('id');
