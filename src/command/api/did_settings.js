@@ -79,11 +79,11 @@ DidSettings.prototype.autoRespondWith = function (text) {
 
 DidSettings.prototype.endpoint = function (method) {
   var id = this.getArgument('id');
-  if (!id) {
-    throw new Error('DID number cant be null');
+  if (id) {
+    this.delArgument('id');
+    return 'dids/' + id;
   }
-  this.delArgument('id');
-  return 'dids/' + id;
+  return 'dids';
 };
 
 exports.DidSettings = DidSettings;

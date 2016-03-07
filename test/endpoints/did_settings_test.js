@@ -8,14 +8,22 @@ chai.use(chaiAsPromised);
 chai.should();
 
 describe('DidSettings', function() {
-  describe('any', function () {
-    it('should not be able to proceed without a did', function (done) {
-      var obj = helper.mockClientForCommand().didSettings();
-      assert.throws(
-        function() { obj.get.call(obj); },
-        /DID number cant be null/
-      );
-      done();
+  describe('get', function () {
+    it('should be able to return all dids', function () {
+      return helper
+        .mockClientForCommand('dids')
+        .didSettings()
+        .get()
+        .should.be.fulfilled;
+    });
+
+    it('should be able to return one did', function () {
+      return helper
+        .mockClientForCommand('dids/12223334444')
+        .didSettings()
+        .forNumber('12223334444')
+        .get()
+        .should.be.fulfilled;
     });
   });
 
