@@ -78,17 +78,27 @@ Settings.prototype.disableAutoRecharges = function () {
  * Enables auto recharges.
  *
  * @param {integer} whenCredit
- * @param {integer} cardId
  * @param {number} total
  *
  * @access public
  * @return {module:command~Command}
  */
-Settings.prototype.enableAutoRecharges = function (whenCredit, cardId, total) {
+Settings.prototype.enableAutoRecharges = function (whenCredit, total) {
   this.setArgument('autorecharge_enabled', true);
-  this.setArgument('autorecharge_card_id', cardId);
   this.setArgument('autorecharge_total', total);
   return this.setArgument('autorecharge_when_credit', whenCredit);
+};
+
+/**
+ * Sets default credit card.
+ *
+ * @param {integer} cardId
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.defaultCreditCard = function (cardId) {
+  return this.setArgument('default_card_id', cardId);
 };
 
 Settings.prototype.endpoint = function (method) {

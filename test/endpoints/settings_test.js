@@ -41,12 +41,22 @@ describe('Settings', function() {
       return helper
         .mockClientForCommand('me/settings', {
           autorecharge_enabled: true,
-          autorecharge_card_id: 66543221,
           autorecharge_total: 150,
           autorecharge_when_credit: 100
         })
         .settings()
-        .enableAutoRecharges(100, 66543221, 150)
+        .enableAutoRecharges(100, 150)
+        .patch()
+        .should.be.fulfilled;
+    });
+
+    it('should be able to set default credit card', function () {
+      return helper
+        .mockClientForCommand('me/settings', {
+          default_card_id: 66543221
+        })
+        .settings()
+        .defaultCreditCard(66543221)
         .patch()
         .should.be.fulfilled;
     });
