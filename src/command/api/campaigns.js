@@ -93,6 +93,34 @@ Campaigns.prototype.csv = function (filename) {
   return this.setArgument('file', filename);
 };
 
+/**
+ * Sets the template id to use.
+ *
+ * @param {integer} templateId
+ * @param {Object} variables
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.useTemplate = function (templateId, variables) {
+  return this.setArgument('settings', {
+    template_id: templateId,
+    variables: variables
+  });
+};
+
+/**
+ * Sets the message text.
+ *
+ * @param {string} text
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.text = function (text) {
+  return this.setArgument('settings', {text: text});
+};
+
 Campaigns.prototype.endpoint = function (method) {
   var endpoint = 'campaigns';
   var id = this.getArgument('id');

@@ -44,7 +44,6 @@ describe('SmsCampaign', function() {
   describe('post', function () {
     it('should be able to create a campaign using a csv file', function () {
       var settings = qs.stringify({settings: JSON.stringify({
-        type: 'sms',
         name: 'this is the name',
         description: 'and this is the description',
         from: '12223334444',
@@ -56,7 +55,7 @@ describe('SmsCampaign', function() {
         .mockClientForCommand(
           'campaigns?' + settings, 'file:/tmp/contacts.csv', 'text/csv'
         )
-        .smsCampaign()
+        .campaigns()
         .name('this is the name')
         .description('and this is the description')
         .csv('/tmp/contacts.csv')
@@ -69,7 +68,6 @@ describe('SmsCampaign', function() {
     it('should be able to create a campaign using text', function () {
       return helper
         .mockClientForCommand('campaigns', {
-          type: 'sms',
           name: 'this is the name',
           description: 'and this is the description',
           contact_list_ids: [1, 3, 5, 7, 9],
@@ -78,7 +76,7 @@ describe('SmsCampaign', function() {
             text: 'Hello world'
           }
         })
-        .smsCampaign()
+        .campaigns()
         .name('this is the name')
         .description('and this is the description')
         .toContactLists([1, 3, 5, 7, 9])
@@ -91,7 +89,6 @@ describe('SmsCampaign', function() {
     it('should be able to create a campaign using a template', function () {
       return helper
         .mockClientForCommand('campaigns', {
-          type: 'sms',
           name: 'this is the name',
           description: 'and this is the description',
           contact_list_ids: [1, 3, 5, 7, 9],
@@ -101,7 +98,7 @@ describe('SmsCampaign', function() {
             variables: {key1: 'value1'}
           }
         })
-        .smsCampaign()
+        .campaigns()
         .name('this is the name')
         .description('and this is the description')
         .toContactLists([1, 3, 5, 7, 9])
