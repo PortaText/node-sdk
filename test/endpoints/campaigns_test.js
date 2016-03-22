@@ -107,5 +107,27 @@ describe('SmsCampaign', function() {
         .post()
         .should.be.fulfilled;
     });
+
+    it('should be able to create a campaign using an sms service', function () {
+      return helper
+        .mockClientForCommand('campaigns', {
+          name: 'this is the name',
+          description: 'and this is the description',
+          service_id: 55,
+          all_subscribers: true,
+          settings: {
+            template_id: 987,
+            variables: {key1: 'value1'}
+          }
+        })
+        .campaigns()
+        .name('this is the name')
+        .description('and this is the description')
+        .fromService(55)
+        .allSubscribers()
+        .useTemplate(987, {key1: 'value1'})
+        .post()
+        .should.be.fulfilled;
+    });
   });
 });

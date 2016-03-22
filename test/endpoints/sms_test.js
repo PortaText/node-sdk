@@ -61,6 +61,23 @@ describe('Sms', function() {
         .post()
         .should.be.fulfilled;
     });
+
+    it('should be able to send an sms from an sms service', function () {
+      return helper
+        .mockClientForCommand('sms', {
+          service_id: 55,
+          to: '15556667777',
+          text: 'hello world',
+          client_ref: 'custom_client_ref'
+        })
+        .sms()
+        .fromService(55)
+        .to('15556667777')
+        .text('hello world')
+        .clientRef('custom_client_ref')
+        .post()
+        .should.be.fulfilled;
+    });
   });
 
   describe('get', function () {

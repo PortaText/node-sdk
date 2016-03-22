@@ -121,6 +121,28 @@ Campaigns.prototype.text = function (text) {
   return this.setArgument('settings', {text: text});
 };
 
+/**
+ * Specify SMS Service ID to use as source.
+ *
+ * @param {integer} serviceId
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.fromService = function (serviceId) {
+  return this.setArgument('service_id', serviceId);
+};
+
+/**
+ * Specify all subscribers of the given SMS Service as targets.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.allSubscribers = function () {
+  return this.setArgument('all_subscribers', true);
+};
+
 Campaigns.prototype.endpoint = function (method) {
   var endpoint = 'campaigns';
   var id = this.getArgument('id');

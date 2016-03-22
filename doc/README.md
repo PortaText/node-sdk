@@ -958,6 +958,8 @@ Returns a command to use.
         * [.csv(filename)](#module_campaign..Campaigns+csv) ⇒ <code>[Command](#module_command..Command)</code>
         * [.useTemplate(templateId, variables)](#module_campaign..Campaigns+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
         * [.text(text)](#module_campaign..Campaigns+text) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.fromService(serviceId)](#module_campaign..Campaigns+fromService) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.allSubscribers()](#module_campaign..Campaigns+allSubscribers) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -993,6 +995,8 @@ Returns a command to use.
     * [.csv(filename)](#module_campaign..Campaigns+csv) ⇒ <code>[Command](#module_command..Command)</code>
     * [.useTemplate(templateId, variables)](#module_campaign..Campaigns+useTemplate) ⇒ <code>[Command](#module_command..Command)</code>
     * [.text(text)](#module_campaign..Campaigns+text) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.fromService(serviceId)](#module_campaign..Campaigns+fromService) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.allSubscribers()](#module_campaign..Campaigns+allSubscribers) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1112,6 +1116,23 @@ Sets the message text.
 | --- | --- |
 | text | <code>string</code> | 
 
+<a name="module_campaign..Campaigns+fromService"></a>
+#### campaigns.fromService(serviceId) ⇒ <code>[Command](#module_command..Command)</code>
+Specify SMS Service ID to use as source.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| serviceId | <code>integer</code> | 
+
+<a name="module_campaign..Campaigns+allSubscribers"></a>
+#### campaigns.allSubscribers() ⇒ <code>[Command](#module_command..Command)</code>
+Specify all subscribers of the given SMS Service as targets.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
 <a name="module_command..Command+setArgument"></a>
 #### campaigns.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
@@ -4496,6 +4517,7 @@ Returns a command to use.
         * [.text(text)](#module_sms..Sms+text) ⇒ <code>[Command](#module_command..Command)</code>
         * [.clientRef(text)](#module_sms..Sms+clientRef) ⇒ <code>[Command](#module_command..Command)</code>
         * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.fromService(serviceId)](#module_sms..Sms+fromService) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -4530,6 +4552,7 @@ Returns a command to use.
     * [.text(text)](#module_sms..Sms+text) ⇒ <code>[Command](#module_command..Command)</code>
     * [.clientRef(text)](#module_sms..Sms+clientRef) ⇒ <code>[Command](#module_command..Command)</code>
     * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.fromService(serviceId)](#module_sms..Sms+fromService) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -4637,6 +4660,17 @@ Contact list IDs to use.
 | Param | Type |
 | --- | --- |
 | contactLists | <code>Array.&lt;integer&gt;</code> | 
+
+<a name="module_sms..Sms+fromService"></a>
+#### sms.fromService(serviceId) ⇒ <code>[Command](#module_command..Command)</code>
+Specify SMS Service ID to use as source.
+
+**Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| serviceId | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 #### sms.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>

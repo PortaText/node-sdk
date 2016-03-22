@@ -106,6 +106,18 @@ Sms.prototype.toContactLists = function (contactLists) {
   return this.setArgument('contact_list_ids', contactLists);
 };
 
+/**
+ * Specify SMS Service ID to use as source.
+ *
+ * @param {integer} serviceId
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Sms.prototype.fromService = function (serviceId) {
+  return this.setArgument('service_id', serviceId);
+};
+
 Sms.prototype.endpoint = function (method) {
   var endpoint = 'sms';
   var operationId = this.getArgument('id');
