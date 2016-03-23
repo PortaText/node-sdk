@@ -37,6 +37,8 @@
 <dd></dd>
 <dt><a href="#module_recharge">recharge</a></dt>
 <dd></dd>
+<dt><a href="#module_sms_services">sms_services</a></dt>
+<dd></dd>
 <dt><a href="#module_settings">settings</a></dt>
 <dd></dd>
 <dt><a href="#module_sms">sms</a></dt>
@@ -4226,6 +4228,239 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_sms_services"></a>
+## sms_services
+
+* [sms_services](#module_sms_services)
+    * [~Services](#module_sms_services..Services) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Services()](#new_module_sms_services..Services_new)
+        * [.args](#module_command..Command+args)
+        * [.id(id)](#module_sms_services..Services+id) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.saveTo(file)](#module_sms_services..Services+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.page(page)](#module_sms_services..Services+page) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_sms_services..Services"></a>
+### sms_services~Services ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[sms_services](#module_sms_services)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_sms_services SMS Services endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Services](#module_sms_services..Services) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Services()](#new_module_sms_services..Services_new)
+    * [.args](#module_command..Command+args)
+    * [.id(id)](#module_sms_services..Services+id) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.saveTo(file)](#module_sms_services..Services+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.page(page)](#module_sms_services..Services+page) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_sms_services..Services_new"></a>
+#### new Services()
+The SMS Services endpoint.
+
+<a name="module_command..Command+args"></a>
+#### services.args
+**Kind**: instance property of <code>[Services](#module_sms_services..Services)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_sms_services..Services+id"></a>
+#### services.id(id) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the id.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| id | <code>integer</code> | 
+
+<a name="module_sms_services..Services+saveTo"></a>
+#### services.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
+Saves the subscriber list to the given filename.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| file | <code>string</code> | 
+
+<a name="module_sms_services..Services+page"></a>
+#### services.page(page) ⇒ <code>[Command](#module_command..Command)</code>
+Return the specific page of results.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| page | <code>integer</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### services.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### services.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### services.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### services.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *services.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Services](#module_sms_services..Services)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### services.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### services.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+acceptContentType"></a>
+#### services.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### services.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### services.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### services.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### services.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### services.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### services.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
 **Access:** public  
 
 | Param | Type |
