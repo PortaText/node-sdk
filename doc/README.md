@@ -1484,7 +1484,7 @@ Returns a command to use.
         * [.description(description)](#module_contact_lists..ContactLists+description) ⇒ <code>[Command](#module_command..Command)</code>
         * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
         * [.saveTo(file)](#module_contact_lists..ContactLists+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
-        * [.withNumber(number)](#module_contact_lists..ContactLists+withNumber) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.withNumber(number, variables)](#module_contact_lists..ContactLists+withNumber) ⇒ <code>[Command](#module_command..Command)</code>
         * [.page(page)](#module_contact_lists..ContactLists+page) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -1518,7 +1518,7 @@ Returns a command to use.
     * [.description(description)](#module_contact_lists..ContactLists+description) ⇒ <code>[Command](#module_command..Command)</code>
     * [.csv(filename)](#module_contact_lists..ContactLists+csv) ⇒ <code>[Command](#module_command..Command)</code>
     * [.saveTo(file)](#module_contact_lists..ContactLists+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
-    * [.withNumber(number)](#module_contact_lists..ContactLists+withNumber) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.withNumber(number, variables)](#module_contact_lists..ContactLists+withNumber) ⇒ <code>[Command](#module_command..Command)</code>
     * [.page(page)](#module_contact_lists..ContactLists+page) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -1606,7 +1606,7 @@ Saves the contact list to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_contact_lists..ContactLists+withNumber"></a>
-#### contactLists.withNumber(number) ⇒ <code>[Command](#module_command..Command)</code>
+#### contactLists.withNumber(number, variables) ⇒ <code>[Command](#module_command..Command)</code>
 Adds or removes the given number to the given contact list.
 
 **Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
@@ -1615,6 +1615,7 @@ Adds or removes the given number to the given contact list.
 | Param | Type |
 | --- | --- |
 | number | <code>string</code> | 
+| variables | <code>Object</code> | 
 
 <a name="module_contact_lists..ContactLists+page"></a>
 #### contactLists.page(page) ⇒ <code>[Command](#module_command..Command)</code>

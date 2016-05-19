@@ -84,11 +84,19 @@ ContactLists.prototype.saveTo = function (file) {
  * Adds or removes the given number to the given contact list.
  *
  * @param {string} number
+ * @param {Object} variables
  *
  * @access public
  * @return {module:command~Command}
  */
-ContactLists.prototype.withNumber = function (number) {
+ContactLists.prototype.withNumber = function (number, variables) {
+  if (variables) {
+    var vars = [];
+    for (var k in variables) {
+      vars.push({key: k, value: variables[k]});
+    }
+    this.setArgument('variables', vars);
+  }
   return this.setArgument('number', number);
 };
 

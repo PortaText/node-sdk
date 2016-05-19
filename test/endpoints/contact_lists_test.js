@@ -81,6 +81,24 @@ describe('ContactLists', function() {
         .should.be.fulfilled;
     });
 
+    it('should be able to add a number to a contact list with variables', function () {
+      return helper
+        .mockClientForCommand('contact_lists/421/contacts/12223334444', {
+          variables: [
+            {key: 'first_name', value: 'John'},
+            {key: 'last_name', value: 'Doe'}
+          ]
+        })
+        .contactLists()
+        .id(421)
+        .withNumber('12223334444', {
+          first_name: 'John',
+          last_name: 'Doe'
+        })
+        .put()
+        .should.be.fulfilled;
+    });
+
     it('should be able to update a contact list', function () {
       return helper
         .mockClientForCommand(
