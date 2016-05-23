@@ -143,6 +143,40 @@ Campaigns.prototype.allSubscribers = function () {
   return this.setArgument('all_subscribers', true);
 };
 
+/**
+ * Return the specific page of results.
+ *
+ * @param {integer} page
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.page = function (page) {
+  return this.setArgument('page', page);
+};
+
+/**
+ * Saves the contacts to the given filename.
+ *
+ * @param {string} file
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.saveTo = function (file) {
+  return this.setArgument('accept_file', file);
+};
+
+/**
+ * Query campaign contacts.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.contacts = function () {
+  return this.setArgument('contacts', true);
+};
+
 Campaigns.prototype.endpoint = function (method) {
   var endpoint = 'campaigns';
   var id = this.getArgument('id');
@@ -150,12 +184,22 @@ Campaigns.prototype.endpoint = function (method) {
     this.delArgument('id');
     endpoint = endpoint + '/' + id;
   }
+  var contacts = this.getArgument('contacts');
+  if (contacts) {
+    this.delArgument('contacts');
+    endpoint = endpoint + '/contacts';
+  }
   var file = this.getArgument('file');
   if (file) {
     var args = JSON.parse(JSON.stringify(this.getArguments()));
     delete args.file;
     args = {settings: JSON.stringify(args)};
     endpoint = endpoint + '?' + qs.stringify(args);
+  }
+  var page = this.getArgument('page');
+  if (page) {
+    this.delArgument('page');
+    endpoint = endpoint + '?page=' + page;
   }
   return endpoint;
 };

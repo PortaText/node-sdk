@@ -21,6 +21,28 @@ describe('Campaigns', function() {
   });
 
   describe('get', function () {
+    it('should be able to paginate contacts', function () {
+      return helper
+        .mockClientForCommand('campaigns/123/contacts?page=44')
+        .campaigns()
+        .id(123)
+        .contacts()
+        .page(44)
+        .get()
+        .should.be.fulfilled;
+    });
+    it('should be able to export all contacts to csv', function () {
+      return helper
+        .mockClientForCommand(
+          'campaigns/123/contacts', '', 'application/json', 'text/csv'
+        )
+        .campaigns()
+        .id(123)
+        .contacts()
+        .saveTo('/tmp/contacts.csv')
+        .get()
+        .should.be.fulfilled;
+    });
     it('should be able to get all campaigns', function () {
       return helper
         .mockClientForCommand('campaigns')

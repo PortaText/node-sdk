@@ -962,6 +962,9 @@ Returns a command to use.
         * [.text(text)](#module_campaign..Campaigns+text) ⇒ <code>[Command](#module_command..Command)</code>
         * [.fromService(serviceId)](#module_campaign..Campaigns+fromService) ⇒ <code>[Command](#module_command..Command)</code>
         * [.allSubscribers()](#module_campaign..Campaigns+allSubscribers) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.page(page)](#module_campaign..Campaigns+page) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.saveTo(file)](#module_campaign..Campaigns+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.contacts()](#module_campaign..Campaigns+contacts) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -999,6 +1002,9 @@ Returns a command to use.
     * [.text(text)](#module_campaign..Campaigns+text) ⇒ <code>[Command](#module_command..Command)</code>
     * [.fromService(serviceId)](#module_campaign..Campaigns+fromService) ⇒ <code>[Command](#module_command..Command)</code>
     * [.allSubscribers()](#module_campaign..Campaigns+allSubscribers) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.page(page)](#module_campaign..Campaigns+page) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.saveTo(file)](#module_campaign..Campaigns+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.contacts()](#module_campaign..Campaigns+contacts) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1132,6 +1138,34 @@ Specify SMS Service ID to use as source.
 <a name="module_campaign..Campaigns+allSubscribers"></a>
 #### campaigns.allSubscribers() ⇒ <code>[Command](#module_command..Command)</code>
 Specify all subscribers of the given SMS Service as targets.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+<a name="module_campaign..Campaigns+page"></a>
+#### campaigns.page(page) ⇒ <code>[Command](#module_command..Command)</code>
+Return the specific page of results.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| page | <code>integer</code> | 
+
+<a name="module_campaign..Campaigns+saveTo"></a>
+#### campaigns.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
+Saves the contacts to the given filename.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| file | <code>string</code> | 
+
+<a name="module_campaign..Campaigns+contacts"></a>
+#### campaigns.contacts() ⇒ <code>[Command](#module_command..Command)</code>
+Query campaign contacts.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
