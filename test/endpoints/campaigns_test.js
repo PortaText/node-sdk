@@ -21,6 +21,14 @@ describe('Campaigns', function() {
   });
 
   describe('get', function () {
+    it('should be able to paginate campaigns', function () {
+      return helper
+        .mockClientForCommand('campaigns?page=44')
+        .campaigns()
+        .page(44)
+        .get()
+        .should.be.fulfilled;
+    });
     it('should be able to paginate contacts', function () {
       return helper
         .mockClientForCommand('campaigns/123/contacts?page=44')
