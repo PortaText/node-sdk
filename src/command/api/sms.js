@@ -3,6 +3,7 @@
  */
 var commandMod = require('../command');
 var util = require('util');
+var qs = require('querystring');
 
 /**
  * The Sms endpoint.
@@ -118,8 +119,26 @@ Sms.prototype.fromService = function (serviceId) {
   return this.setArgument('service_id', serviceId);
 };
 
+/**
+ * Searches for SMS operations
+ *
+ * @param {Object} Search params (see the API doc).
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Sms.prototype.search = function (params) {
+  return this.setArgument('search_params', params);
+};
+
 Sms.prototype.endpoint = function (method) {
   var endpoint = 'sms';
+
+  var searchParams = this.getArgument('search_params');
+  if (searchParams) {
+    this.delArgument('search_params');
+    return endpoint + '?' + qs.stringify(searchParams);
+  }
   var operationId = this.getArgument('id');
   if (operationId) {
     endpoint = endpoint + '/' + operationId;

@@ -81,6 +81,18 @@ describe('Sms', function() {
   });
 
   describe('get', function () {
+    it('should be able to search for sms operations', function () {
+      return helper
+        .mockClientForCommand('sms?page=3&date_from=2015-01-01T00%3A00%3A00', null)
+        .sms()
+        .search({
+          page: 3,
+          date_from: '2015-01-01T00:00:00'
+        })
+        .get()
+        .should.be.fulfilled;
+    });
+
     it('should be able to get an sms operation', function () {
       return helper
         .mockClientForCommand('sms/763')

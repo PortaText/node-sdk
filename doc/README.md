@@ -4788,6 +4788,7 @@ Returns a command to use.
         * [.clientRef(text)](#module_sms..Sms+clientRef) ⇒ <code>[Command](#module_command..Command)</code>
         * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
         * [.fromService(serviceId)](#module_sms..Sms+fromService) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.search(Search)](#module_sms..Sms+search) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -4823,6 +4824,7 @@ Returns a command to use.
     * [.clientRef(text)](#module_sms..Sms+clientRef) ⇒ <code>[Command](#module_command..Command)</code>
     * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
     * [.fromService(serviceId)](#module_sms..Sms+fromService) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.search(Search)](#module_sms..Sms+search) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -4941,6 +4943,17 @@ Specify SMS Service ID to use as source.
 | Param | Type |
 | --- | --- |
 | serviceId | <code>integer</code> | 
+
+<a name="module_sms..Sms+search"></a>
+#### sms.search(Search) ⇒ <code>[Command](#module_command..Command)</code>
+Searches for SMS operations
+
+**Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Search | <code>Object</code> | params (see the API doc). |
 
 <a name="module_command..Command+setArgument"></a>
 #### sms.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
