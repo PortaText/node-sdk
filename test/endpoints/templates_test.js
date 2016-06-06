@@ -7,7 +7,7 @@ var Promise = require('promise');
 chai.use(chaiAsPromised);
 chai.should();
 
-describe('Timezones', function() {
+describe('Templates', function() {
   describe('get', function () {
     it('should be able to get all templates', function () {
       return helper
