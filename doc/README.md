@@ -4517,6 +4517,15 @@ Returns a command to use.
         * [.sendInboundByEmail(email)](#module_settings..Settings+sendInboundByEmail) ⇒ <code>[Command](#module_command..Command)</code>
         * [.disableAutoRecharges()](#module_settings..Settings+disableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
         * [.enableAutoRecharges(whenCredit, total)](#module_settings..Settings+enableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdMaxWordLength(maxWordLength)](#module_settings..Settings+amdMaxWordLength) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdSilenceThreshold(silenceThreshold)](#module_settings..Settings+amdSilenceThreshold) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdMaxWords(maxWords)](#module_settings..Settings+amdMaxWords) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdBetweenWordsSilence(silenceBetweenWords)](#module_settings..Settings+amdBetweenWordsSilence) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdMinWordLength(minWordLength)](#module_settings..Settings+amdMinWordLength) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdTotalTime(totalTime)](#module_settings..Settings+amdTotalTime) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdAfterGreetingSilence(greetingSilence)](#module_settings..Settings+amdAfterGreetingSilence) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdMaxGreetingLength(greetingLength)](#module_settings..Settings+amdMaxGreetingLength) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.amdInitialSilence(initialSilence)](#module_settings..Settings+amdInitialSilence) ⇒ <code>[Command](#module_command..Command)</code>
         * [.defaultCreditCard(cardId)](#module_settings..Settings+defaultCreditCard) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -4551,6 +4560,15 @@ Returns a command to use.
     * [.sendInboundByEmail(email)](#module_settings..Settings+sendInboundByEmail) ⇒ <code>[Command](#module_command..Command)</code>
     * [.disableAutoRecharges()](#module_settings..Settings+disableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
     * [.enableAutoRecharges(whenCredit, total)](#module_settings..Settings+enableAutoRecharges) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdMaxWordLength(maxWordLength)](#module_settings..Settings+amdMaxWordLength) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdSilenceThreshold(silenceThreshold)](#module_settings..Settings+amdSilenceThreshold) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdMaxWords(maxWords)](#module_settings..Settings+amdMaxWords) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdBetweenWordsSilence(silenceBetweenWords)](#module_settings..Settings+amdBetweenWordsSilence) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdMinWordLength(minWordLength)](#module_settings..Settings+amdMinWordLength) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdTotalTime(totalTime)](#module_settings..Settings+amdTotalTime) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdAfterGreetingSilence(greetingSilence)](#module_settings..Settings+amdAfterGreetingSilence) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdMaxGreetingLength(greetingLength)](#module_settings..Settings+amdMaxGreetingLength) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.amdInitialSilence(initialSilence)](#module_settings..Settings+amdInitialSilence) ⇒ <code>[Command](#module_command..Command)</code>
     * [.defaultCreditCard(cardId)](#module_settings..Settings+defaultCreditCard) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -4633,6 +4651,106 @@ Enables auto recharges.
 | --- | --- |
 | whenCredit | <code>integer</code> | 
 | total | <code>number</code> | 
+
+<a name="module_settings..Settings+amdMaxWordLength"></a>
+#### settings.amdMaxWordLength(maxWordLength) ⇒ <code>[Command](#module_command..Command)</code>
+The minimum duration of Voice considered to be a word (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| maxWordLength | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdSilenceThreshold"></a>
+#### settings.amdSilenceThreshold(silenceThreshold) ⇒ <code>[Command](#module_command..Command)</code>
+How long do we consider silence (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| silenceThreshold | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdMaxWords"></a>
+#### settings.amdMaxWords(maxWords) ⇒ <code>[Command](#module_command..Command)</code>
+The maximum number of words in a greeting.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| maxWords | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdBetweenWordsSilence"></a>
+#### settings.amdBetweenWordsSilence(silenceBetweenWords) ⇒ <code>[Command](#module_command..Command)</code>
+The minimum duration of silence after a word to consider the
+audio that follows to be a new word (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| silenceBetweenWords | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdMinWordLength"></a>
+#### settings.amdMinWordLength(minWordLength) ⇒ <code>[Command](#module_command..Command)</code>
+The minimum duration of Voice considered to be a word (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| minWordLength | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdTotalTime"></a>
+#### settings.amdTotalTime(totalTime) ⇒ <code>[Command](#module_command..Command)</code>
+The maximum time allowed for the algorithm (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| totalTime | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdAfterGreetingSilence"></a>
+#### settings.amdAfterGreetingSilence(greetingSilence) ⇒ <code>[Command](#module_command..Command)</code>
+Is the silence after detecting a greeting (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| greetingSilence | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdMaxGreetingLength"></a>
+#### settings.amdMaxGreetingLength(greetingLength) ⇒ <code>[Command](#module_command..Command)</code>
+Is the maximum length of a greeting (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| greetingLength | <code>integer</code> | 
+
+<a name="module_settings..Settings+amdInitialSilence"></a>
+#### settings.amdInitialSilence(initialSilence) ⇒ <code>[Command](#module_command..Command)</code>
+Is maximum initial silence duration before greeting (milliseconds).
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| initialSilence | <code>integer</code> | 
 
 <a name="module_settings..Settings+defaultCreditCard"></a>
 #### settings.defaultCreditCard(cardId) ⇒ <code>[Command](#module_command..Command)</code>

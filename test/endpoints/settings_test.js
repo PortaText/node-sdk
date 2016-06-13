@@ -19,6 +19,33 @@ describe('Settings', function() {
   });
 
   describe('patch', function () {
+    it('should be able to set amd settings', function () {
+      return helper
+        .mockClientForCommand('me/settings', {
+          amd_initial_silence: 900,
+          amd_max_greeting_length: 800,
+          amd_after_greeting_silence: 700,
+          amd_total_time: 600,
+          amd_min_word_length: 500,
+          amd_between_words_silence: 400,
+          amd_max_words: 300,
+          amd_silence_threshold: 200,
+          amd_max_word_length: 100
+        })
+        .settings()
+        .amdInitialSilence(900)
+        .amdMaxGreetingLength(800)
+        .amdAfterGreetingSilence(700)
+        .amdTotalTime(600)
+        .amdMinWordLength(500)
+        .amdBetweenWordsSilence(400)
+        .amdMaxWords(300)
+        .amdSilenceThreshold(200)
+        .amdMaxWordLength(100)
+        .patch()
+        .should.be.fulfilled;
+    });
+
     it('should be able to alert on low credit', function () {
       return helper
         .mockClientForCommand('me/settings', {alert_when_credit_less_than: 100})

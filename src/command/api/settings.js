@@ -90,6 +90,115 @@ Settings.prototype.enableAutoRecharges = function (whenCredit, total) {
 };
 
 /**
+ * The minimum duration of Voice considered to be a word (milliseconds).
+ *
+ * @param {integer} maxWordLength
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdMaxWordLength = function (maxWordLength) {
+  return this.setArgument('amd_max_word_length', maxWordLength);
+};
+
+/**
+ * How long do we consider silence (milliseconds).
+ *
+ * @param {integer} silenceThreshold
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdSilenceThreshold = function (silenceThreshold) {
+  return this.setArgument('amd_silence_threshold', silenceThreshold);
+};
+
+/**
+ * The maximum number of words in a greeting.
+ *
+ * @param {integer} maxWords
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdMaxWords = function (maxWords) {
+  return this.setArgument('amd_max_words', maxWords);
+};
+
+/**
+ * The minimum duration of silence after a word to consider the
+ * audio that follows to be a new word (milliseconds).
+ *
+ * @param {integer} silenceBetweenWords
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdBetweenWordsSilence = function (silenceBetweenWords) {
+  return this.setArgument('amd_between_words_silence', silenceBetweenWords);
+};
+
+/**
+ * The minimum duration of Voice considered to be a word (milliseconds).
+ *
+ * @param {integer} minWordLength
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdMinWordLength = function (minWordLength) {
+  return this.setArgument('amd_min_word_length', minWordLength);
+};
+
+/**
+ * The maximum time allowed for the algorithm (milliseconds).
+ *
+ * @param {integer} totalTime
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdTotalTime = function (totalTime) {
+  return this.setArgument('amd_total_time', totalTime);
+};
+
+/**
+ * Is the silence after detecting a greeting (milliseconds).
+ *
+ * @param {integer} greetingSilence
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdAfterGreetingSilence = function (greetingSilence) {
+  return this.setArgument('amd_after_greeting_silence', greetingSilence);
+};
+
+/**
+ * Is the maximum length of a greeting (milliseconds).
+ *
+ * @param {integer} greetingLength
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdMaxGreetingLength = function (greetingLength) {
+  return this.setArgument('amd_max_greeting_length', greetingLength);
+};
+
+/**
+ * Is maximum initial silence duration before greeting (milliseconds).
+ *
+ * @param {integer} initialSilence
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.amdInitialSilence = function (initialSilence) {
+  return this.setArgument('amd_initial_silence', initialSilence);
+};
+
+/**
  * Sets default credit card.
  *
  * @param {integer} cardId
