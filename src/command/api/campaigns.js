@@ -94,46 +94,6 @@ Campaigns.prototype.csv = function (filename) {
 };
 
 /**
- * Sets the template id to use.
- *
- * @param {integer} templateId
- * @param {Object} variables
- *
- * @access public
- * @return {module:command~Command}
- */
-Campaigns.prototype.useTemplate = function (templateId, variables) {
-  return this.setArgument('settings', {
-    template_id: templateId,
-    variables: variables
-  });
-};
-
-/**
- * Sets the message text.
- *
- * @param {string} text
- *
- * @access public
- * @return {module:command~Command}
- */
-Campaigns.prototype.text = function (text) {
-  return this.setArgument('settings', {text: text});
-};
-
-/**
- * Specify SMS Service ID to use as source.
- *
- * @param {integer} serviceId
- *
- * @access public
- * @return {module:command~Command}
- */
-Campaigns.prototype.fromService = function (serviceId) {
-  return this.setArgument('service_id', serviceId);
-};
-
-/**
  * Specify all subscribers of the given SMS Service as targets.
  *
  * @access public
