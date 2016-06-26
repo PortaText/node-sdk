@@ -232,6 +232,7 @@ exports.KnownCommands = [
   ['Contacts'],
   ['Services'],
   ['Trunks'],
+  ['Version'],
   ['NumberVerify', 'number_verify'],
   ['DidSearch', 'did_search'],
   ['EmailVerify', 'email_verify'],
