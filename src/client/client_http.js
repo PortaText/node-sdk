@@ -37,7 +37,6 @@ ClientHttp.prototype.execute = function (descriptor) {
     var mod = require(scheme);
     var buffer = new Buffer('', 'ascii');
     var req = mod.request(options, function (res) {
-      res.setEncoding('ascii');
       var doResolve = function () {
         resolve({
           code: res.statusCode,
@@ -50,6 +49,7 @@ ClientHttp.prototype.execute = function (descriptor) {
         res.pipe(file);
         file.on('close', doResolve);
       } else {
+        res.setEncoding('ascii');
         res.on('data', function (chunk) {
           buffer = Buffer.concat([buffer, new Buffer(chunk, 'ascii')]);
         });
