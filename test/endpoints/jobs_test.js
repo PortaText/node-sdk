@@ -20,6 +20,17 @@ describe('Jobs', function() {
   });
 
   describe('get', function () {
+    it('should be able to get a job result', function () {
+      return helper
+        .mockClientForCommand(
+          'jobs/55/result', '', 'application/json', '*/*'
+        ).jobs()
+        .id(55)
+        .saveTo('/tmp/result.zip')
+        .get()
+        .should.be.fulfilled;
+    });
+
     it('should be able to get all jobs paginated', function () {
       return helper
         .mockClientForCommand('jobs?page=55')

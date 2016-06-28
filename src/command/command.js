@@ -130,6 +130,10 @@ Command.prototype.acceptContentType = function (method) {
   if (file) {
     return 'text/csv';
   }
+  file = this.args.accept_any_file;
+  if (file) {
+    return '*/*';
+  }
   return 'application/json';
 };
 
@@ -196,7 +200,11 @@ Command.prototype.run = function (method) {
   var cType = this.contentType(method);
   var aCType = this.acceptContentType(method);
   var file = this.args.accept_file;
+  if (!file) {
+    file = this.args.accept_any_file;
+  }
   delete this.args.accept_file;
+  delete this.args.accept_any_file;
   var body = this.body(method);
   return this.client.run(endpoint, method, cType, aCType, body, file);
 };
