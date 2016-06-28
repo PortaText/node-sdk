@@ -27,6 +27,8 @@
 <dd></dd>
 <dt><a href="#module_email_verify">email_verify</a></dt>
 <dd></dd>
+<dt><a href="#module_inspect">inspect</a></dt>
+<dd></dd>
 <dt><a href="#module_jobs">jobs</a></dt>
 <dd></dd>
 <dt><a href="#module_me">me</a></dt>
@@ -3047,6 +3049,226 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_inspect"></a>
+## inspect
+
+* [inspect](#module_inspect)
+    * [~Inspect](#module_inspect..Inspect) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Inspect()](#new_module_inspect..Inspect_new)
+        * [.args](#module_command..Command+args)
+        * [.number(number)](#module_inspect..Inspect+number) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.csv(filename)](#module_inspect..Inspect+csv) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_inspect..Inspect"></a>
+### inspect~Inspect ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[inspect](#module_inspect)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_inspect Inspect endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Inspect](#module_inspect..Inspect) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Inspect()](#new_module_inspect..Inspect_new)
+    * [.args](#module_command..Command+args)
+    * [.number(number)](#module_inspect..Inspect+number) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.csv(filename)](#module_inspect..Inspect+csv) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_inspect..Inspect_new"></a>
+#### new Inspect()
+The Inspect endpoint.
+
+<a name="module_command..Command+args"></a>
+#### inspect.args
+**Kind**: instance property of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_inspect..Inspect+number"></a>
+#### inspect.number(number) ⇒ <code>[Command](#module_command..Command)</code>
+Inspects the given number.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| number | <code>string</code> | 
+
+<a name="module_inspect..Inspect+csv"></a>
+#### inspect.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
+Send a CSV file to inspect numbers.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| filename | <code>string</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+#### inspect.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+#### inspect.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+#### inspect.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+#### inspect.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+#### *inspect.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+#### inspect.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+#### inspect.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+acceptContentType"></a>
+#### inspect.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+#### inspect.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+#### inspect.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+#### inspect.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+#### inspect.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+#### inspect.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+#### inspect.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
 **Access:** public  
 
 | Param | Type |
