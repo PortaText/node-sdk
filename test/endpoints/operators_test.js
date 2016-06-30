@@ -25,5 +25,15 @@ describe('Operators', function() {
         .get()
         .should.be.fulfilled;
     });
+    it('should be able to export the list to a file', function () {
+      return helper
+        .mockClientForCommand(
+          'operators', '', 'application/json', 'text/csv'
+        )
+        .operators()
+        .saveTo('/tmp/operators.csv')
+        .get()
+        .should.be.fulfilled;
+    });
   });
 });

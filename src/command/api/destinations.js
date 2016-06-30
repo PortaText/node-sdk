@@ -47,6 +47,18 @@ Destinations.prototype.sortBy = function (sortBy, order) {
   return this.setArgument('order', order);
 };
 
+/**
+ * Saves the list to the given filename.
+ *
+ * @param {string} file
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Destinations.prototype.saveTo = function (file) {
+  return this.setArgument('accept_file', file);
+};
+
 Destinations.prototype.endpoint = function (method) {
   var endpoint = 'destinations'
   var queryString = {};

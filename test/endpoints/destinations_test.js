@@ -27,5 +27,15 @@ describe('Destinations', function() {
         .get()
         .should.be.fulfilled;
     });
+    it('should be able to export the list to a file', function () {
+      return helper
+        .mockClientForCommand(
+          'destinations', '', 'application/json', 'text/csv'
+        )
+        .destinations()
+        .saveTo('/tmp/destinations.csv')
+        .get()
+        .should.be.fulfilled;
+    });
   });
 });
