@@ -244,6 +244,7 @@ exports.KnownCommands = [
   ['Inspect'],
   ['Operators'],
   ['Destinations'],
+  ['Simulate'],
   ['NumberVerify', 'number_verify'],
   ['DidSearch', 'did_search'],
   ['EmailVerify', 'email_verify'],
