@@ -70,6 +70,7 @@
 </dl>
 
 <a name="module_client_http"></a>
+
 ## client_http
 
 * [client_http](#module_client_http)
@@ -77,6 +78,7 @@
         * [new ClientHttp()](#new_module_client_http..ClientHttp_new)
 
 <a name="module_client_http..ClientHttp"></a>
+
 ### client_http~ClientHttp ⇐ <code>Client</code>
 **Kind**: inner class of <code>[client_http](#module_client_http)</code>  
 **Extends:** <code>Client</code>  
@@ -84,10 +86,12 @@
 **License**: Apache-2.0  
 **Copyright**: 2015 PortaText  
 <a name="new_module_client_http..ClientHttp_new"></a>
+
 #### new ClientHttp()
 This is our basic client
 
 <a name="module_client"></a>
+
 ## client
 
 * [client](#module_client)
@@ -107,6 +111,7 @@ This is our basic client
         * *[.execute(descriptor)](#module_client..Client+execute) ⇒ <code>Promise</code>*
 
 <a name="module_client..Client"></a>
+
 ### client~Client
 **Kind**: inner class of <code>[client](#module_client)</code>  
 **Author:** Marcelo Gornstein <marcelog@portatext.com>  
@@ -129,10 +134,12 @@ This is our basic client
     * *[.execute(descriptor)](#module_client..Client+execute) ⇒ <code>Promise</code>*
 
 <a name="new_module_client..Client_new"></a>
+
 #### new Client()
 This is our basic client
 
 <a name="module_client..Client+apiKey"></a>
+
 #### client.apiKey
 **Kind**: instance property of <code>[Client](#module_client..Client)</code>  
 **Default**: <code></code>  
@@ -144,6 +151,7 @@ This is our basic client
 | <code>string</code> | The api key to use |
 
 <a name="module_client..Client+endpoint"></a>
+
 #### client.endpoint
 **Kind**: instance property of <code>[Client](#module_client..Client)</code>  
 **Read only**: true  
@@ -154,6 +162,7 @@ This is our basic client
 | <code>string</code> | The endpoint to use |
 
 <a name="module_client..Client+logger"></a>
+
 #### client.logger
 **Kind**: instance property of <code>[Client](#module_client..Client)</code>  
 **Default**: <code>{module:null_logger~NullLogger}</code>  
@@ -165,6 +174,7 @@ This is our basic client
 | <code>Object</code> | The logger to use. |
 
 <a name="module_client..Client+sessionToken"></a>
+
 #### client.sessionToken
 **Kind**: instance property of <code>[Client](#module_client..Client)</code>  
 **Default**: <code></code>  
@@ -176,6 +186,7 @@ This is our basic client
 | <code>string</code> | The session token to use. |
 
 <a name="module_client..Client+credentials"></a>
+
 #### client.credentials
 **Kind**: instance property of <code>[Client](#module_client..Client)</code>  
 **Default**: <code></code>  
@@ -187,12 +198,14 @@ This is our basic client
 | <code>Array</code> | The credentials to use. The first element is the username, and the second one is the password. |
 
 <a name="module_client..Client+DEFAULT_ENDPOINT"></a>
+
 #### client.DEFAULT_ENDPOINT : <code>string</code>
 The default base HTTP endpoint
 
 **Kind**: instance constant of <code>[Client](#module_client..Client)</code>  
 **Default**: <code>&quot;https://rest.portatext.com&quot;</code>  
 <a name="module_client..Client+setEndpoint"></a>
+
 #### client.setEndpoint(endpoint) ⇒ <code>Client</code>
 Overrides the endpoint to use. I.e: You can make this client point to
 any url you want (e.g: http://127.0.0.1:1025/myMock).
@@ -205,6 +218,7 @@ any url you want (e.g: http://127.0.0.1:1025/myMock).
 | endpoint | <code>string</code> | 
 
 <a name="module_client..Client+setApiKey"></a>
+
 #### client.setApiKey(apiKey) ⇒ <code>Client</code>
 Sets an API key to use.
 
@@ -216,6 +230,7 @@ Sets an API key to use.
 | apiKey | <code>string</code> | 
 
 <a name="module_client..Client+setCredentials"></a>
+
 #### client.setCredentials(username, password) ⇒ <code>Client</code>
 Sets a username and password. Use this instead of setting an api key if
 you prefer to use a session authentication.
@@ -229,6 +244,7 @@ you prefer to use a session authentication.
 | password | <code>string</code> | 
 
 <a name="module_client..Client+setLogger"></a>
+
 #### client.setLogger(logger) ⇒ <code>Client</code>
 Sets a logger. The object to set must contain a "log" method (i.e:
 compatible with the console object).
@@ -241,6 +257,7 @@ compatible with the console object).
 | logger | <code>Object</code> | 
 
 <a name="module_client..Client+run"></a>
+
 #### client.run(endpoint, method, contentType, acceptContentType, body, outputFile, [authType]) ⇒ <code>Promise</code>
 Sets a logger. The object to set must contain a "log" method (i.e:
 compatible with the console object).
@@ -259,6 +276,7 @@ compatible with the console object).
 | [authType] | <code>AuthMethod</code> | If not supplied, will be automatically chosen. |
 
 <a name="module_client..Client+execute"></a>
+
 #### *client.execute(descriptor) ⇒ <code>Promise</code>*
 Executes the given request through the underlying implementation.
 
@@ -270,6 +288,7 @@ Executes the given request through the underlying implementation.
 | descriptor | <code>Descriptor</code> | The request descriptor. |
 
 <a name="module_acl"></a>
+
 ## acl
 
 * [acl](#module_acl)
@@ -293,6 +312,7 @@ Executes the given request through the underlying implementation.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_acl..Acl"></a>
+
 ### acl~Acl ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[acl](#module_acl)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -321,10 +341,12 @@ Executes the given request through the underlying implementation.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_acl..Acl_new"></a>
+
 #### new Acl()
 The ACL endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### acl.args
 **Kind**: instance property of <code>[Acl](#module_acl..Acl)</code>  
 **Default**: <code>{}</code>  
@@ -336,6 +358,7 @@ The ACL endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_acl..Acl+add"></a>
+
 #### acl.add(ip, netmask, description) ⇒ <code>[Command](#module_command..Command)</code>
 Adds an ip to the ACL.
 
@@ -349,6 +372,7 @@ Adds an ip to the ACL.
 | description | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### acl.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -360,6 +384,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### acl.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -371,6 +396,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### acl.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -382,6 +408,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### acl.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -393,6 +420,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *acl.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -405,6 +433,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### acl.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -417,6 +446,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### acl.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -428,6 +458,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### acl.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -439,36 +470,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### acl.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Acl](#module_acl..Acl)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### acl.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Acl](#module_acl..Acl)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### acl.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Acl](#module_acl..Acl)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### acl.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Acl](#module_acl..Acl)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### acl.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Acl](#module_acl..Acl)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### acl.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -480,6 +517,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_blacklist"></a>
+
 ## blacklist
 
 * [blacklist](#module_blacklist)
@@ -506,6 +544,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_blacklist..Blacklist"></a>
+
 ### blacklist~Blacklist ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[blacklist](#module_blacklist)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -537,10 +576,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_blacklist..Blacklist_new"></a>
+
 #### new Blacklist()
 The Blacklist endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### blacklist.args
 **Kind**: instance property of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
 **Default**: <code>{}</code>  
@@ -552,6 +593,7 @@ The Blacklist endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_blacklist..Blacklist+number"></a>
+
 #### blacklist.number(number) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the number.
 
@@ -563,6 +605,7 @@ Sets the number.
 | number | <code>string</code> | 
 
 <a name="module_blacklist..Blacklist+saveTo"></a>
+
 #### blacklist.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Saves the blacklist to the given filename.
 
@@ -574,6 +617,7 @@ Saves the blacklist to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_blacklist..Blacklist+csv"></a>
+
 #### blacklist.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
 Send a CSV file to blacklist contacts.
 
@@ -585,6 +629,7 @@ Send a CSV file to blacklist contacts.
 | filename | <code>string</code> | 
 
 <a name="module_blacklist..Blacklist+page"></a>
+
 #### blacklist.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -596,6 +641,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### blacklist.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -607,6 +653,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### blacklist.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -618,6 +665,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### blacklist.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -629,6 +677,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### blacklist.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -640,6 +689,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *blacklist.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -652,6 +702,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### blacklist.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -663,6 +714,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### blacklist.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -674,6 +726,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### blacklist.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -685,36 +738,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### blacklist.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### blacklist.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### blacklist.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### blacklist.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### blacklist.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### blacklist.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -726,6 +785,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_campaign_lifecycle"></a>
+
 ## campaign_lifecycle
 
 * [campaign_lifecycle](#module_campaign_lifecycle)
@@ -753,6 +813,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_campaign_lifecycle..CampaignLifecycle"></a>
+
 ### campaign_lifecycle~CampaignLifecycle ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[campaign_lifecycle](#module_campaign_lifecycle)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -785,10 +846,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_campaign_lifecycle..CampaignLifecycle_new"></a>
+
 #### new CampaignLifecycle()
 The CampaignLifecycle endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### campaignLifecycle.args
 **Kind**: instance property of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Default**: <code>{}</code>  
@@ -800,36 +863,42 @@ The CampaignLifecycle endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_campaign_lifecycle..CampaignLifecycle+id"></a>
+
 #### campaignLifecycle.id() ⇒ <code>[Command](#module_command..Command)</code>
 Sets the campaign id.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_campaign_lifecycle..CampaignLifecycle+start"></a>
+
 #### campaignLifecycle.start() ⇒ <code>[Command](#module_command..Command)</code>
 Starts a campaign.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_campaign_lifecycle..CampaignLifecycle+resume"></a>
+
 #### campaignLifecycle.resume() ⇒ <code>[Command](#module_command..Command)</code>
 Resumes a campaign.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_campaign_lifecycle..CampaignLifecycle+pause"></a>
+
 #### campaignLifecycle.pause() ⇒ <code>[Command](#module_command..Command)</code>
 Pauses a campaign.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_campaign_lifecycle..CampaignLifecycle+cancel"></a>
+
 #### campaignLifecycle.cancel() ⇒ <code>[Command](#module_command..Command)</code>
 Cancels a campaign.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_command..Command+setArgument"></a>
+
 #### campaignLifecycle.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -841,6 +910,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### campaignLifecycle.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -852,6 +922,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### campaignLifecycle.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -863,6 +934,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### campaignLifecycle.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -874,6 +946,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *campaignLifecycle.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -886,6 +959,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### campaignLifecycle.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -897,6 +971,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### campaignLifecycle.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -908,6 +983,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### campaignLifecycle.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -919,36 +995,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### campaignLifecycle.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### campaignLifecycle.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### campaignLifecycle.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### campaignLifecycle.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### campaignLifecycle.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[CampaignLifecycle](#module_campaign_lifecycle..CampaignLifecycle)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### campaignLifecycle.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -960,6 +1042,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_campaign"></a>
+
 ## campaign
 
 * [campaign](#module_campaign)
@@ -992,6 +1075,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_campaign..Campaigns"></a>
+
 ### campaign~Campaigns ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[campaign](#module_campaign)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -1029,10 +1113,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_campaign..Campaigns_new"></a>
+
 #### new Campaigns()
 The Campaigns endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### campaigns.args
 **Kind**: instance property of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Default**: <code>{}</code>  
@@ -1044,6 +1130,7 @@ The Campaigns endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_campaign..Campaigns+id"></a>
+
 #### campaigns.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the id.
 
@@ -1055,6 +1142,7 @@ Sets the id.
 | id | <code>integer</code> | 
 
 <a name="module_campaign..Campaigns+name"></a>
+
 #### campaigns.name(name) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the name.
 
@@ -1066,6 +1154,7 @@ Sets the name.
 | name | <code>string</code> | 
 
 <a name="module_campaign..Campaigns+description"></a>
+
 #### campaigns.description(description) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the description.
 
@@ -1077,6 +1166,7 @@ Sets the description.
 | description | <code>string</code> | 
 
 <a name="module_campaign..Campaigns+from"></a>
+
 #### campaigns.from(from) ⇒ <code>[Command](#module_command..Command)</code>
 Specifies source telephone number for the campaign.
 
@@ -1088,6 +1178,7 @@ Specifies source telephone number for the campaign.
 | from | <code>string</code> | 
 
 <a name="module_campaign..Campaigns+toContactLists"></a>
+
 #### campaigns.toContactLists(contactLists) ⇒ <code>[Command](#module_command..Command)</code>
 Contact list IDs to use.
 
@@ -1099,6 +1190,7 @@ Contact list IDs to use.
 | contactLists | <code>Array.&lt;integer&gt;</code> | 
 
 <a name="module_campaign..Campaigns+csv"></a>
+
 #### campaigns.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
 Send a CSV file to import contacts.
 
@@ -1110,12 +1202,14 @@ Send a CSV file to import contacts.
 | filename | <code>string</code> | 
 
 <a name="module_campaign..Campaigns+allSubscribers"></a>
+
 #### campaigns.allSubscribers() ⇒ <code>[Command](#module_command..Command)</code>
 Specify all subscribers of the given SMS Service as targets.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 <a name="module_campaign..Campaigns+page"></a>
+
 #### campaigns.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -1127,6 +1221,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_campaign..Campaigns+saveTo"></a>
+
 #### campaigns.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Saves the contacts to the given filename.
 
@@ -1138,12 +1233,14 @@ Saves the contacts to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_campaign..Campaigns+contacts"></a>
+
 #### campaigns.contacts() ⇒ <code>[Command](#module_command..Command)</code>
 Query campaign contacts.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 <a name="module_command..Command+setArgument"></a>
+
 #### campaigns.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -1155,6 +1252,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### campaigns.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -1166,6 +1264,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### campaigns.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -1177,6 +1276,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### campaigns.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -1188,6 +1288,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *campaigns.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -1200,6 +1301,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### campaigns.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -1211,6 +1313,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### campaigns.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -1222,6 +1325,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### campaigns.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -1233,36 +1337,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### campaigns.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### campaigns.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### campaigns.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### campaigns.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### campaigns.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### campaigns.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -1274,6 +1384,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_cnam"></a>
+
 ## cnam
 
 * [cnam](#module_cnam)
@@ -1297,6 +1408,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_cnam..Cnam"></a>
+
 ### cnam~Cnam ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[cnam](#module_cnam)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -1325,10 +1437,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_cnam..Cnam_new"></a>
+
 #### new Cnam()
 The Cnam endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### cnam.args
 **Kind**: instance property of <code>[Cnam](#module_cnam..Cnam)</code>  
 **Default**: <code>{}</code>  
@@ -1340,6 +1454,7 @@ The Cnam endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_cnam..Cnam+forNumber"></a>
+
 #### cnam.forNumber(number) ⇒ <code>[Command](#module_command..Command)</code>
 Asks for CNAM info for the specific number.
 
@@ -1351,6 +1466,7 @@ Asks for CNAM info for the specific number.
 | number | <code>string</code> | The target number. |
 
 <a name="module_command..Command+setArgument"></a>
+
 #### cnam.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -1362,6 +1478,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### cnam.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -1373,6 +1490,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### cnam.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -1384,6 +1502,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### cnam.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -1395,6 +1514,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *cnam.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -1407,6 +1527,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### cnam.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -1418,6 +1539,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### cnam.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -1429,6 +1551,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### cnam.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -1440,36 +1563,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### cnam.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### cnam.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### cnam.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### cnam.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### cnam.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Cnam](#module_cnam..Cnam)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### cnam.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -1481,6 +1610,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_contact_lists"></a>
+
 ## contact_lists
 
 * [contact_lists](#module_contact_lists)
@@ -1510,6 +1640,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_contact_lists..ContactLists"></a>
+
 ### contact_lists~ContactLists ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[contact_lists](#module_contact_lists)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -1544,10 +1675,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_contact_lists..ContactLists_new"></a>
+
 #### new ContactLists()
 The ContactLists endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### contactLists.args
 **Kind**: instance property of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
 **Default**: <code>{}</code>  
@@ -1559,6 +1692,7 @@ The ContactLists endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_contact_lists..ContactLists+id"></a>
+
 #### contactLists.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the id.
 
@@ -1570,6 +1704,7 @@ Sets the id.
 | id | <code>integer</code> | 
 
 <a name="module_contact_lists..ContactLists+name"></a>
+
 #### contactLists.name(name) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the name.
 
@@ -1581,6 +1716,7 @@ Sets the name.
 | name | <code>string</code> | 
 
 <a name="module_contact_lists..ContactLists+description"></a>
+
 #### contactLists.description(description) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the description.
 
@@ -1592,6 +1728,7 @@ Sets the description.
 | description | <code>string</code> | 
 
 <a name="module_contact_lists..ContactLists+csv"></a>
+
 #### contactLists.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
 Send a CSV file to import contacts.
 
@@ -1603,6 +1740,7 @@ Send a CSV file to import contacts.
 | filename | <code>string</code> | 
 
 <a name="module_contact_lists..ContactLists+saveTo"></a>
+
 #### contactLists.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Saves the contact list to the given filename.
 
@@ -1614,6 +1752,7 @@ Saves the contact list to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_contact_lists..ContactLists+withNumber"></a>
+
 #### contactLists.withNumber(number, variables) ⇒ <code>[Command](#module_command..Command)</code>
 Adds or removes the given number to the given contact list.
 
@@ -1626,6 +1765,7 @@ Adds or removes the given number to the given contact list.
 | variables | <code>Object</code> | 
 
 <a name="module_contact_lists..ContactLists+page"></a>
+
 #### contactLists.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -1637,6 +1777,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### contactLists.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -1648,6 +1789,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### contactLists.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -1659,6 +1801,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### contactLists.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -1670,6 +1813,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### contactLists.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -1681,6 +1825,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *contactLists.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -1693,6 +1838,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### contactLists.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -1704,6 +1850,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### contactLists.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -1715,6 +1862,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### contactLists.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -1726,36 +1874,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### contactLists.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### contactLists.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### contactLists.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### contactLists.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### contactLists.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[ContactLists](#module_contact_lists..ContactLists)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### contactLists.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -1767,6 +1921,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_contacts"></a>
+
 ## contacts
 
 * [contacts](#module_contacts)
@@ -1797,6 +1952,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_contacts..Contacts"></a>
+
 ### contacts~Contacts ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[contacts](#module_contacts)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -1832,10 +1988,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_contacts..Contacts_new"></a>
+
 #### new Contacts()
 The Contacts endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### contacts.args
 **Kind**: instance property of <code>[Contacts](#module_contacts..Contacts)</code>  
 **Default**: <code>{}</code>  
@@ -1847,6 +2005,7 @@ The Contacts endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_contacts..Contacts+id"></a>
+
 #### contacts.id(number) ⇒ <code>[Command](#module_command..Command)</code>
 Use this contact number.
 
@@ -1858,6 +2017,7 @@ Use this contact number.
 | number | <code>string</code> | 
 
 <a name="module_contacts..Contacts+name"></a>
+
 #### contacts.name(name) ⇒ <code>[Command](#module_command..Command)</code>
 Specify only a variable name.
 
@@ -1869,6 +2029,7 @@ Specify only a variable name.
 | name | <code>string</code> | 
 
 <a name="module_contacts..Contacts+set"></a>
+
 #### contacts.set(name, value) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given variable.
 
@@ -1881,12 +2042,14 @@ Sets the given variable.
 | value | <code>string</code> | 
 
 <a name="module_contacts..Contacts+withContactLists"></a>
+
 #### contacts.withContactLists() ⇒ <code>[Command](#module_command..Command)</code>
 Include contact list ids in the export.
 
 **Kind**: instance method of <code>[Contacts](#module_contacts..Contacts)</code>  
 **Access:** public  
 <a name="module_contacts..Contacts+page"></a>
+
 #### contacts.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -1898,6 +2061,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_contacts..Contacts+setAll"></a>
+
 #### contacts.setAll(variables) ⇒ <code>[Command](#module_command..Command)</code>
 Sets all the given variables.
 
@@ -1909,6 +2073,7 @@ Sets all the given variables.
 | variables | <code>Object</code> | 
 
 <a name="module_contacts..Contacts+saveTo"></a>
+
 #### contacts.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Saves the variables to the given filename.
 
@@ -1920,6 +2085,7 @@ Saves the variables to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_contacts..Contacts+csv"></a>
+
 #### contacts.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
 Send a CSV file to import variables from.
 
@@ -1931,6 +2097,7 @@ Send a CSV file to import variables from.
 | filename | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### contacts.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -1942,6 +2109,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### contacts.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -1953,6 +2121,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### contacts.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -1964,6 +2133,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### contacts.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -1975,6 +2145,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *contacts.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -1987,6 +2158,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### contacts.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -1998,6 +2170,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### contacts.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -2009,6 +2182,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### contacts.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -2020,36 +2194,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### contacts.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Contacts](#module_contacts..Contacts)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### contacts.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Contacts](#module_contacts..Contacts)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### contacts.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Contacts](#module_contacts..Contacts)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### contacts.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Contacts](#module_contacts..Contacts)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### contacts.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Contacts](#module_contacts..Contacts)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### contacts.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -2061,6 +2241,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_credit_cards"></a>
+
 ## credit_cards
 
 * [credit_cards](#module_credit_cards)
@@ -2087,6 +2268,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_credit_cards..CreditCards"></a>
+
 ### credit_cards~CreditCards ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[credit_cards](#module_credit_cards)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -2118,10 +2300,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_credit_cards..CreditCards_new"></a>
+
 #### new CreditCards()
 The CreditCards endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### creditCards.args
 **Kind**: instance property of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
 **Default**: <code>{}</code>  
@@ -2133,6 +2317,7 @@ The CreditCards endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_credit_cards..CreditCards+id"></a>
+
 #### creditCards.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the credit card id.
 
@@ -2144,6 +2329,7 @@ Sets the credit card id.
 | id | <code>integer</code> | 
 
 <a name="module_credit_cards..CreditCards+nameOnCard"></a>
+
 #### creditCards.nameOnCard(firstname, lastname) ⇒ <code>[Command](#module_command..Command)</code>
 Set name on card.
 
@@ -2156,6 +2342,7 @@ Set name on card.
 | lastname | <code>string</code> | 
 
 <a name="module_credit_cards..CreditCards+cardInfo"></a>
+
 #### creditCards.cardInfo(number, expirationDate, code) ⇒ <code>[Command](#module_command..Command)</code>
 Set card information.
 
@@ -2169,6 +2356,7 @@ Set card information.
 | code | <code>string</code> |  |
 
 <a name="module_credit_cards..CreditCards+address"></a>
+
 #### creditCards.address(streetAddress, city, state, zip, country) ⇒ <code>[Command](#module_command..Command)</code>
 Set card billing address.
 
@@ -2184,6 +2372,7 @@ Set card billing address.
 | country | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### creditCards.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -2195,6 +2384,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### creditCards.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -2206,6 +2396,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### creditCards.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -2217,6 +2408,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### creditCards.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -2228,6 +2420,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *creditCards.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -2240,6 +2433,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### creditCards.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -2251,6 +2445,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### creditCards.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -2262,6 +2457,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### creditCards.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -2273,36 +2469,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### creditCards.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### creditCards.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### creditCards.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### creditCards.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### creditCards.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[CreditCards](#module_credit_cards..CreditCards)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### creditCards.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -2314,6 +2516,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_destinations"></a>
+
 ## destinations
 
 * [destinations](#module_destinations)
@@ -2339,6 +2542,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_destinations..Destinations"></a>
+
 ### destinations~Destinations ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[destinations](#module_destinations)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -2369,10 +2573,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_destinations..Destinations_new"></a>
+
 #### new Destinations()
 The Destinations endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### destinations.args
 **Kind**: instance property of <code>[Destinations](#module_destinations..Destinations)</code>  
 **Default**: <code>{}</code>  
@@ -2384,6 +2590,7 @@ The Destinations endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_destinations..Destinations+page"></a>
+
 #### destinations.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -2395,6 +2602,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_destinations..Destinations+sortBy"></a>
+
 #### destinations.sortBy(&#x27;country&#x27;, &#x27;asc&#x27;) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -2407,6 +2615,7 @@ Return the specific page of results.
 | 'asc' | <code>string</code> | or 'desc'. |
 
 <a name="module_destinations..Destinations+saveTo"></a>
+
 #### destinations.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Saves the list to the given filename.
 
@@ -2418,6 +2627,7 @@ Saves the list to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### destinations.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -2429,6 +2639,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### destinations.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -2440,6 +2651,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### destinations.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -2451,6 +2663,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### destinations.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -2462,6 +2675,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *destinations.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -2474,6 +2688,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### destinations.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -2485,6 +2700,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### destinations.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -2496,6 +2712,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### destinations.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -2507,36 +2724,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### destinations.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Destinations](#module_destinations..Destinations)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### destinations.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Destinations](#module_destinations..Destinations)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### destinations.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Destinations](#module_destinations..Destinations)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### destinations.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Destinations](#module_destinations..Destinations)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### destinations.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Destinations](#module_destinations..Destinations)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### destinations.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -2548,6 +2771,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_did_search"></a>
+
 ## did_search
 
 * [did_search](#module_did_search)
@@ -2579,6 +2803,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_did_search..DidSearch"></a>
+
 ### did_search~DidSearch ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[did_search](#module_did_search)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -2615,10 +2840,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_did_search..DidSearch_new"></a>
+
 #### new DidSearch()
 The DidSearch endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### didSearch.args
 **Kind**: instance property of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Default**: <code>{}</code>  
@@ -2630,6 +2857,7 @@ The DidSearch endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_did_search..DidSearch+forCountry"></a>
+
 #### didSearch.forCountry(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
 Searches for DIDs for this specific country.
 
@@ -2641,30 +2869,35 @@ Searches for DIDs for this specific country.
 | countryIso | <code>string</code> | 2-letter ISO code. |
 
 <a name="module_did_search..DidSearch+tollFree"></a>
+
 #### didSearch.tollFree() ⇒ <code>[Command](#module_command..Command)</code>
 Search only for toll free numbers.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_did_search..DidSearch+local"></a>
+
 #### didSearch.local() ⇒ <code>[Command](#module_command..Command)</code>
 Search only for local numbers.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_did_search..DidSearch+national"></a>
+
 #### didSearch.national() ⇒ <code>[Command](#module_command..Command)</code>
 Search only for national numbers.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_did_search..DidSearch+mobile"></a>
+
 #### didSearch.mobile() ⇒ <code>[Command](#module_command..Command)</code>
 Search only for mobile numbers.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_did_search..DidSearch+page"></a>
+
 #### didSearch.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -2676,6 +2909,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_did_search..DidSearch+startsWith"></a>
+
 #### didSearch.startsWith(pattern) ⇒ <code>[Command](#module_command..Command)</code>
 Searches numbers that start with the specific pattern.
 
@@ -2687,6 +2921,7 @@ Searches numbers that start with the specific pattern.
 | pattern | <code>string</code> | 
 
 <a name="module_did_search..DidSearch+endsWith"></a>
+
 #### didSearch.endsWith(pattern) ⇒ <code>[Command](#module_command..Command)</code>
 Searches numbers that ends with the specific pattern.
 
@@ -2698,6 +2933,7 @@ Searches numbers that ends with the specific pattern.
 | pattern | <code>string</code> | 
 
 <a name="module_did_search..DidSearch+contains"></a>
+
 #### didSearch.contains(pattern) ⇒ <code>[Command](#module_command..Command)</code>
 Searches numbers that contains the specific pattern.
 
@@ -2709,6 +2945,7 @@ Searches numbers that contains the specific pattern.
 | pattern | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### didSearch.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -2720,6 +2957,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### didSearch.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -2731,6 +2969,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### didSearch.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -2742,6 +2981,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### didSearch.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -2753,6 +2993,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *didSearch.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -2765,6 +3006,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### didSearch.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -2777,6 +3019,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### didSearch.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -2788,6 +3031,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### didSearch.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -2799,36 +3043,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### didSearch.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### didSearch.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### didSearch.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### didSearch.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### didSearch.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[DidSearch](#module_did_search..DidSearch)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### didSearch.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -2840,6 +3090,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_did_settings"></a>
+
 ## did_settings
 
 * [did_settings](#module_did_settings)
@@ -2867,6 +3118,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_did_settings..DidSettings"></a>
+
 ### did_settings~DidSettings ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[did_settings](#module_did_settings)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -2899,10 +3151,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_did_settings..DidSettings_new"></a>
+
 #### new DidSettings()
 The DidSettings endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### didSettings.args
 **Kind**: instance property of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Default**: <code>{}</code>  
@@ -2914,6 +3168,7 @@ The DidSettings endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_did_settings..DidSettings+forNumber"></a>
+
 #### didSettings.forNumber(number) ⇒ <code>[Command](#module_command..Command)</code>
 Selects DID.
 
@@ -2925,6 +3180,7 @@ Selects DID.
 | number | <code>string</code> | 
 
 <a name="module_did_settings..DidSettings+enableCnam"></a>
+
 #### didSettings.enableCnam(value) ⇒ <code>[Command](#module_command..Command)</code>
 Enables CNAM lookup.
 
@@ -2936,18 +3192,21 @@ Enables CNAM lookup.
 | value | <code>integer</code> | 
 
 <a name="module_did_settings..DidSettings+disableCnam"></a>
+
 #### didSettings.disableCnam() ⇒ <code>[Command](#module_command..Command)</code>
 Disables CNAM lookup.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  
 <a name="module_did_settings..DidSettings+dontAutoRespond"></a>
+
 #### didSettings.dontAutoRespond() ⇒ <code>[Command](#module_command..Command)</code>
 Disables autoresponder.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  
 <a name="module_did_settings..DidSettings+autoRespondWith"></a>
+
 #### didSettings.autoRespondWith(text) ⇒ <code>[Command](#module_command..Command)</code>
 Enables autoresponder.
 
@@ -2959,6 +3218,7 @@ Enables autoresponder.
 | text | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### didSettings.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -2970,6 +3230,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### didSettings.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -2981,6 +3242,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### didSettings.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -2992,6 +3254,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### didSettings.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -3003,6 +3266,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *didSettings.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -3015,6 +3279,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### didSettings.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -3026,6 +3291,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### didSettings.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -3037,6 +3303,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### didSettings.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -3048,36 +3315,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### didSettings.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### didSettings.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### didSettings.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### didSettings.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### didSettings.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### didSettings.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -3089,6 +3362,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_email_verify"></a>
+
 ## email_verify
 
 * [email_verify](#module_email_verify)
@@ -3112,6 +3386,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_email_verify..EmailVerify"></a>
+
 ### email_verify~EmailVerify ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[email_verify](#module_email_verify)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -3140,10 +3415,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_email_verify..EmailVerify_new"></a>
+
 #### new EmailVerify()
 The EmailVerify endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### emailVerify.args
 **Kind**: instance property of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
 **Default**: <code>{}</code>  
@@ -3155,6 +3432,7 @@ The EmailVerify endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_email_verify..EmailVerify+withNonce"></a>
+
 #### emailVerify.withNonce(nonce) ⇒ <code>[Command](#module_command..Command)</code>
 Use this nonce to verify.
 
@@ -3166,6 +3444,7 @@ Use this nonce to verify.
 | nonce | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### emailVerify.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -3177,6 +3456,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### emailVerify.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -3188,6 +3468,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### emailVerify.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -3199,6 +3480,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### emailVerify.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -3210,6 +3492,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *emailVerify.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -3222,6 +3505,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### emailVerify.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -3233,6 +3517,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### emailVerify.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -3244,6 +3529,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### emailVerify.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -3255,36 +3541,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### emailVerify.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### emailVerify.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### emailVerify.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### emailVerify.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### emailVerify.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[EmailVerify](#module_email_verify..EmailVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### emailVerify.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -3296,6 +3588,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_inspect"></a>
+
 ## inspect
 
 * [inspect](#module_inspect)
@@ -3320,6 +3613,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_inspect..Inspect"></a>
+
 ### inspect~Inspect ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[inspect](#module_inspect)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -3349,10 +3643,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_inspect..Inspect_new"></a>
+
 #### new Inspect()
 The Inspect endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### inspect.args
 **Kind**: instance property of <code>[Inspect](#module_inspect..Inspect)</code>  
 **Default**: <code>{}</code>  
@@ -3364,6 +3660,7 @@ The Inspect endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_inspect..Inspect+number"></a>
+
 #### inspect.number(number) ⇒ <code>[Command](#module_command..Command)</code>
 Inspects the given number.
 
@@ -3375,6 +3672,7 @@ Inspects the given number.
 | number | <code>string</code> | 
 
 <a name="module_inspect..Inspect+csv"></a>
+
 #### inspect.csv(filename) ⇒ <code>[Command](#module_command..Command)</code>
 Send a CSV file to inspect numbers.
 
@@ -3386,6 +3684,7 @@ Send a CSV file to inspect numbers.
 | filename | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### inspect.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -3397,6 +3696,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### inspect.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -3408,6 +3708,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### inspect.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -3419,6 +3720,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### inspect.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -3430,6 +3732,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *inspect.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -3442,6 +3745,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### inspect.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -3453,6 +3757,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### inspect.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -3464,6 +3769,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### inspect.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -3475,36 +3781,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### inspect.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### inspect.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### inspect.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### inspect.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### inspect.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Inspect](#module_inspect..Inspect)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### inspect.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -3516,6 +3828,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_jobs"></a>
+
 ## jobs
 
 * [jobs](#module_jobs)
@@ -3541,6 +3854,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_jobs..Jobs"></a>
+
 ### jobs~Jobs ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[jobs](#module_jobs)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -3571,10 +3885,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_jobs..Jobs_new"></a>
+
 #### new Jobs()
 The Jobs endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### jobs.args
 **Kind**: instance property of <code>[Jobs](#module_jobs..Jobs)</code>  
 **Default**: <code>{}</code>  
@@ -3586,6 +3902,7 @@ The Jobs endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_jobs..Jobs+id"></a>
+
 #### jobs.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the id.
 
@@ -3597,6 +3914,7 @@ Sets the id.
 | id | <code>integer</code> | 
 
 <a name="module_jobs..Jobs+page"></a>
+
 #### jobs.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -3608,6 +3926,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_jobs..Jobs+saveTo"></a>
+
 #### jobs.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Used to save the file resulting of a job execution.
 
@@ -3619,6 +3938,7 @@ Used to save the file resulting of a job execution.
 | file | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### jobs.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -3630,6 +3950,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### jobs.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -3641,6 +3962,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### jobs.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -3652,6 +3974,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### jobs.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -3663,6 +3986,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *jobs.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -3675,6 +3999,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### jobs.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -3686,6 +4011,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### jobs.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -3697,6 +4023,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### jobs.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -3708,36 +4035,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### jobs.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### jobs.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### jobs.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### jobs.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### jobs.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Jobs](#module_jobs..Jobs)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### jobs.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -3749,6 +4082,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_me"></a>
+
 ## me
 
 * [me](#module_me)
@@ -3776,6 +4110,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_me..Me"></a>
+
 ### me~Me ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[me](#module_me)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -3808,10 +4143,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_me..Me_new"></a>
+
 #### new Me()
 The Me endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### me.args
 **Kind**: instance property of <code>[Me](#module_me..Me)</code>  
 **Default**: <code>{}</code>  
@@ -3823,6 +4160,7 @@ The Me endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_me..Me+name"></a>
+
 #### me.name(first, last) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the name.
 
@@ -3835,6 +4173,7 @@ Sets the name.
 | last | <code>string</code> | 
 
 <a name="module_me..Me+company"></a>
+
 #### me.company(company) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the company.
 
@@ -3846,6 +4185,7 @@ Sets the company.
 | company | <code>string</code> | 
 
 <a name="module_me..Me+email"></a>
+
 #### me.email(email) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the email.
 
@@ -3857,6 +4197,7 @@ Sets the email.
 | email | <code>string</code> | 
 
 <a name="module_me..Me+callbackUrl"></a>
+
 #### me.callbackUrl(callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the callback url.
 
@@ -3868,6 +4209,7 @@ Sets the callback url.
 | callbackUrl | <code>string</code> | 
 
 <a name="module_me..Me+timezone"></a>
+
 #### me.timezone(timezone) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the timezone.
 
@@ -3879,6 +4221,7 @@ Sets the timezone.
 | timezone | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### me.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -3890,6 +4233,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### me.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -3901,6 +4245,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### me.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -3912,6 +4257,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### me.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -3923,6 +4269,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *me.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -3935,6 +4282,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### me.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -3946,6 +4294,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### me.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -3957,6 +4306,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### me.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -3968,36 +4318,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### me.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Me](#module_me..Me)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### me.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Me](#module_me..Me)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### me.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Me](#module_me..Me)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### me.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Me](#module_me..Me)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### me.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Me](#module_me..Me)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### me.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -4009,6 +4365,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_my_password"></a>
+
 ## my_password
 
 * [my_password](#module_my_password)
@@ -4034,6 +4391,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_my_password..MyPassword"></a>
+
 ### my_password~MyPassword ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[my_password](#module_my_password)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -4064,10 +4422,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_my_password..MyPassword_new"></a>
+
 #### new MyPassword()
 The Me/Password endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### myPassword.args
 **Kind**: instance property of <code>[MyPassword](#module_my_password..MyPassword)</code>  
 **Default**: <code>{}</code>  
@@ -4079,6 +4439,7 @@ The Me/Password endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_my_password..MyPassword+withNonce"></a>
+
 #### myPassword.withNonce(nonce, newPassword) ⇒ <code>[Command](#module_command..Command)</code>
 Use this nonce to reset a password.
 
@@ -4091,6 +4452,7 @@ Use this nonce to reset a password.
 | newPassword | <code>string</code> | 
 
 <a name="module_my_password..MyPassword+forEmail"></a>
+
 #### myPassword.forEmail(email) ⇒ <code>[Command](#module_command..Command)</code>
 Ask to reset the password for this email.
 
@@ -4102,6 +4464,7 @@ Ask to reset the password for this email.
 | email | <code>string</code> | 
 
 <a name="module_my_password..MyPassword+change"></a>
+
 #### myPassword.change(oldPassword, newPassword) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the name.
 
@@ -4114,6 +4477,7 @@ Sets the name.
 | newPassword | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### myPassword.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -4125,6 +4489,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### myPassword.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -4136,6 +4501,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### myPassword.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -4147,6 +4513,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### myPassword.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -4158,6 +4525,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *myPassword.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -4170,6 +4538,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### myPassword.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -4181,6 +4550,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### myPassword.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -4192,6 +4562,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### myPassword.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -4203,36 +4574,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### myPassword.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### myPassword.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### myPassword.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### myPassword.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### myPassword.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[MyPassword](#module_my_password..MyPassword)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### myPassword.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -4244,6 +4621,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_number_verify"></a>
+
 ## number_verify
 
 * [number_verify](#module_number_verify)
@@ -4270,6 +4648,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_number_verify..NumberVerify"></a>
+
 ### number_verify~NumberVerify ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[number_verify](#module_number_verify)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -4301,10 +4680,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_number_verify..NumberVerify_new"></a>
+
 #### new NumberVerify()
 The Number Verify endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### numberVerify.args
 **Kind**: instance property of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
 **Default**: <code>{}</code>  
@@ -4316,6 +4697,7 @@ The Number Verify endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_number_verify..NumberVerify+forNumber"></a>
+
 #### numberVerify.forNumber(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the target number.
 
@@ -4327,6 +4709,7 @@ Sets the target number.
 | countryIso | <code>string</code> | 2-letter ISO code. |
 
 <a name="module_number_verify..NumberVerify+verifyWith"></a>
+
 #### numberVerify.verifyWith(to) ⇒ <code>[Command](#module_command..Command)</code>
 Uses the given code to verify the phone number.
 
@@ -4338,6 +4721,7 @@ Uses the given code to verify the phone number.
 | to | <code>string</code> | 
 
 <a name="module_number_verify..NumberVerify+from"></a>
+
 #### numberVerify.from(from) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the message source number.
 
@@ -4349,6 +4733,7 @@ Sets the message source number.
 | from | <code>string</code> | 
 
 <a name="module_number_verify..NumberVerify+useTemplate"></a>
+
 #### numberVerify.useTemplate(templateId, variables) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the template id to use.
 
@@ -4361,6 +4746,7 @@ Sets the template id to use.
 | variables | <code>Object</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### numberVerify.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -4372,6 +4758,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### numberVerify.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -4383,6 +4770,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### numberVerify.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -4394,6 +4782,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### numberVerify.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -4405,6 +4794,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *numberVerify.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -4417,6 +4807,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### numberVerify.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -4428,6 +4819,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### numberVerify.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -4439,6 +4831,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### numberVerify.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -4450,36 +4843,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### numberVerify.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### numberVerify.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### numberVerify.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### numberVerify.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### numberVerify.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[NumberVerify](#module_number_verify..NumberVerify)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### numberVerify.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -4491,6 +4890,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_operators"></a>
+
 ## operators
 
 * [operators](#module_operators)
@@ -4516,6 +4916,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_operators..Operators"></a>
+
 ### operators~Operators ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[operators](#module_operators)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -4546,10 +4947,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_operators..Operators_new"></a>
+
 #### new Operators()
 The Operators endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### operators.args
 **Kind**: instance property of <code>[Operators](#module_operators..Operators)</code>  
 **Default**: <code>{}</code>  
@@ -4561,6 +4964,7 @@ The Operators endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_operators..Operators+page"></a>
+
 #### operators.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -4572,6 +4976,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_operators..Operators+sortBy"></a>
+
 #### operators.sortBy(&#x27;country&#x27;, &#x27;asc&#x27;) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -4584,6 +4989,7 @@ Return the specific page of results.
 | 'asc' | <code>string</code> | or 'desc'. |
 
 <a name="module_operators..Operators+saveTo"></a>
+
 #### operators.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Saves the list to the given filename.
 
@@ -4595,6 +5001,7 @@ Saves the list to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### operators.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -4606,6 +5013,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### operators.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -4617,6 +5025,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### operators.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -4628,6 +5037,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### operators.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -4639,6 +5049,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *operators.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -4651,6 +5062,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### operators.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -4662,6 +5074,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### operators.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -4673,6 +5086,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### operators.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -4684,36 +5098,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### operators.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Operators](#module_operators..Operators)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### operators.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Operators](#module_operators..Operators)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### operators.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Operators](#module_operators..Operators)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### operators.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Operators](#module_operators..Operators)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### operators.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Operators](#module_operators..Operators)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### operators.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -4725,6 +5145,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_recharge"></a>
+
 ## recharge
 
 * [recharge](#module_recharge)
@@ -4749,6 +5170,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_recharge..Recharge"></a>
+
 ### recharge~Recharge ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[recharge](#module_recharge)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -4778,10 +5200,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_recharge..Recharge_new"></a>
+
 #### new Recharge()
 The Recharge endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### recharge.args
 **Kind**: instance property of <code>[Recharge](#module_recharge..Recharge)</code>  
 **Default**: <code>{}</code>  
@@ -4793,6 +5217,7 @@ The Recharge endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_recharge..Recharge+withCard"></a>
+
 #### recharge.withCard(cardId) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the card id to use for recharge.
 
@@ -4804,6 +5229,7 @@ Sets the card id to use for recharge.
 | cardId | <code>integer</code> | 
 
 <a name="module_recharge..Recharge+total"></a>
+
 #### recharge.total(total) ⇒ <code>[Command](#module_command..Command)</code>
 Amount of money to recharge.
 
@@ -4815,6 +5241,7 @@ Amount of money to recharge.
 | total | <code>float</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### recharge.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -4826,6 +5253,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### recharge.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -4837,6 +5265,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### recharge.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -4848,6 +5277,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### recharge.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -4859,6 +5289,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *recharge.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -4871,6 +5302,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### recharge.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -4882,6 +5314,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### recharge.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -4893,6 +5326,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### recharge.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -4904,36 +5338,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### recharge.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### recharge.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### recharge.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### recharge.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### recharge.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Recharge](#module_recharge..Recharge)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### recharge.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -4945,6 +5385,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_sms_services"></a>
+
 ## sms_services
 
 * [sms_services](#module_sms_services)
@@ -4970,6 +5411,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_sms_services..Services"></a>
+
 ### sms_services~Services ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[sms_services](#module_sms_services)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -5000,10 +5442,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_sms_services..Services_new"></a>
+
 #### new Services()
 The SMS Services endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### services.args
 **Kind**: instance property of <code>[Services](#module_sms_services..Services)</code>  
 **Default**: <code>{}</code>  
@@ -5015,6 +5459,7 @@ The SMS Services endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_sms_services..Services+id"></a>
+
 #### services.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the id.
 
@@ -5026,6 +5471,7 @@ Sets the id.
 | id | <code>integer</code> | 
 
 <a name="module_sms_services..Services+saveTo"></a>
+
 #### services.saveTo(file) ⇒ <code>[Command](#module_command..Command)</code>
 Saves the subscriber list to the given filename.
 
@@ -5037,6 +5483,7 @@ Saves the subscriber list to the given filename.
 | file | <code>string</code> | 
 
 <a name="module_sms_services..Services+page"></a>
+
 #### services.page(page) ⇒ <code>[Command](#module_command..Command)</code>
 Return the specific page of results.
 
@@ -5048,6 +5495,7 @@ Return the specific page of results.
 | page | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### services.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -5059,6 +5507,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### services.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -5070,6 +5519,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### services.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -5081,6 +5531,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### services.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -5092,6 +5543,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *services.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -5104,6 +5556,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### services.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -5115,6 +5568,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### services.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -5126,6 +5580,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### services.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -5137,36 +5592,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### services.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### services.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### services.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### services.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### services.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Services](#module_sms_services..Services)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### services.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -5178,6 +5639,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_settings"></a>
+
 ## settings
 
 * [settings](#module_settings)
@@ -5216,6 +5678,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_settings..Settings"></a>
+
 ### settings~Settings ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[settings](#module_settings)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -5259,10 +5722,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_settings..Settings_new"></a>
+
 #### new Settings()
 The Settings endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### settings.args
 **Kind**: instance property of <code>[Settings](#module_settings..Settings)</code>  
 **Default**: <code>{}</code>  
@@ -5274,12 +5739,14 @@ The Settings endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_settings..Settings+dontAlertOnLowCredit"></a>
+
 #### settings.dontAlertOnLowCredit() ⇒ <code>[Command](#module_command..Command)</code>
 Dont send an alert by email on low credit.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_settings..Settings+alertWhenCreditLessThan"></a>
+
 #### settings.alertWhenCreditLessThan(value) ⇒ <code>[Command](#module_command..Command)</code>
 Sends an alert by email when credit reaches the given threshold.
 
@@ -5291,12 +5758,14 @@ Sends an alert by email when credit reaches the given threshold.
 | value | <code>integer</code> | 
 
 <a name="module_settings..Settings+dontSendInboundByEmail"></a>
+
 #### settings.dontSendInboundByEmail() ⇒ <code>[Command](#module_command..Command)</code>
 Don't send emails on inbound messages.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_settings..Settings+sendInboundByEmail"></a>
+
 #### settings.sendInboundByEmail(email) ⇒ <code>[Command](#module_command..Command)</code>
 Set email where to send inbound messages to.
 
@@ -5308,12 +5777,14 @@ Set email where to send inbound messages to.
 | email | <code>string</code> | 
 
 <a name="module_settings..Settings+disableAutoRecharges"></a>
+
 #### settings.disableAutoRecharges() ⇒ <code>[Command](#module_command..Command)</code>
 Disables auto recharges.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_settings..Settings+enableAutoRecharges"></a>
+
 #### settings.enableAutoRecharges(whenCredit, total) ⇒ <code>[Command](#module_command..Command)</code>
 Enables auto recharges.
 
@@ -5326,6 +5797,7 @@ Enables auto recharges.
 | total | <code>number</code> | 
 
 <a name="module_settings..Settings+amdMaxWordLength"></a>
+
 #### settings.amdMaxWordLength(maxWordLength) ⇒ <code>[Command](#module_command..Command)</code>
 The minimum duration of Voice considered to be a word (milliseconds).
 
@@ -5337,6 +5809,7 @@ The minimum duration of Voice considered to be a word (milliseconds).
 | maxWordLength | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdSilenceThreshold"></a>
+
 #### settings.amdSilenceThreshold(silenceThreshold) ⇒ <code>[Command](#module_command..Command)</code>
 How long do we consider silence (milliseconds).
 
@@ -5348,6 +5821,7 @@ How long do we consider silence (milliseconds).
 | silenceThreshold | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdMaxWords"></a>
+
 #### settings.amdMaxWords(maxWords) ⇒ <code>[Command](#module_command..Command)</code>
 The maximum number of words in a greeting.
 
@@ -5359,6 +5833,7 @@ The maximum number of words in a greeting.
 | maxWords | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdBetweenWordsSilence"></a>
+
 #### settings.amdBetweenWordsSilence(silenceBetweenWords) ⇒ <code>[Command](#module_command..Command)</code>
 The minimum duration of silence after a word to consider the
 audio that follows to be a new word (milliseconds).
@@ -5371,6 +5846,7 @@ audio that follows to be a new word (milliseconds).
 | silenceBetweenWords | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdMinWordLength"></a>
+
 #### settings.amdMinWordLength(minWordLength) ⇒ <code>[Command](#module_command..Command)</code>
 The minimum duration of Voice considered to be a word (milliseconds).
 
@@ -5382,6 +5858,7 @@ The minimum duration of Voice considered to be a word (milliseconds).
 | minWordLength | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdTotalTime"></a>
+
 #### settings.amdTotalTime(totalTime) ⇒ <code>[Command](#module_command..Command)</code>
 The maximum time allowed for the algorithm (milliseconds).
 
@@ -5393,6 +5870,7 @@ The maximum time allowed for the algorithm (milliseconds).
 | totalTime | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdAfterGreetingSilence"></a>
+
 #### settings.amdAfterGreetingSilence(greetingSilence) ⇒ <code>[Command](#module_command..Command)</code>
 Is the silence after detecting a greeting (milliseconds).
 
@@ -5404,6 +5882,7 @@ Is the silence after detecting a greeting (milliseconds).
 | greetingSilence | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdMaxGreetingLength"></a>
+
 #### settings.amdMaxGreetingLength(greetingLength) ⇒ <code>[Command](#module_command..Command)</code>
 Is the maximum length of a greeting (milliseconds).
 
@@ -5415,6 +5894,7 @@ Is the maximum length of a greeting (milliseconds).
 | greetingLength | <code>integer</code> | 
 
 <a name="module_settings..Settings+amdInitialSilence"></a>
+
 #### settings.amdInitialSilence(initialSilence) ⇒ <code>[Command](#module_command..Command)</code>
 Is maximum initial silence duration before greeting (milliseconds).
 
@@ -5426,6 +5906,7 @@ Is maximum initial silence duration before greeting (milliseconds).
 | initialSilence | <code>integer</code> | 
 
 <a name="module_settings..Settings+defaultCreditCard"></a>
+
 #### settings.defaultCreditCard(cardId) ⇒ <code>[Command](#module_command..Command)</code>
 Sets default credit card.
 
@@ -5437,6 +5918,7 @@ Sets default credit card.
 | cardId | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### settings.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -5448,6 +5930,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### settings.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -5459,6 +5942,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### settings.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -5470,6 +5954,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### settings.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -5481,6 +5966,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *settings.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -5493,6 +5979,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### settings.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -5504,6 +5991,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### settings.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -5515,6 +6003,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### settings.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -5526,36 +6015,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### settings.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### settings.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### settings.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### settings.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### settings.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### settings.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -5567,6 +6062,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_simulate"></a>
+
 ## simulate
 
 * [simulate](#module_simulate)
@@ -5592,6 +6088,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_simulate..Simulate"></a>
+
 ### simulate~Simulate ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[simulate](#module_simulate)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -5622,10 +6119,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_simulate..Simulate_new"></a>
+
 #### new Simulate()
 The Simulate endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### simulate.args
 **Kind**: instance property of <code>[Simulate](#module_simulate..Simulate)</code>  
 **Default**: <code>{}</code>  
@@ -5637,6 +6136,7 @@ The Simulate endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_simulate..Simulate+country"></a>
+
 #### simulate.country(country) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the destination country.
 
@@ -5648,6 +6148,7 @@ Sets the destination country.
 | country | <code>string</code> | 2-letter ISO code. |
 
 <a name="module_simulate..Simulate+useTemplate"></a>
+
 #### simulate.useTemplate(templateId, variables) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the template id to use.
 
@@ -5660,6 +6161,7 @@ Sets the template id to use.
 | variables | <code>Object</code> | 
 
 <a name="module_simulate..Simulate+text"></a>
+
 #### simulate.text(text) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the message text.
 
@@ -5671,6 +6173,7 @@ Sets the message text.
 | text | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### simulate.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -5682,6 +6185,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### simulate.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -5693,6 +6197,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### simulate.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -5704,6 +6209,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### simulate.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -5715,6 +6221,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *simulate.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -5727,6 +6234,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### simulate.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -5738,6 +6246,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### simulate.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -5749,6 +6258,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### simulate.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -5760,36 +6270,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### simulate.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Simulate](#module_simulate..Simulate)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### simulate.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Simulate](#module_simulate..Simulate)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### simulate.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Simulate](#module_simulate..Simulate)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### simulate.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Simulate](#module_simulate..Simulate)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### simulate.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Simulate](#module_simulate..Simulate)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### simulate.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -5801,6 +6317,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_sms_campaign"></a>
+
 ## sms_campaign
 
 * [sms_campaign](#module_sms_campaign)
@@ -5826,6 +6343,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_sms_campaign..SmsCampaign"></a>
+
 ### sms_campaign~SmsCampaign ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[sms_campaign](#module_sms_campaign)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -5856,10 +6374,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_sms_campaign..SmsCampaign_new"></a>
+
 #### new SmsCampaign()
 The Campaigns endpoint (SMS).
 
 <a name="module_command..Command+args"></a>
+
 #### smsCampaign.args
 **Kind**: instance property of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
 **Default**: <code>{}</code>  
@@ -5871,6 +6391,7 @@ The Campaigns endpoint (SMS).
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_sms_campaign..SmsCampaign+useTemplate"></a>
+
 #### smsCampaign.useTemplate(templateId, variables) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the template id to use.
 
@@ -5883,6 +6404,7 @@ Sets the template id to use.
 | variables | <code>Object</code> | 
 
 <a name="module_sms_campaign..SmsCampaign+text"></a>
+
 #### smsCampaign.text(text) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the message text.
 
@@ -5894,6 +6416,7 @@ Sets the message text.
 | text | <code>string</code> | 
 
 <a name="module_sms_campaign..SmsCampaign+fromService"></a>
+
 #### smsCampaign.fromService(serviceId) ⇒ <code>[Command](#module_command..Command)</code>
 Specify SMS Service ID to use as source.
 
@@ -5905,6 +6428,7 @@ Specify SMS Service ID to use as source.
 | serviceId | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### smsCampaign.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -5916,6 +6440,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### smsCampaign.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -5927,6 +6452,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### smsCampaign.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -5938,6 +6464,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### smsCampaign.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -5949,6 +6476,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *smsCampaign.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -5960,6 +6488,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### smsCampaign.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -5971,6 +6500,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### smsCampaign.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -5982,6 +6512,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### smsCampaign.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -5993,36 +6524,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### smsCampaign.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### smsCampaign.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### smsCampaign.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### smsCampaign.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### smsCampaign.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[SmsCampaign](#module_sms_campaign..SmsCampaign)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### smsCampaign.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -6034,6 +6571,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_sms"></a>
+
 ## sms
 
 * [sms](#module_sms)
@@ -6065,6 +6603,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_sms..Sms"></a>
+
 ### sms~Sms ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[sms](#module_sms)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -6101,10 +6640,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_sms..Sms_new"></a>
+
 #### new Sms()
 The Sms endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### sms.args
 **Kind**: instance property of <code>[Sms](#module_sms..Sms)</code>  
 **Default**: <code>{}</code>  
@@ -6116,6 +6657,7 @@ The Sms endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_sms..Sms+id"></a>
+
 #### sms.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the id.
 
@@ -6127,6 +6669,7 @@ Sets the id.
 | id | <code>string</code> | 
 
 <a name="module_sms..Sms+to"></a>
+
 #### sms.to(to) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the message destination number.
 
@@ -6138,6 +6681,7 @@ Sets the message destination number.
 | to | <code>string</code> | 
 
 <a name="module_sms..Sms+from"></a>
+
 #### sms.from(from) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the message source number.
 
@@ -6149,6 +6693,7 @@ Sets the message source number.
 | from | <code>string</code> | 
 
 <a name="module_sms..Sms+useTemplate"></a>
+
 #### sms.useTemplate(templateId, variables) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the template id to use.
 
@@ -6161,6 +6706,7 @@ Sets the template id to use.
 | variables | <code>Object</code> | 
 
 <a name="module_sms..Sms+text"></a>
+
 #### sms.text(text) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the message text.
 
@@ -6172,6 +6718,7 @@ Sets the message text.
 | text | <code>string</code> | 
 
 <a name="module_sms..Sms+clientRef"></a>
+
 #### sms.clientRef(text) ⇒ <code>[Command](#module_command..Command)</code>
 Set a specific custom client reference.
 
@@ -6183,6 +6730,7 @@ Set a specific custom client reference.
 | text | <code>string</code> | 
 
 <a name="module_sms..Sms+toContactLists"></a>
+
 #### sms.toContactLists(contactLists) ⇒ <code>[Command](#module_command..Command)</code>
 Contact list IDs to use.
 
@@ -6194,6 +6742,7 @@ Contact list IDs to use.
 | contactLists | <code>Array.&lt;integer&gt;</code> | 
 
 <a name="module_sms..Sms+fromService"></a>
+
 #### sms.fromService(serviceId) ⇒ <code>[Command](#module_command..Command)</code>
 Specify SMS Service ID to use as source.
 
@@ -6205,6 +6754,7 @@ Specify SMS Service ID to use as source.
 | serviceId | <code>integer</code> | 
 
 <a name="module_sms..Sms+search"></a>
+
 #### sms.search(Search) ⇒ <code>[Command](#module_command..Command)</code>
 Searches for SMS operations
 
@@ -6216,6 +6766,7 @@ Searches for SMS operations
 | Search | <code>Object</code> | params (see the API doc). |
 
 <a name="module_command..Command+setArgument"></a>
+
 #### sms.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -6227,6 +6778,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### sms.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -6238,6 +6790,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### sms.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -6249,6 +6802,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### sms.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -6260,6 +6814,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *sms.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -6272,6 +6827,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### sms.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -6283,6 +6839,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### sms.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -6294,6 +6851,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### sms.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -6305,36 +6863,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### sms.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### sms.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### sms.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### sms.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### sms.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### sms.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -6346,6 +6910,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_tariffs"></a>
+
 ## tariffs
 
 * [tariffs](#module_tariffs)
@@ -6369,6 +6934,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_tariffs..Tariffs"></a>
+
 ### tariffs~Tariffs ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[tariffs](#module_tariffs)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -6397,10 +6963,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_tariffs..Tariffs_new"></a>
+
 #### new Tariffs()
 The Timezones endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### tariffs.args
 **Kind**: instance property of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
 **Default**: <code>{}</code>  
@@ -6412,6 +6980,7 @@ The Timezones endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_tariffs..Tariffs+forCountry"></a>
+
 #### tariffs.forCountry(countryIso) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the tariff country ISO code.
 
@@ -6423,6 +6992,7 @@ Sets the tariff country ISO code.
 | countryIso | <code>string</code> | 2-letter ISO code. |
 
 <a name="module_command..Command+setArgument"></a>
+
 #### tariffs.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -6434,6 +7004,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### tariffs.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -6445,6 +7016,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### tariffs.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -6456,6 +7028,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### tariffs.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -6467,6 +7040,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *tariffs.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -6479,6 +7053,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### tariffs.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -6490,6 +7065,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### tariffs.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -6501,6 +7077,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### tariffs.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -6512,36 +7089,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### tariffs.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### tariffs.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### tariffs.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### tariffs.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### tariffs.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### tariffs.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -6553,6 +7136,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_templates"></a>
+
 ## templates
 
 * [templates](#module_templates)
@@ -6579,6 +7163,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_templates..Templates"></a>
+
 ### templates~Templates ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[templates](#module_templates)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -6610,10 +7195,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_templates..Templates_new"></a>
+
 #### new Templates()
 The Templates endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### templates.args
 **Kind**: instance property of <code>[Templates](#module_templates..Templates)</code>  
 **Default**: <code>{}</code>  
@@ -6625,6 +7212,7 @@ The Templates endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_templates..Templates+name"></a>
+
 #### templates.name(name) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the name.
 
@@ -6636,6 +7224,7 @@ Sets the name.
 | name | <code>string</code> | 
 
 <a name="module_templates..Templates+description"></a>
+
 #### templates.description(description) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the description.
 
@@ -6647,6 +7236,7 @@ Sets the description.
 | description | <code>string</code> | 
 
 <a name="module_templates..Templates+text"></a>
+
 #### templates.text(text) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the template text.
 
@@ -6658,6 +7248,7 @@ Sets the template text.
 | text | <code>string</code> | 
 
 <a name="module_templates..Templates+id"></a>
+
 #### templates.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the id.
 
@@ -6669,6 +7260,7 @@ Sets the id.
 | id | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### templates.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -6680,6 +7272,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### templates.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -6691,6 +7284,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### templates.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -6702,6 +7296,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### templates.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -6713,6 +7308,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *templates.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -6725,6 +7321,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### templates.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -6736,6 +7333,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### templates.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -6747,6 +7345,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### templates.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -6758,36 +7357,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### templates.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### templates.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### templates.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### templates.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### templates.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Templates](#module_templates..Templates)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### templates.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -6799,6 +7404,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_timezones"></a>
+
 ## timezones
 
 * [timezones](#module_timezones)
@@ -6821,6 +7427,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_timezones..Timezones"></a>
+
 ### timezones~Timezones ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[timezones](#module_timezones)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -6848,10 +7455,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_timezones..Timezones_new"></a>
+
 #### new Timezones()
 The Timezones endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### timezones.args
 **Kind**: instance property of <code>[Timezones](#module_timezones..Timezones)</code>  
 **Default**: <code>{}</code>  
@@ -6863,6 +7472,7 @@ The Timezones endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_command..Command+setArgument"></a>
+
 #### timezones.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -6874,6 +7484,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### timezones.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -6885,6 +7496,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### timezones.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -6896,6 +7508,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### timezones.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -6907,6 +7520,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *timezones.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -6919,6 +7533,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### timezones.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -6930,6 +7545,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### timezones.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -6941,6 +7557,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### timezones.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -6952,36 +7569,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### timezones.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Timezones](#module_timezones..Timezones)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### timezones.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Timezones](#module_timezones..Timezones)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### timezones.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Timezones](#module_timezones..Timezones)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### timezones.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Timezones](#module_timezones..Timezones)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### timezones.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Timezones](#module_timezones..Timezones)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### timezones.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -6993,6 +7616,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_trunks"></a>
+
 ## trunks
 
 * [trunks](#module_trunks)
@@ -7018,6 +7642,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_trunks..Trunks"></a>
+
 ### trunks~Trunks ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[trunks](#module_trunks)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -7048,10 +7673,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_trunks..Trunks_new"></a>
+
 #### new Trunks()
 The Trunks endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### trunks.args
 **Kind**: instance property of <code>[Trunks](#module_trunks..Trunks)</code>  
 **Default**: <code>{}</code>  
@@ -7063,6 +7690,7 @@ The Trunks endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_trunks..Trunks+name"></a>
+
 #### trunks.name(name) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the name.
 
@@ -7074,6 +7702,7 @@ Sets the name.
 | name | <code>string</code> | 
 
 <a name="module_trunks..Trunks+ip"></a>
+
 #### trunks.ip(ip) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the ip address.
 
@@ -7085,6 +7714,7 @@ Sets the ip address.
 | ip | <code>string</code> | 
 
 <a name="module_trunks..Trunks+id"></a>
+
 #### trunks.id(id) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the id.
 
@@ -7096,6 +7726,7 @@ Sets the id.
 | id | <code>integer</code> | 
 
 <a name="module_command..Command+setArgument"></a>
+
 #### trunks.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -7107,6 +7738,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### trunks.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -7118,6 +7750,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### trunks.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -7129,6 +7762,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### trunks.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -7140,6 +7774,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *trunks.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -7152,6 +7787,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### trunks.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -7163,6 +7799,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### trunks.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -7174,6 +7811,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### trunks.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -7185,36 +7823,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### trunks.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Trunks](#module_trunks..Trunks)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### trunks.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Trunks](#module_trunks..Trunks)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### trunks.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Trunks](#module_trunks..Trunks)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### trunks.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Trunks](#module_trunks..Trunks)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### trunks.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Trunks](#module_trunks..Trunks)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### trunks.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -7226,6 +7870,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_version"></a>
+
 ## version
 
 * [version](#module_version)
@@ -7248,6 +7893,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_version..Version"></a>
+
 ### version~Version ⇐ <code>[Command](#module_command..Command)</code>
 **Kind**: inner class of <code>[version](#module_version)</code>  
 **Extends:** <code>[Command](#module_command..Command)</code>  
@@ -7275,10 +7921,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_version..Version_new"></a>
+
 #### new Version()
 The Version endpoint.
 
 <a name="module_command..Command+args"></a>
+
 #### version.args
 **Kind**: instance property of <code>[Version](#module_version..Version)</code>  
 **Default**: <code>{}</code>  
@@ -7290,6 +7938,7 @@ The Version endpoint.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_command..Command+setArgument"></a>
+
 #### version.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -7301,6 +7950,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### version.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -7312,6 +7962,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### version.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -7323,6 +7974,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### version.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -7334,6 +7986,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *version.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -7346,6 +7999,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### version.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -7357,6 +8011,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### version.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -7368,6 +8023,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### version.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -7379,36 +8035,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### version.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Version](#module_version..Version)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### version.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Version](#module_version..Version)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### version.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Version](#module_version..Version)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### version.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Version](#module_version..Version)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### version.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Version](#module_version..Version)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### version.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -7420,6 +8082,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_command"></a>
+
 ## command
 
 * [command](#module_command)
@@ -7442,6 +8105,7 @@ Returns a command to use.
         * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="module_command..Command"></a>
+
 ### command~Command
 **Kind**: inner class of <code>[command](#module_command)</code>  
 **Author:** Marcelo Gornstein <marcelog@portatext.com>  
@@ -7467,10 +8131,12 @@ Returns a command to use.
     * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
 
 <a name="new_module_command..Command_new"></a>
+
 #### new Command()
 A base command.
 
 <a name="module_command..Command+args"></a>
+
 #### command.args
 **Kind**: instance property of <code>[Command](#module_command..Command)</code>  
 **Default**: <code>{}</code>  
@@ -7482,6 +8148,7 @@ A base command.
 | <code>Object</code> | Arguments for this command. |
 
 <a name="module_command..Command+setArgument"></a>
+
 #### command.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Sets the given argument to the given value.
 
@@ -7493,6 +8160,7 @@ Sets the given argument to the given value.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+delArgument"></a>
+
 #### command.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
 Deletes an argument.
 
@@ -7504,6 +8172,7 @@ Deletes an argument.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArgument"></a>
+
 #### command.getArgument(method) ⇒ <code>\*</code>
 Returns the value for the given argument name.
 
@@ -7515,6 +8184,7 @@ Returns the value for the given argument name.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+getArguments"></a>
+
 #### command.getArguments(method) ⇒ <code>Object</code>
 Returns an associative array with the arguments.
 
@@ -7526,6 +8196,7 @@ Returns an associative array with the arguments.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+endpoint"></a>
+
 #### *command.endpoint(method) ⇒ <code>string</code>*
 Returns a string with the endpoint for the given command.
 
@@ -7537,6 +8208,7 @@ Returns a string with the endpoint for the given command.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+body"></a>
+
 #### command.body(method) ⇒ <code>string</code>
 Returns the body for this endpoint.
 
@@ -7548,6 +8220,7 @@ Returns the body for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+contentType"></a>
+
 #### command.contentType(method) ⇒ <code>string</code>
 Returns the content type for this endpoint.
 
@@ -7559,6 +8232,7 @@ Returns the content type for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+acceptContentType"></a>
+
 #### command.acceptContentType(method) ⇒ <code>string</code>
 Returns the Accept header for this endpoint.
 
@@ -7570,36 +8244,42 @@ Returns the Accept header for this endpoint.
 | method | <code>HttpMethod</code> | 
 
 <a name="module_command..Command+get"></a>
+
 #### command.get() ⇒ <code>Promise</code>
 Runs this command with a GET method and returns the result.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  
 **Access:** public  
 <a name="module_command..Command+post"></a>
+
 #### command.post() ⇒ <code>Promise</code>
 Runs this command with a POST method and returns the result.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  
 **Access:** public  
 <a name="module_command..Command+patch"></a>
+
 #### command.patch() ⇒ <code>Promise</code>
 Runs this command with a PATCH method and returns the result.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  
 **Access:** public  
 <a name="module_command..Command+delete"></a>
+
 #### command.delete() ⇒ <code>Promise</code>
 Runs this command with a DELETE method and returns the result.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  
 **Access:** public  
 <a name="module_command..Command+put"></a>
+
 #### command.put() ⇒ <code>Promise</code>
 Runs this command with a PUT method and returns the result.
 
 **Kind**: instance method of <code>[Command](#module_command..Command)</code>  
 **Access:** public  
 <a name="module_command..Command+setClient"></a>
+
 #### command.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
 Returns a command to use.
 
@@ -7611,6 +8291,7 @@ Returns a command to use.
 | client | <code>[Client](#module_client..Client)</code> | 
 
 <a name="module_null_logger"></a>
+
 ## null_logger
 
 * [null_logger](#module_null_logger)
@@ -7619,6 +8300,7 @@ Returns a command to use.
         * [.log(message)](#module_null_logger..NullLogger+log) ⇒ <code>null</code>
 
 <a name="module_null_logger..NullLogger"></a>
+
 ### null_logger~NullLogger
 **Kind**: inner class of <code>[null_logger](#module_null_logger)</code>  
 **Author:** Marcelo Gornstein <marcelog@portatext.com>  
@@ -7630,10 +8312,12 @@ Returns a command to use.
     * [.log(message)](#module_null_logger..NullLogger+log) ⇒ <code>null</code>
 
 <a name="new_module_null_logger..NullLogger_new"></a>
+
 #### new NullLogger()
 This is our null logger, used in case none is setup.
 
 <a name="module_null_logger..NullLogger+log"></a>
+
 #### nullLogger.log(message) ⇒ <code>null</code>
 Discards the log message when called. This is the only method used by us.
 
