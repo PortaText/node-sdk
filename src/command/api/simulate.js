@@ -61,9 +61,33 @@ Simulate.prototype.text = function (text) {
 };
 
 Simulate.prototype.endpoint = function (method) {
-  var endpoint = 'simulate';
+  var queryString = {};
 
-  return endpoint;
+  var country = this.getArgument('country');
+  if (!country) {
+    throw new Error('Country cant be null');
+  }
+  queryString.country = this.getArgument('country');
+  this.delArgument('country');
+
+  var text = this.getArgument('text');
+  if (text) {
+    queryString.text = text;
+    this.delArgument('text');
+  }
+
+  var templateId = this.getArgument('template_id');
+  if (templateId) {
+    queryString.template_id = templateId;
+    this.delArgument('template_id');
+  }
+
+  var variables = this.getArgument('variables');
+  if (variables) {
+    queryString.variables = JSON.stringify(variables);
+    this.delArgument('variables');
+  }
+  return 'simulate?' + qs.stringify(queryString);
 };
 
 exports.Simulate = Simulate;
