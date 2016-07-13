@@ -114,6 +114,10 @@ Command.prototype.contentType = function (method) {
   if (file) {
     return 'text/csv';
   }
+  file = this.args.sound_file;
+  if (file) {
+    return 'audio/mpeg';
+  }
   return 'application/json';
 };
 
@@ -133,6 +137,10 @@ Command.prototype.acceptContentType = function (method) {
   file = this.args.accept_any_file;
   if (file) {
     return '*/*';
+  }
+  file = this.args.accept_sound_file;
+  if (file) {
+    return 'audio/mpeg';
   }
   return 'application/json';
 };
@@ -203,8 +211,12 @@ Command.prototype.run = function (method) {
   if (!file) {
     file = this.args.accept_any_file;
   }
+  if (!file) {
+    file = this.args.accept_sound_file;
+  }
   delete this.args.accept_file;
   delete this.args.accept_any_file;
+  delete this.args.accept_sound_file;
   var body = this.body(method);
   return this.client.run(endpoint, method, cType, aCType, body, file);
 };
@@ -246,6 +258,7 @@ exports.KnownCommands = [
   ['Destinations'],
   ['Simulate'],
   ['Summary'],
+  ['Sounds'],
   ['GsmCharset', 'gsm_charset'],
   ['NumberVerify', 'number_verify'],
   ['DidSearch', 'did_search'],
