@@ -57,6 +57,36 @@ Summary.prototype.saveTo = function (file) {
   return this.setArgument('accept_file', file);
 };
 
+/**
+ * Sets report granularity to day.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Summary.prototype.byDay = function () {
+  return this.setArgument('granularity', 'date');
+};
+
+/**
+ * Sets report granularity to month.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Summary.prototype.byMonth = function () {
+  return this.setArgument('granularity', 'month');
+};
+
+/**
+ * Sets report granularity to week.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Summary.prototype.byWeek = function () {
+  return this.setArgument('granularity', 'week');
+};
+
 Summary.prototype.endpoint = function (method) {
   var endpoint = 'summary';
   var queryString = {};
@@ -69,6 +99,11 @@ Summary.prototype.endpoint = function (method) {
   if (dateTo) {
     queryString.date_to = dateTo;
     this.delArgument('date_to');
+  }
+  var granularity = this.getArgument('granularity');
+  if (granularity) {
+    queryString.granularity = granularity;
+    this.delArgument('granularity');
   }
   if (Object.keys(queryString).length > 0) {
     return endpoint + '?' + qs.stringify(queryString);

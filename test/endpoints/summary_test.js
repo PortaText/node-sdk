@@ -9,6 +9,33 @@ chai.should();
 
 describe('Summary', function() {
   describe('get', function () {
+    it('should be able to get summary with day granularity', function () {
+      return helper
+        .mockClientForCommand('summary?granularity=date')
+        .summary()
+        .byDay()
+        .get()
+        .should.be.fulfilled;
+    });
+
+    it('should be able to get summary with month granularity', function () {
+      return helper
+        .mockClientForCommand('summary?granularity=month')
+        .summary()
+        .byMonth()
+        .get()
+        .should.be.fulfilled;
+    });
+
+    it('should be able to get summary with week granularity', function () {
+      return helper
+        .mockClientForCommand('summary?granularity=week')
+        .summary()
+        .byWeek()
+        .get()
+        .should.be.fulfilled;
+    });
+
     it('should be able to get summary with a date range', function () {
       return helper
         .mockClientForCommand(
