@@ -131,6 +131,19 @@ Sms.prototype.search = function (params) {
   return this.setArgument('search_params', params);
 };
 
+/**
+ * Schedule this sms.
+ *
+ * @access public
+ * @return {module:command~Command}
+ * @see https://github.com/PortaText/docs/wiki/REST-API#schedules
+ */
+Sms.prototype.schedule = function (type, details) {
+  var schedule = {};
+  schedule[type] = details;
+  return this.setArgument('schedule', schedule);
+};
+
 Sms.prototype.endpoint = function (method) {
   var endpoint = 'sms';
 

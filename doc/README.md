@@ -6815,6 +6815,7 @@ Returns a command to use.
         * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
         * [.fromService(serviceId)](#module_sms..Sms+fromService) ⇒ <code>[Command](#module_command..Command)</code>
         * [.search(Search)](#module_sms..Sms+search) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.schedule()](#module_sms..Sms+schedule) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -6852,6 +6853,7 @@ Returns a command to use.
     * [.toContactLists(contactLists)](#module_sms..Sms+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
     * [.fromService(serviceId)](#module_sms..Sms+fromService) ⇒ <code>[Command](#module_command..Command)</code>
     * [.search(Search)](#module_sms..Sms+search) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.schedule()](#module_sms..Sms+schedule) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -6993,6 +6995,14 @@ Searches for SMS operations
 | --- | --- | --- |
 | Search | <code>Object</code> | params (see the API doc). |
 
+<a name="module_sms..Sms+schedule"></a>
+
+#### sms.schedule() ⇒ <code>[Command](#module_command..Command)</code>
+Schedule this sms.
+
+**Kind**: instance method of <code>[Sms](#module_sms..Sms)</code>  
+**Access:** public  
+**See**: https://github.com/PortaText/docs/wiki/REST-API#schedules  
 <a name="module_command..Command+setArgument"></a>
 
 #### sms.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>

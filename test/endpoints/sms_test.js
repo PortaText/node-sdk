@@ -45,6 +45,31 @@ describe('Sms', function() {
         .should.be.fulfilled;
     });
 
+    it('should be able to schedule an sms', function () {
+      return helper
+        .mockClientForCommand('sms', {
+          from: '12223334444',
+          to: '15556667777',
+          text: 'hello world',
+          schedule: {
+            any_day: {
+              from: "15:00",
+              to: "17:30"
+            }
+          }
+        })
+        .sms()
+        .from('12223334444')
+        .to('15556667777')
+        .text('hello world')
+        .schedule('any_day', {
+          from: '15:00',
+          to: '17:30'
+        })
+        .post()
+        .should.be.fulfilled;
+    });
+
     it('should be able to send an sms using a text', function () {
       return helper
         .mockClientForCommand('sms', {
