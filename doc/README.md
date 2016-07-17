@@ -1065,6 +1065,7 @@ Returns a command to use.
         * [.page(page)](#module_campaign..Campaigns+page) ⇒ <code>[Command](#module_command..Command)</code>
         * [.saveTo(file)](#module_campaign..Campaigns+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
         * [.contacts()](#module_campaign..Campaigns+contacts) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.schedule()](#module_campaign..Campaigns+schedule) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1103,6 +1104,7 @@ Returns a command to use.
     * [.page(page)](#module_campaign..Campaigns+page) ⇒ <code>[Command](#module_command..Command)</code>
     * [.saveTo(file)](#module_campaign..Campaigns+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
     * [.contacts()](#module_campaign..Campaigns+contacts) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.schedule()](#module_campaign..Campaigns+schedule) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1245,6 +1247,14 @@ Query campaign contacts.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
+<a name="module_campaign..Campaigns+schedule"></a>
+
+#### campaigns.schedule() ⇒ <code>[Command](#module_command..Command)</code>
+Schedule this campaign.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** public  
+**See**: https://github.com/PortaText/docs/wiki/REST-API#schedules  
 <a name="module_command..Command+setArgument"></a>
 
 #### campaigns.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>

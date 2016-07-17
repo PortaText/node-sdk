@@ -96,6 +96,35 @@ describe('SmsCampaign', function() {
         .should.be.fulfilled;
     });
 
+    it('should be able to schedule a sms campaign', function () {
+      return helper
+        .mockClientForCommand('campaigns', {
+          type: 'sms',
+          name: 'this is the name',
+          description: 'and this is the description',
+          contact_list_ids: [1, 3, 5, 7, 9],
+          from: '12223334444',
+          settings: {
+            text: 'Hello world'
+          },
+          schedule: {
+            any_day: {
+              from: '13:45',
+              to: '21:22'
+            }
+          }
+        })
+        .smsCampaign()
+        .name('this is the name')
+        .description('and this is the description')
+        .toContactLists([1, 3, 5, 7, 9])
+        .from('12223334444')
+        .text('Hello world')
+        .schedule('any_day', {from: '13:45', to: '21:22'})
+        .post()
+        .should.be.fulfilled;
+    });
+
     it('should be able to create a sms campaign using text', function () {
       return helper
         .mockClientForCommand('campaigns', {

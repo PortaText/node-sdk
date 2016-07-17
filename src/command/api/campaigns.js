@@ -137,6 +137,19 @@ Campaigns.prototype.contacts = function () {
   return this.setArgument('contacts', true);
 };
 
+/**
+ * Schedule this campaign.
+ *
+ * @access public
+ * @return {module:command~Command}
+ * @see https://github.com/PortaText/docs/wiki/REST-API#schedules
+ */
+Campaigns.prototype.schedule = function (type, details) {
+  var schedule = {};
+  schedule[type] = details;
+  return this.setArgument('schedule', schedule);
+};
+
 Campaigns.prototype.endpoint = function (method) {
   var endpoint = 'campaigns';
   var id = this.getArgument('id');
