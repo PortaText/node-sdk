@@ -11,10 +11,10 @@ describe('Recharge', function() {
   describe('post', function () {
     it('should be able to recharge', function () {
       return helper
-        .mockClientForCommand('recharge', {card_id: 445522, total: 150})
+        .mockClientForCommand('recharge', {card_id: 445522, total: 5000})
         .recharge()
         .withCard(445522)
-        .total(150)
+        .total(5000)
         .post()
         .should.be.fulfilled;
     });

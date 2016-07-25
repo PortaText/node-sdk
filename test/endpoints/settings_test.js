@@ -68,11 +68,11 @@ describe('Settings', function() {
       return helper
         .mockClientForCommand('me/settings', {
           autorecharge_enabled: true,
-          autorecharge_total: 150,
+          autorecharge_total: 5000,
           autorecharge_when_credit: 100
         })
         .settings()
-        .enableAutoRecharges(100, 150)
+        .enableAutoRecharges(100, 5000)
         .patch()
         .should.be.fulfilled;
     });

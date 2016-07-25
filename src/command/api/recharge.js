@@ -33,9 +33,9 @@ Recharge.prototype.withCard = function (cardId) {
 };
 
 /**
- * Amount of money to recharge.
+ * Amount of credits to recharge.
  *
- * @param {float} total
+ * @param {integer} total
  *
  * @access public
  * @return {module:command~Command}
