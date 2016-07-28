@@ -61,6 +61,8 @@
 <dd></dd>
 <dt><a href="#module_tariffs">tariffs</a></dt>
 <dd></dd>
+<dt><a href="#module_tel_campaign">tel_campaign</a></dt>
+<dd></dd>
 <dt><a href="#module_templates">templates</a></dt>
 <dd></dd>
 <dt><a href="#module_timezones">timezones</a></dt>
@@ -1065,7 +1067,8 @@ Returns a command to use.
         * [.page(page)](#module_campaign..Campaigns+page) ⇒ <code>[Command](#module_command..Command)</code>
         * [.saveTo(file)](#module_campaign..Campaigns+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
         * [.contacts()](#module_campaign..Campaigns+contacts) ⇒ <code>[Command](#module_command..Command)</code>
-        * [.schedule()](#module_campaign..Campaigns+schedule) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.schedule(type, details)](#module_campaign..Campaigns+schedule) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setSetting(name, value)](#module_campaign..Campaigns+setSetting) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1104,7 +1107,8 @@ Returns a command to use.
     * [.page(page)](#module_campaign..Campaigns+page) ⇒ <code>[Command](#module_command..Command)</code>
     * [.saveTo(file)](#module_campaign..Campaigns+saveTo) ⇒ <code>[Command](#module_command..Command)</code>
     * [.contacts()](#module_campaign..Campaigns+contacts) ⇒ <code>[Command](#module_command..Command)</code>
-    * [.schedule()](#module_campaign..Campaigns+schedule) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.schedule(type, details)](#module_campaign..Campaigns+schedule) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setSetting(name, value)](#module_campaign..Campaigns+setSetting) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -1249,12 +1253,32 @@ Query campaign contacts.
 **Access:** public  
 <a name="module_campaign..Campaigns+schedule"></a>
 
-#### campaigns.schedule() ⇒ <code>[Command](#module_command..Command)</code>
+#### campaigns.schedule(type, details) ⇒ <code>[Command](#module_command..Command)</code>
 Schedule this campaign.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 **See**: https://github.com/PortaText/docs/wiki/REST-API#schedules  
+
+| Param | Type |
+| --- | --- |
+| type | <code>string</code> | 
+| details | <code>object</code> | 
+
+<a name="module_campaign..Campaigns+setSetting"></a>
+
+#### campaigns.setSetting(name, value) ⇒ <code>[Command](#module_command..Command)</code>
+Set campaign settings.
+
+**Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
+**Access:** protected  
+**See**: https://github.com/PortaText/docs/wiki/REST-API#schedules  
+
+| Param | Type |
+| --- | --- |
+| name | <code>string</code> | 
+| value | <code>string</code> | 
+
 <a name="module_command..Command+setArgument"></a>
 
 #### campaigns.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
@@ -7931,6 +7955,273 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Tariffs](#module_tariffs..Tariffs)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_tel_campaign"></a>
+
+## tel_campaign
+
+* [tel_campaign](#module_tel_campaign)
+    * [~TelCampaign](#module_tel_campaign..TelCampaign) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new TelCampaign()](#new_module_tel_campaign..TelCampaign_new)
+        * [.args](#module_command..Command+args)
+        * [.iterations(iterations)](#module_tel_campaign..TelCampaign+iterations) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.agents(agents)](#module_tel_campaign..TelCampaign+agents) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.postCallWorkDuration(seconds)](#module_tel_campaign..TelCampaign+postCallWorkDuration) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.minIterationTime(minutes)](#module_tel_campaign..TelCampaign+minIterationTime) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_tel_campaign..TelCampaign"></a>
+
+### tel_campaign~TelCampaign ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[tel_campaign](#module_tel_campaign)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_campaigns Campaigns endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~TelCampaign](#module_tel_campaign..TelCampaign) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new TelCampaign()](#new_module_tel_campaign..TelCampaign_new)
+    * [.args](#module_command..Command+args)
+    * [.iterations(iterations)](#module_tel_campaign..TelCampaign+iterations) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.agents(agents)](#module_tel_campaign..TelCampaign+agents) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.postCallWorkDuration(seconds)](#module_tel_campaign..TelCampaign+postCallWorkDuration) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.minIterationTime(minutes)](#module_tel_campaign..TelCampaign+minIterationTime) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_tel_campaign..TelCampaign_new"></a>
+
+#### new TelCampaign()
+The Campaigns endpoint (Telephony).
+
+<a name="module_command..Command+args"></a>
+
+#### telCampaign.args
+**Kind**: instance property of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_tel_campaign..TelCampaign+iterations"></a>
+
+#### telCampaign.iterations(iterations) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the total number of iterations.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| iterations | <code>integer</code> | 
+
+<a name="module_tel_campaign..TelCampaign+agents"></a>
+
+#### telCampaign.agents(agents) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the total number of agents.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| agents | <code>integer</code> | 
+
+<a name="module_tel_campaign..TelCampaign+postCallWorkDuration"></a>
+
+#### telCampaign.postCallWorkDuration(seconds) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the post work duration for each agent after each call.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| seconds | <code>integer</code> | 
+
+<a name="module_tel_campaign..TelCampaign+minIterationTime"></a>
+
+#### telCampaign.minIterationTime(minutes) ⇒ <code>[Command](#module_command..Command)</code>
+Minimum time to wait before attempting to recontact a target.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| minutes | <code>integer</code> | 
+
+<a name="module_command..Command+setArgument"></a>
+
+#### telCampaign.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+
+#### telCampaign.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+
+#### telCampaign.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+
+#### telCampaign.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+
+#### *telCampaign.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+
+#### telCampaign.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+
+#### telCampaign.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+acceptContentType"></a>
+
+#### telCampaign.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+
+#### telCampaign.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+
+#### telCampaign.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+
+#### telCampaign.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+
+#### telCampaign.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+
+#### telCampaign.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+
+#### telCampaign.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
 **Access:** public  
 
 | Param | Type |

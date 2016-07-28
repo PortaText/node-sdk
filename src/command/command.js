@@ -249,6 +249,7 @@ exports.KnownCommands = [
   ['Recharge'],
   ['Campaigns'],
   ['SmsCampaign', 'sms_campaign'],
+  ['TelCampaign', 'tel_campaign'],
   ['Contacts'],
   ['Services'],
   ['Trunks'],

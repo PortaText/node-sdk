@@ -70,6 +70,38 @@ describe('Campaigns', function() {
   });
 });
 
+describe('TelCampaign', function() {
+  describe('post', function () {
+    it('should be able to create a telephony campaign', function () {
+      return helper
+        .mockClientForCommand('campaigns', {
+          type: 'telephony',
+          name: 'this is the name',
+          description: 'and this is the description',
+          contact_list_ids: [1, 3, 5, 7, 9],
+          from: '12223334444',
+          settings: {
+            agents: 20,
+            iterations: 3,
+            post_call_work_duration: 15,
+            min_iteration_time: 5
+          }
+        })
+        .telCampaign()
+        .name('this is the name')
+        .description('and this is the description')
+        .toContactLists([1, 3, 5, 7, 9])
+        .from('12223334444')
+        .agents(20)
+        .iterations(3)
+        .postCallWorkDuration(15)
+        .minIterationTime(5)
+        .post()
+        .should.be.fulfilled;
+    });
+  });
+});
+
 describe('SmsCampaign', function() {
   describe('post', function () {
     it('should be able to create a sms campaign using a csv file', function () {

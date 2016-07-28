@@ -31,10 +31,8 @@ util.inherits(SmsCampaign, campaignMod.Campaigns);
  * @return {module:command~Command}
  */
 SmsCampaign.prototype.useTemplate = function (templateId, variables) {
-  return this.setArgument('settings', {
-    template_id: templateId,
-    variables: variables
-  });
+  this.setSetting('template_id', templateId);
+  return this.setSetting('variables', variables);
 };
 
 /**
@@ -46,7 +44,7 @@ SmsCampaign.prototype.useTemplate = function (templateId, variables) {
  * @return {module:command~Command}
  */
 SmsCampaign.prototype.text = function (text) {
-  return this.setArgument('settings', {text: text});
+  return this.setSetting('text', text);
 };
 
 /**

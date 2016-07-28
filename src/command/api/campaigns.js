@@ -140,6 +140,9 @@ Campaigns.prototype.contacts = function () {
 /**
  * Schedule this campaign.
  *
+ * @param {string} type
+ * @param {object} details
+ *
  * @access public
  * @return {module:command~Command}
  * @see https://github.com/PortaText/docs/wiki/REST-API#schedules
@@ -148,6 +151,25 @@ Campaigns.prototype.schedule = function (type, details) {
   var schedule = {};
   schedule[type] = details;
   return this.setArgument('schedule', schedule);
+};
+
+/**
+ * Set campaign settings.
+ *
+ * @param {string} name
+ * @param {string} value
+ *
+ * @access protected
+ * @return {module:command~Command}
+ * @see https://github.com/PortaText/docs/wiki/REST-API#schedules
+ */
+Campaigns.prototype.setSetting = function (name, value) {
+  args = this.getArgument('settings');
+  if (!args) {
+    args = {};
+  }
+  args[name] = value;
+  return this.setArgument('settings', args);
 };
 
 Campaigns.prototype.endpoint = function (method) {
