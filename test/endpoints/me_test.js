@@ -26,7 +26,8 @@ describe('Me', function() {
           email: 'john@doe.com',
           company: 'Mr. spiffy',
           callback_url: null,
-          timezone: 'UTC'
+          timezone: 'UTC',
+          language: 'es'
         })
         .me()
         .name('John', 'Doe')
@@ -34,6 +35,7 @@ describe('Me', function() {
         .company('Mr. spiffy')
         .callbackUrl(null)
         .timezone('UTC')
+        .language('es')
         .put()
         .should.be.fulfilled;
     });

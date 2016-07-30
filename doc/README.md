@@ -4346,6 +4346,7 @@ Returns a command to use.
         * [.email(email)](#module_me..Me+email) ⇒ <code>[Command](#module_command..Command)</code>
         * [.callbackUrl(callbackUrl)](#module_me..Me+callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
         * [.timezone(timezone)](#module_me..Me+timezone) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.language(language)](#module_me..Me+language) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -4379,6 +4380,7 @@ Returns a command to use.
     * [.email(email)](#module_me..Me+email) ⇒ <code>[Command](#module_command..Command)</code>
     * [.callbackUrl(callbackUrl)](#module_me..Me+callbackUrl) ⇒ <code>[Command](#module_command..Command)</code>
     * [.timezone(timezone)](#module_me..Me+timezone) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.language(language)](#module_me..Me+language) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -4471,6 +4473,18 @@ Sets the timezone.
 | Param | Type |
 | --- | --- |
 | timezone | <code>string</code> | 
+
+<a name="module_me..Me+language"></a>
+
+#### me.language(language) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the 2-letter iso code for the language.
+
+**Kind**: instance method of <code>[Me](#module_me..Me)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| language | <code>string</code> | 
 
 <a name="module_command..Command+setArgument"></a>
 

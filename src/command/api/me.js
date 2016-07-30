@@ -82,6 +82,18 @@ Me.prototype.timezone = function (timezone) {
   return this.setArgument('timezone', timezone);
 };
 
+/**
+ * Sets the 2-letter iso code for the language.
+ *
+ * @param {string} language
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Me.prototype.language = function (language) {
+  return this.setArgument('language', language);
+};
+
 Me.prototype.endpoint = function (method) {
   return 'me';
 };
