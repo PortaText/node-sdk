@@ -84,7 +84,8 @@ describe('TelCampaign', function() {
             agents: 20,
             iterations: 3,
             post_call_work_duration: 15,
-            min_iteration_time: 5
+            min_iteration_time: 5,
+            outbound_trunk_id: 33
           }
         })
         .telCampaign()
@@ -96,6 +97,7 @@ describe('TelCampaign', function() {
         .iterations(3)
         .postCallWorkDuration(15)
         .minIterationTime(5)
+        .outboundTrunk(33)
         .post()
         .should.be.fulfilled;
     });

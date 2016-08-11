@@ -7987,6 +7987,7 @@ Returns a command to use.
         * [.agents(agents)](#module_tel_campaign..TelCampaign+agents) ⇒ <code>[Command](#module_command..Command)</code>
         * [.postCallWorkDuration(seconds)](#module_tel_campaign..TelCampaign+postCallWorkDuration) ⇒ <code>[Command](#module_command..Command)</code>
         * [.minIterationTime(minutes)](#module_tel_campaign..TelCampaign+minIterationTime) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.outboundTrunk(Trunk)](#module_tel_campaign..TelCampaign+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -8019,6 +8020,7 @@ Returns a command to use.
     * [.agents(agents)](#module_tel_campaign..TelCampaign+agents) ⇒ <code>[Command](#module_command..Command)</code>
     * [.postCallWorkDuration(seconds)](#module_tel_campaign..TelCampaign+postCallWorkDuration) ⇒ <code>[Command](#module_command..Command)</code>
     * [.minIterationTime(minutes)](#module_tel_campaign..TelCampaign+minIterationTime) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.outboundTrunk(Trunk)](#module_tel_campaign..TelCampaign+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -8098,6 +8100,18 @@ Minimum time to wait before attempting to recontact a target.
 | Param | Type |
 | --- | --- |
 | minutes | <code>integer</code> | 
+
+<a name="module_tel_campaign..TelCampaign+outboundTrunk"></a>
+
+#### telCampaign.outboundTrunk(Trunk) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the outbound trunk id.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Trunk | <code>integer</code> | ID. |
 
 <a name="module_command..Command+setArgument"></a>
 

@@ -69,4 +69,16 @@ TelCampaign.prototype.minIterationTime = function (minutes) {
   return this.setSetting('min_iteration_time', minutes);
 };
 
+/**
+ * Sets the outbound trunk id.
+ *
+ * @param {integer} Trunk ID.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+TelCampaign.prototype.outboundTrunk = function (trunkId) {
+  return this.setSetting('outbound_trunk_id', trunkId);
+};
+
 exports.TelCampaign = TelCampaign;
