@@ -1,5 +1,5 @@
 {
-  "version": "1.4.19",
+  "version": "1.4.20",
   "description": "Official client for the PortaText API",
   "name": "portatext",
   "keywords": [
@@ -50,7 +50,7 @@
     "jsdoc": "latest",
     "jsdox": "latest",
     "jsdoc-to-markdown": "latest",
-    "eslint": "2.13.1",
+    "eslint": "latest",
     "eslint-plugin-standard": "latest",
     "eslint-config-standard": "latest",
     "eslint-plugin-promise": "latest",
