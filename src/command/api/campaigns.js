@@ -138,6 +138,17 @@ Campaigns.prototype.contacts = function () {
 };
 
 /**
+ * Operate on the given campaign contact.
+ *
+ * @param {string} contact
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Campaigns.prototype.contact = function (contact) {
+  return this.setArgument('contact', contact);
+};
+/**
  * Schedule this campaign.
  *
  * @param {string} type
@@ -183,6 +194,11 @@ Campaigns.prototype.endpoint = function (method) {
   if (contacts) {
     this.delArgument('contacts');
     endpoint = endpoint + '/contacts';
+  }
+  var contact = this.getArgument('contact');
+  if (contact) {
+    this.delArgument('contact');
+    endpoint = endpoint + '/contacts/' + contact;
   }
   var file = this.getArgument('file');
   if (file) {

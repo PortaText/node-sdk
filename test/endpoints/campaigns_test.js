@@ -10,6 +10,16 @@ chai.should();
 
 describe('Campaigns', function() {
   describe('delete', function () {
+    it('should be able to cancel a contact', function () {
+      return helper
+        .mockClientForCommand('campaigns/451/contacts/12223334444')
+        .campaigns()
+        .id(451)
+        .contact('12223334444')
+        .delete()
+        .should.be.fulfilled;
+    });
+
     it('should be able to delete campaign', function () {
       return helper
         .mockClientForCommand('campaigns/451')
