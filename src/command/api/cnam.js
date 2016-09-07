@@ -32,12 +32,28 @@ Cnam.prototype.forNumber = function (number) {
   return this.setArgument('number', number);
 };
 
+/**
+ * Send a CSV file to query CNAM.
+ *
+ * @param {string} filename
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Cnam.prototype.csv = function (filename) {
+  return this.setArgument('file', filename);
+};
+
 Cnam.prototype.endpoint = function (method) {
   var number = this.getArgument('number');
-  if (!number) {
+  var file = this.getArgument('file');
+  if (!number && !file) {
     throw new Error('DID number cant be null');
   }
   this.delArgument('number');
+  if (!number) {
+    return 'cnam';
+  }
   return 'cnam/' + number;
 };
 
