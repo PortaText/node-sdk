@@ -199,6 +199,33 @@ Settings.prototype.amdInitialSilence = function (initialSilence) {
 };
 
 /**
+ * Enables publishing of events to an SNS topic.
+ *
+ * @param {string} key
+ * @param {string} secret
+ * @param {string} topicArn
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.publishEventsToSns = function (key, secret, topicArn) {
+  this.setArgument('sns_publish_enabled', true);
+  this.setArgument('sns_access_key', key);
+  this.setArgument('sns_access_secret', secret);
+  return this.setArgument('sns_topic', topicArn);
+}
+
+/**
+ * Disables publishing of events to an SNS topic.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Settings.prototype.dontPublishEventsToSns = function () {
+  return this.setArgument('sns_publish_enabled', false);
+}
+
+/**
  * Sets default credit card.
  *
  * @param {integer} cardId

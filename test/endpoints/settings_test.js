@@ -19,6 +19,31 @@ describe('Settings', function() {
   });
 
   describe('patch', function () {
+    it('should be able to enable sns publishing', function () {
+      return helper
+        .mockClientForCommand('me/settings', {
+          sns_publish_enabled: true,
+          sns_access_key: 'key',
+          sns_access_secret: 'secret',
+          sns_topic: 'topic'
+        })
+        .settings()
+        .publishEventsToSns('key', 'secret', 'topic')
+        .patch()
+        .should.be.fulfilled;
+    });
+
+    it('should be able to disable sns publishing', function () {
+      return helper
+        .mockClientForCommand('me/settings', {
+          sns_publish_enabled: false
+        })
+        .settings()
+        .dontPublishEventsToSns()
+        .patch()
+        .should.be.fulfilled;
+    });
+
     it('should be able to set amd settings', function () {
       return helper
         .mockClientForCommand('me/settings', {

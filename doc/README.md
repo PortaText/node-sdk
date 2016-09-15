@@ -5955,6 +5955,8 @@ Returns a command to use.
         * [.amdAfterGreetingSilence(greetingSilence)](#module_settings..Settings+amdAfterGreetingSilence) ⇒ <code>[Command](#module_command..Command)</code>
         * [.amdMaxGreetingLength(greetingLength)](#module_settings..Settings+amdMaxGreetingLength) ⇒ <code>[Command](#module_command..Command)</code>
         * [.amdInitialSilence(initialSilence)](#module_settings..Settings+amdInitialSilence) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.publishEventsToSns(key, secret, topicArn)](#module_settings..Settings+publishEventsToSns) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.dontPublishEventsToSns()](#module_settings..Settings+dontPublishEventsToSns) ⇒ <code>[Command](#module_command..Command)</code>
         * [.defaultCreditCard(cardId)](#module_settings..Settings+defaultCreditCard) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -5999,6 +6001,8 @@ Returns a command to use.
     * [.amdAfterGreetingSilence(greetingSilence)](#module_settings..Settings+amdAfterGreetingSilence) ⇒ <code>[Command](#module_command..Command)</code>
     * [.amdMaxGreetingLength(greetingLength)](#module_settings..Settings+amdMaxGreetingLength) ⇒ <code>[Command](#module_command..Command)</code>
     * [.amdInitialSilence(initialSilence)](#module_settings..Settings+amdInitialSilence) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.publishEventsToSns(key, secret, topicArn)](#module_settings..Settings+publishEventsToSns) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.dontPublishEventsToSns()](#module_settings..Settings+dontPublishEventsToSns) ⇒ <code>[Command](#module_command..Command)</code>
     * [.defaultCreditCard(cardId)](#module_settings..Settings+defaultCreditCard) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -6199,6 +6203,27 @@ Is maximum initial silence duration before greeting (milliseconds).
 | --- | --- |
 | initialSilence | <code>integer</code> | 
 
+<a name="module_settings..Settings+publishEventsToSns"></a>
+
+#### settings.publishEventsToSns(key, secret, topicArn) ⇒ <code>[Command](#module_command..Command)</code>
+Enables publishing of events to an SNS topic.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| key | <code>string</code> | 
+| secret | <code>string</code> | 
+| topicArn | <code>string</code> | 
+
+<a name="module_settings..Settings+dontPublishEventsToSns"></a>
+
+#### settings.dontPublishEventsToSns() ⇒ <code>[Command](#module_command..Command)</code>
+Disables publishing of events to an SNS topic.
+
+**Kind**: instance method of <code>[Settings](#module_settings..Settings)</code>  
+**Access:** public  
 <a name="module_settings..Settings+defaultCreditCard"></a>
 
 #### settings.defaultCreditCard(cardId) ⇒ <code>[Command](#module_command..Command)</code>
