@@ -28,6 +28,26 @@ describe('DidSettings', function() {
   });
 
   describe('patch', function () {
+    it('should be able to enable stop words', function () {
+      return helper
+        .mockClientForCommand('dids/12223334444', {stop_words_enabled: true})
+        .didSettings()
+        .forNumber('12223334444')
+        .enableStopWords()
+        .patch()
+        .should.be.fulfilled;
+    });
+
+    it('should be able to disable stop words', function () {
+      return helper
+        .mockClientForCommand('dids/12223334444', {stop_words_enabled: false})
+        .didSettings()
+        .forNumber('12223334444')
+        .disableStopWords()
+        .patch()
+        .should.be.fulfilled;
+    });
+
     it('should be able to enable cnam', function () {
       return helper
         .mockClientForCommand('dids/12223334444', {cnam_enabled: true})

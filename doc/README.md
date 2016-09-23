@@ -3168,6 +3168,8 @@ Returns a command to use.
         * [.forNumber(number)](#module_did_settings..DidSettings+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
         * [.enableCnam(value)](#module_did_settings..DidSettings+enableCnam) ⇒ <code>[Command](#module_command..Command)</code>
         * [.disableCnam()](#module_did_settings..DidSettings+disableCnam) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.enableStopWords(value)](#module_did_settings..DidSettings+enableStopWords) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.disableStopWords()](#module_did_settings..DidSettings+disableStopWords) ⇒ <code>[Command](#module_command..Command)</code>
         * [.dontAutoRespond()](#module_did_settings..DidSettings+dontAutoRespond) ⇒ <code>[Command](#module_command..Command)</code>
         * [.autoRespondWith(text)](#module_did_settings..DidSettings+autoRespondWith) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -3201,6 +3203,8 @@ Returns a command to use.
     * [.forNumber(number)](#module_did_settings..DidSettings+forNumber) ⇒ <code>[Command](#module_command..Command)</code>
     * [.enableCnam(value)](#module_did_settings..DidSettings+enableCnam) ⇒ <code>[Command](#module_command..Command)</code>
     * [.disableCnam()](#module_did_settings..DidSettings+disableCnam) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.enableStopWords(value)](#module_did_settings..DidSettings+enableStopWords) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.disableStopWords()](#module_did_settings..DidSettings+disableStopWords) ⇒ <code>[Command](#module_command..Command)</code>
     * [.dontAutoRespond()](#module_did_settings..DidSettings+dontAutoRespond) ⇒ <code>[Command](#module_command..Command)</code>
     * [.autoRespondWith(text)](#module_did_settings..DidSettings+autoRespondWith) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
@@ -3263,6 +3267,25 @@ Enables CNAM lookup.
 
 #### didSettings.disableCnam() ⇒ <code>[Command](#module_command..Command)</code>
 Disables CNAM lookup.
+
+**Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
+**Access:** public  
+<a name="module_did_settings..DidSettings+enableStopWords"></a>
+
+#### didSettings.enableStopWords(value) ⇒ <code>[Command](#module_command..Command)</code>
+Enables autodetection of stop words.
+
+**Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| value | <code>integer</code> | 
+
+<a name="module_did_settings..DidSettings+disableStopWords"></a>
+
+#### didSettings.disableStopWords() ⇒ <code>[Command](#module_command..Command)</code>
+Disables autodetection of stop words.
 
 **Kind**: instance method of <code>[DidSettings](#module_did_settings..DidSettings)</code>  
 **Access:** public  

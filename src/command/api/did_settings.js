@@ -55,6 +55,28 @@ DidSettings.prototype.disableCnam = function () {
 };
 
 /**
+ * Enables autodetection of stop words.
+ *
+ * @param {integer} value
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+DidSettings.prototype.enableStopWords = function () {
+  return this.setArgument('stop_words_enabled', true);
+};
+
+/**
+ * Disables autodetection of stop words.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+DidSettings.prototype.disableStopWords = function () {
+  return this.setArgument('stop_words_enabled', false);
+};
+
+/**
  * Disables autoresponder.
  *
  * @access public
