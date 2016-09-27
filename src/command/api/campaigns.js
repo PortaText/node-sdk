@@ -60,7 +60,7 @@ Campaigns.prototype.description = function (description) {
 /**
  * Specifies source telephone number for the campaign.
  *
- * @param {string} from
+ * @param {string}|{array} from
  *
  * @access public
  * @return {module:command~Command}

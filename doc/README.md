@@ -1060,7 +1060,7 @@ Returns a command to use.
         * [.id(id)](#module_campaign..Campaigns+id) ⇒ <code>[Command](#module_command..Command)</code>
         * [.name(name)](#module_campaign..Campaigns+name) ⇒ <code>[Command](#module_command..Command)</code>
         * [.description(description)](#module_campaign..Campaigns+description) ⇒ <code>[Command](#module_command..Command)</code>
-        * [.from(from)](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.from(|{array})](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
         * [.toContactLists(contactLists)](#module_campaign..Campaigns+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
         * [.csv(filename)](#module_campaign..Campaigns+csv) ⇒ <code>[Command](#module_command..Command)</code>
         * [.allSubscribers()](#module_campaign..Campaigns+allSubscribers) ⇒ <code>[Command](#module_command..Command)</code>
@@ -1101,7 +1101,7 @@ Returns a command to use.
     * [.id(id)](#module_campaign..Campaigns+id) ⇒ <code>[Command](#module_command..Command)</code>
     * [.name(name)](#module_campaign..Campaigns+name) ⇒ <code>[Command](#module_command..Command)</code>
     * [.description(description)](#module_campaign..Campaigns+description) ⇒ <code>[Command](#module_command..Command)</code>
-    * [.from(from)](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.from(|{array})](#module_campaign..Campaigns+from) ⇒ <code>[Command](#module_command..Command)</code>
     * [.toContactLists(contactLists)](#module_campaign..Campaigns+toContactLists) ⇒ <code>[Command](#module_command..Command)</code>
     * [.csv(filename)](#module_campaign..Campaigns+csv) ⇒ <code>[Command](#module_command..Command)</code>
     * [.allSubscribers()](#module_campaign..Campaigns+allSubscribers) ⇒ <code>[Command](#module_command..Command)</code>
@@ -1181,15 +1181,15 @@ Sets the description.
 
 <a name="module_campaign..Campaigns+from"></a>
 
-#### campaigns.from(from) ⇒ <code>[Command](#module_command..Command)</code>
+#### campaigns.from(|{array}) ⇒ <code>[Command](#module_command..Command)</code>
 Specifies source telephone number for the campaign.
 
 **Kind**: instance method of <code>[Campaigns](#module_campaign..Campaigns)</code>  
 **Access:** public  
 
-| Param | Type |
-| --- | --- |
-| from | <code>string</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| |{array} | <code>string</code> | from |
 
 <a name="module_campaign..Campaigns+toContactLists"></a>
 
