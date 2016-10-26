@@ -70,6 +70,36 @@ describe('Sms', function() {
         .should.be.fulfilled;
     });
 
+    it('should be able to send an sms using a list as from', function () {
+      return helper
+        .mockClientForCommand('sms', {
+          from: ['12223334444', '12223334445', '12223334446'],
+          to: '15556667777',
+          text: 'hello world'
+        })
+        .sms()
+        .from(['12223334444', '12223334445', '12223334446'])
+        .to('15556667777')
+        .text('hello world')
+        .post()
+        .should.be.fulfilled;
+    });
+
+    it('should be able to send an sms using "any" as from', function () {
+      return helper
+        .mockClientForCommand('sms', {
+          from: 'any',
+          to: '15556667777',
+          text: 'hello world'
+        })
+        .sms()
+        .from('any')
+        .to('15556667777')
+        .text('hello world')
+        .post()
+        .should.be.fulfilled;
+    });
+
     it('should be able to send an sms using a text', function () {
       return helper
         .mockClientForCommand('sms', {
