@@ -81,4 +81,28 @@ TelCampaign.prototype.outboundTrunk = function (trunkId) {
   return this.setSetting('outbound_trunk_id', trunkId);
 };
 
+/**
+ * Dial Timeout for Leg A.
+ *
+ * @param {integer} timeout In seconds.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+TelCampaign.prototype.dialTimeout = function (timeout) {
+  return this.setSetting('dial_timeout', timeout);
+};
+
+/**
+ * An array of call flow objects
+ *
+ * @param {integer} Call flow objects.
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+TelCampaign.prototype.flow = function (callFlow) {
+  return this.setSetting('flow', callFlow);
+};
+
 exports.TelCampaign = TelCampaign;

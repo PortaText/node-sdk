@@ -95,7 +95,12 @@ describe('TelCampaign', function() {
             iterations: 3,
             post_call_work_duration: 15,
             min_iteration_time: 5,
-            outbound_trunk_id: 33
+            outbound_trunk_id: 33,
+            dial_timeout: 120,
+            flow: [
+              {wait: {seconds: 120}},
+              {play: {sound_id: 3}}
+            ]
           }
         })
         .telCampaign()
@@ -108,7 +113,11 @@ describe('TelCampaign', function() {
         .postCallWorkDuration(15)
         .minIterationTime(5)
         .outboundTrunk(33)
-        .post()
+        .dialTimeout(120)
+        .flow([
+          {wait: {seconds: 120}},
+          {play: {sound_id: 3}}
+        ]).post()
         .should.be.fulfilled;
     });
   });

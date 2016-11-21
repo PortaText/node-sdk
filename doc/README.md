@@ -8064,6 +8064,8 @@ Returns a command to use.
         * [.postCallWorkDuration(seconds)](#module_tel_campaign..TelCampaign+postCallWorkDuration) ⇒ <code>[Command](#module_command..Command)</code>
         * [.minIterationTime(minutes)](#module_tel_campaign..TelCampaign+minIterationTime) ⇒ <code>[Command](#module_command..Command)</code>
         * [.outboundTrunk(Trunk)](#module_tel_campaign..TelCampaign+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.dialTimeout(timeout)](#module_tel_campaign..TelCampaign+dialTimeout) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.flow(Call)](#module_tel_campaign..TelCampaign+flow) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -8097,6 +8099,8 @@ Returns a command to use.
     * [.postCallWorkDuration(seconds)](#module_tel_campaign..TelCampaign+postCallWorkDuration) ⇒ <code>[Command](#module_command..Command)</code>
     * [.minIterationTime(minutes)](#module_tel_campaign..TelCampaign+minIterationTime) ⇒ <code>[Command](#module_command..Command)</code>
     * [.outboundTrunk(Trunk)](#module_tel_campaign..TelCampaign+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.dialTimeout(timeout)](#module_tel_campaign..TelCampaign+dialTimeout) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.flow(Call)](#module_tel_campaign..TelCampaign+flow) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -8188,6 +8192,30 @@ Sets the outbound trunk id.
 | Param | Type | Description |
 | --- | --- | --- |
 | Trunk | <code>integer</code> | ID. |
+
+<a name="module_tel_campaign..TelCampaign+dialTimeout"></a>
+
+#### telCampaign.dialTimeout(timeout) ⇒ <code>[Command](#module_command..Command)</code>
+Dial Timeout for Leg A.
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| timeout | <code>integer</code> | In seconds. |
+
+<a name="module_tel_campaign..TelCampaign+flow"></a>
+
+#### telCampaign.flow(Call) ⇒ <code>[Command](#module_command..Command)</code>
+An array of call flow objects
+
+**Kind**: instance method of <code>[TelCampaign](#module_tel_campaign..TelCampaign)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Call | <code>integer</code> | flow objects. |
 
 <a name="module_command..Command+setArgument"></a>
 
