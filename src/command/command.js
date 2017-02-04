@@ -243,6 +243,7 @@ exports.KnownCommands = [
   ['Me'],
   ['Blacklist'],
   ['Sms'],
+  ['Calls'],
   ['Cnam'],
   ['Jobs'],
   ['Settings'],

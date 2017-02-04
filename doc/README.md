@@ -9,6 +9,8 @@
 <dd></dd>
 <dt><a href="#module_blacklist">blacklist</a></dt>
 <dd></dd>
+<dt><a href="#module_calls">calls</a></dt>
+<dd></dd>
 <dt><a href="#module_campaign_lifecycle">campaign_lifecycle</a></dt>
 <dd></dd>
 <dt><a href="#module_campaign">campaign</a></dt>
@@ -786,6 +788,288 @@ Runs this command with a PUT method and returns the result.
 Returns a command to use.
 
 **Kind**: instance method of <code>[Blacklist](#module_blacklist..Blacklist)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| client | <code>[Client](#module_client..Client)</code> | 
+
+<a name="module_calls"></a>
+
+## calls
+
+* [calls](#module_calls)
+    * [~Calls](#module_calls..Calls) ⇐ <code>[Command](#module_command..Command)</code>
+        * [new Calls()](#new_module_calls..Calls_new)
+        * [.args](#module_command..Command+args)
+        * [.to(to)](#module_calls..Calls+to) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.from(from)](#module_calls..Calls+from) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.outboundTrunk(Trunk)](#module_calls..Calls+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.dialTimeout(timeout)](#module_calls..Calls+dialTimeout) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.flow(Call)](#module_calls..Calls+flow) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+        * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+        * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+        * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+        * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+        * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+        * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+        * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+        * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+        * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+        * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+        * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="module_calls..Calls"></a>
+
+### calls~Calls ⇐ <code>[Command](#module_command..Command)</code>
+**Kind**: inner class of <code>[calls](#module_calls)</code>  
+**Extends:** <code>[Command](#module_command..Command)</code>  
+**Link**: https://github.com/PortaText/docs/wiki/REST-API#api_calls Calls endpoint.  
+**Author:** Marcelo Gornstein <marcelog@portatext.com>  
+**License**: Apache-2.0  
+**Copyright**: 2015 PortaText  
+
+* [~Calls](#module_calls..Calls) ⇐ <code>[Command](#module_command..Command)</code>
+    * [new Calls()](#new_module_calls..Calls_new)
+    * [.args](#module_command..Command+args)
+    * [.to(to)](#module_calls..Calls+to) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.from(from)](#module_calls..Calls+from) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.outboundTrunk(Trunk)](#module_calls..Calls+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.dialTimeout(timeout)](#module_calls..Calls+dialTimeout) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.flow(Call)](#module_calls..Calls+flow) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
+    * [.getArguments(method)](#module_command..Command+getArguments) ⇒ <code>Object</code>
+    * *[.endpoint(method)](#module_command..Command+endpoint) ⇒ <code>string</code>*
+    * [.body(method)](#module_command..Command+body) ⇒ <code>string</code>
+    * [.contentType(method)](#module_command..Command+contentType) ⇒ <code>string</code>
+    * [.acceptContentType(method)](#module_command..Command+acceptContentType) ⇒ <code>string</code>
+    * [.get()](#module_command..Command+get) ⇒ <code>Promise</code>
+    * [.post()](#module_command..Command+post) ⇒ <code>Promise</code>
+    * [.patch()](#module_command..Command+patch) ⇒ <code>Promise</code>
+    * [.delete()](#module_command..Command+delete) ⇒ <code>Promise</code>
+    * [.put()](#module_command..Command+put) ⇒ <code>Promise</code>
+    * [.setClient(client)](#module_command..Command+setClient) ⇒ <code>[Command](#module_command..Command)</code>
+
+<a name="new_module_calls..Calls_new"></a>
+
+#### new Calls()
+The Calls endpoint.
+
+<a name="module_command..Command+args"></a>
+
+#### calls.args
+**Kind**: instance property of <code>[Calls](#module_calls..Calls)</code>  
+**Default**: <code>{}</code>  
+**Read only**: true  
+**Properties**
+
+| Type | Description |
+| --- | --- |
+| <code>Object</code> | Arguments for this command. |
+
+<a name="module_calls..Calls+to"></a>
+
+#### calls.to(to) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the message destination number.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| to | <code>string</code> | 
+
+<a name="module_calls..Calls+from"></a>
+
+#### calls.from(from) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the message source number.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| from | <code>string</code> | 
+
+<a name="module_calls..Calls+outboundTrunk"></a>
+
+#### calls.outboundTrunk(Trunk) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the outbound trunk id.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Trunk | <code>integer</code> | ID. |
+
+<a name="module_calls..Calls+dialTimeout"></a>
+
+#### calls.dialTimeout(timeout) ⇒ <code>[Command](#module_command..Command)</code>
+Dial Timeout for Leg A.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| timeout | <code>integer</code> | In seconds. |
+
+<a name="module_calls..Calls+flow"></a>
+
+#### calls.flow(Call) ⇒ <code>[Command](#module_command..Command)</code>
+An array of call flow objects
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Call | <code>integer</code> | flow objects. |
+
+<a name="module_command..Command+setArgument"></a>
+
+#### calls.setArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Sets the given argument to the given value.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+delArgument"></a>
+
+#### calls.delArgument(method) ⇒ <code>[Command](#module_command..Command)</code>
+Deletes an argument.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArgument"></a>
+
+#### calls.getArgument(method) ⇒ <code>\*</code>
+Returns the value for the given argument name.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+getArguments"></a>
+
+#### calls.getArguments(method) ⇒ <code>Object</code>
+Returns an associative array with the arguments.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** protected  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+endpoint"></a>
+
+#### *calls.endpoint(method) ⇒ <code>string</code>*
+Returns a string with the endpoint for the given command.
+
+**Kind**: instance abstract method of <code>[Calls](#module_calls..Calls)</code>  
+**Overrides:** <code>[endpoint](#module_command..Command+endpoint)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+body"></a>
+
+#### calls.body(method) ⇒ <code>string</code>
+Returns the body for this endpoint.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+contentType"></a>
+
+#### calls.contentType(method) ⇒ <code>string</code>
+Returns the content type for this endpoint.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+acceptContentType"></a>
+
+#### calls.acceptContentType(method) ⇒ <code>string</code>
+Returns the Accept header for this endpoint.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type |
+| --- | --- |
+| method | <code>HttpMethod</code> | 
+
+<a name="module_command..Command+get"></a>
+
+#### calls.get() ⇒ <code>Promise</code>
+Runs this command with a GET method and returns the result.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+<a name="module_command..Command+post"></a>
+
+#### calls.post() ⇒ <code>Promise</code>
+Runs this command with a POST method and returns the result.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+<a name="module_command..Command+patch"></a>
+
+#### calls.patch() ⇒ <code>Promise</code>
+Runs this command with a PATCH method and returns the result.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+<a name="module_command..Command+delete"></a>
+
+#### calls.delete() ⇒ <code>Promise</code>
+Runs this command with a DELETE method and returns the result.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+<a name="module_command..Command+put"></a>
+
+#### calls.put() ⇒ <code>Promise</code>
+Runs this command with a PUT method and returns the result.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+<a name="module_command..Command+setClient"></a>
+
+#### calls.setClient(client) ⇒ <code>[Command](#module_command..Command)</code>
+Returns a command to use.
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
 **Access:** public  
 
 | Param | Type |
