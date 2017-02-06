@@ -131,7 +131,7 @@ This project uses standard [npm scripts](https://docs.npmjs.com/cli/run-script).
  * coverage: Runs the tests and then [Instanbul](https://gotwarlost.github.io/istanbul/) to get a coverage report.
  * build: This is the default task, and will run all the other tasks.
 
-## Running a phing task
+## Running an npm task
 To run a task, just do:
 
 ```sh
