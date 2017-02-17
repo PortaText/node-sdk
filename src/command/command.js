@@ -239,6 +239,7 @@ exports.KnownCommands = [
   ['Timezones'],
   ['Templates'],
   ['Tariffs'],
+  ['Plans'],
   ['Acl'],
   ['Me'],
   ['Blacklist'],
