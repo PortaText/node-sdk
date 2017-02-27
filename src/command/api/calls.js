@@ -81,8 +81,27 @@ Calls.prototype.flow = function (callFlow) {
   return this.setArgument('flow', callFlow);
 };
 
+/**
+ * Searches for Call operations
+ *
+ * @param {Object} Search params (see the API doc).
+ *
+ * @access public
+ * @return {module:command~Command}
+ */
+Calls.prototype.search = function (params) {
+  return this.setArgument('search_params', params);
+};
+
 Calls.prototype.endpoint = function (method) {
-  return 'calls';
+  var endpoint = 'calls';
+
+  var searchParams = this.getArgument('search_params');
+  if (searchParams) {
+    this.delArgument('search_params');
+    return endpoint + '?' + qs.stringify(searchParams);
+  }
+  return endpoint;
 };
 
 exports.Calls = Calls;

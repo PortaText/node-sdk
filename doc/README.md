@@ -809,6 +809,7 @@ Returns a command to use.
         * [.outboundTrunk(Trunk)](#module_calls..Calls+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
         * [.dialTimeout(timeout)](#module_calls..Calls+dialTimeout) ⇒ <code>[Command](#module_command..Command)</code>
         * [.flow(Call)](#module_calls..Calls+flow) ⇒ <code>[Command](#module_command..Command)</code>
+        * [.search(Search)](#module_calls..Calls+search) ⇒ <code>[Command](#module_command..Command)</code>
         * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
         * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -842,6 +843,7 @@ Returns a command to use.
     * [.outboundTrunk(Trunk)](#module_calls..Calls+outboundTrunk) ⇒ <code>[Command](#module_command..Command)</code>
     * [.dialTimeout(timeout)](#module_calls..Calls+dialTimeout) ⇒ <code>[Command](#module_command..Command)</code>
     * [.flow(Call)](#module_calls..Calls+flow) ⇒ <code>[Command](#module_command..Command)</code>
+    * [.search(Search)](#module_calls..Calls+search) ⇒ <code>[Command](#module_command..Command)</code>
     * [.setArgument(method)](#module_command..Command+setArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.delArgument(method)](#module_command..Command+delArgument) ⇒ <code>[Command](#module_command..Command)</code>
     * [.getArgument(method)](#module_command..Command+getArgument) ⇒ <code>\*</code>
@@ -933,6 +935,18 @@ An array of call flow objects
 | Param | Type | Description |
 | --- | --- | --- |
 | Call | <code>integer</code> | flow objects. |
+
+<a name="module_calls..Calls+search"></a>
+
+#### calls.search(Search) ⇒ <code>[Command](#module_command..Command)</code>
+Searches for Call operations
+
+**Kind**: instance method of <code>[Calls](#module_calls..Calls)</code>  
+**Access:** public  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Search | <code>Object</code> | params (see the API doc). |
 
 <a name="module_command..Command+setArgument"></a>
 

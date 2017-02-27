@@ -33,4 +33,20 @@ describe('Calls', function() {
         .should.be.fulfilled;
     });
   });
+
+  describe('get', function () {
+    it('should be able to search for calls', function () {
+      return helper
+        .mockClientForCommand('calls?page=1&sort_order=asc&sort_field=date&campaign_id=1')
+        .calls()
+        .search({
+          page: 1,
+          sort_order: 'asc',
+          sort_field: 'date',
+          campaign_id: 1
+        })
+        .get()
+        .should.be.fulfilled;
+    });
+  });
 });
